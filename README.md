@@ -2,8 +2,8 @@
 
 This project was created to test graph search algorithms. There are implementations and tests for two algorithms:
 
-- Breadth-first search 
-- Dijkstra's Algorithm
+- [Breadth-first search](src/main/java/algorithm/BreadthFirstSearch.java) 
+- [Dijkstra's Algorithm](src/main/java/algorithm/DijkstrasAlgorithm.java)
 
 ## Technical specifications
 
