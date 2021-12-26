@@ -5,8 +5,8 @@ import algorithm.DijkstrasAlgorithm
 import algorithm.Graph
 import algorithm.SearchAlgorithm
 
-class App {
-    private static final Graph<String> complex = new Graph<>(Map.of(
+class AppGroovy {
+    private static final Graph<String> COMPLEX_GRAPH = new Graph<>(Map.of(
             "A", Map.of("B", 5, "H", 2),
             "B", Map.of("A", 5, "C", 7),
             "C", Map.of("B", 7, "D", 3, "G", 4),
@@ -20,11 +20,11 @@ class App {
     private static final SearchAlgorithm<String> shortest = new BreadthFirstSearch<>()
 
     static void main(String[] args) {
-        System.out.println(complex)
+        System.out.println(COMPLEX_GRAPH)
 
-        printRoute(complex, "D", "C")
-        printRoute(complex, "A", "G")
-        printRoute(complex, "D", "H")
+        printRoute(COMPLEX_GRAPH, "D", "C")
+        printRoute(COMPLEX_GRAPH, "A", "G")
+        printRoute(COMPLEX_GRAPH, "D", "H")
     }
 
     private static void printRoute(final Graph<String> graph, final String source, final String target) {
