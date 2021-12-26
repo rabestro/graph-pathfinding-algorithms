@@ -35,8 +35,8 @@ public class Main {
         final var message = """
                         
                 Find the path from %s to %s
-                    - the shortest take %.0f time and the path is %s
-                    - the fastest take %.0f time and the path is %s"""
+                    - the shortest take %.0f min and the path is %s
+                    - the fastest take %.0f min and the path is %s"""
                 .formatted(
                         source, target,
                         graph.getDistance(routeOne), routeOne,
