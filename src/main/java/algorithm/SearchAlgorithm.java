@@ -2,6 +2,7 @@ package algorithm;
 
 import java.util.List;
 
-public interface Algorithm<T> {
+@FunctionalInterface
+public interface SearchAlgorithm<T> {
     List<T> findPath(Graph<T> graph, T source, T target);
 }

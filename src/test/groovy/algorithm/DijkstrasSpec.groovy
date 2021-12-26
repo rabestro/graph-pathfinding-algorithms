@@ -5,29 +5,72 @@ import spock.lang.Subject
 import spock.lang.Unroll
 
 class DijkstrasSpec extends Specification {
-
-    static final SAMPLE_ONE = [
-            A: [B: 7, C: 2],
-            B: [A: 3, C: 5],
-            C: [A: 1, B: 3]
-    ] as Graph<String>
-
     @Subject
     def algorithm = new Dijkstras<String>()
 
-    @Unroll("from #source to #target the time is #time and the path is #expected")
-    def 'should find a route for sample one'() {
+    @Unroll("from #source to #target the time is #time and the path is #fastest")
+    def 'should find a route for a simple graph'() {
         given:
-        def graph = SAMPLE_ONE
+        def graph = new Graph([
+                A: [B: 7, C: 2],
+                B: [A: 3, C: 5],
+                C: [A: 1, B: 3]
+        ])
 
         when:
         def path = algorithm.findPath(graph, source, target)
 
         then:
-        path == expected
+        path == fastest
+
+        and:
+        graph.getDistance(path) == time as double
 
         where:
-        source | target || time | expected
-        'A'    | 'B'    || 7    | ['A', 'B']
+        source | target || time | fastest
+        'A'    | 'A'    || 0    | ['A']
+        'B'    | 'B'    || 0    | ['B']
+        'C'    | 'C'    || 0    | ['C']
+        'A'    | 'B'    || 5    | ['A', 'C', 'B']
     }
+
+    @Unroll("from #source to #target the time is #time and the path is #fastest")
+    def 'should find a route for a complex graph'() {
+        given:
+        def graph = new Graph([
+                A: [B: 5, H: 2],
+                B: [A: 5, C: 7],
+                C: [B: 7, D: 3, G: 4],
+                D: [C: 20, E: 4],
+                E: [F: 5],
+                F: [G: 6],
+                G: [C: 4],
+                H: [G: 3]
+        ])
+
+        when:
+        def path = algorithm.findPath(graph, source, target)
+
+        then:
+        path == fastest
+
+        and:
+        graph.getDistance(path) == time as double
+
+        where:
+        source | target || time | fastest
+        'A'    | 'A'    || 0    | ['A']
+        'B'    | 'B'    || 0    | ['B']
+        'A'    | 'B'    || 5    | ['A', 'B']
+        'B'    | 'A'    || 5    | ['B', 'A']
+        'A'    | 'C'    || 9    | ['A', 'H', 'G', 'C']
+        'C'    | 'A'    || 12   | ['C', 'B', 'A']
+        'A'    | 'G'    || 5    | ['A', 'H', 'G']
+        'C'    | 'D'    || 3    | ['C', 'D']
+        'D'    | 'C'    || 19   | ['D', 'E', 'F', 'G', 'C']
+        'B'    | 'D'    || 10   | ['B', 'C', 'D']
+        'D'    | 'B'    || 26   | ['D', 'E', 'F', 'G', 'C', 'B']
+        'D'    | 'H'    || 33   | ['D', 'E', 'F', 'G', 'C', 'B', 'A', 'H']
+    }
+
 }

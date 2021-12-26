@@ -1,9 +1,13 @@
 package algorithm;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
-public class Dijkstras<T> implements Algorithm<T> {
+public class Dijkstras<T> implements SearchAlgorithm<T> {
 
     @Override
     public List<T> findPath(Graph<T> graph, T source, T target) {
@@ -15,12 +19,12 @@ public class Dijkstras<T> implements Algorithm<T> {
         distances.put(source, .0);
 
         while (!queue.isEmpty()) {
-            final var prev = queue.pollFirst();
+            final var prev = queue.removeFirst();
             final var edges = graph.nodes().get(prev);
             edges.forEach((node, time) -> {
-                final var distance = distances.getOrDefault(prev, .0) + time.doubleValue();
+                final var distance = distances.get(prev) + time.doubleValue();
                 if (!visited.contains(node)) {
-                    queue.add(node);
+                    queue.addLast(node);
                     visited.add(node);
                 }
                 if (distance < distances.getOrDefault(node, Double.MAX_VALUE)) {
