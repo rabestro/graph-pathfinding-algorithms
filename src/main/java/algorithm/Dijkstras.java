@@ -12,6 +12,7 @@ public class Dijkstras<T> implements Algorithm<T> {
         final var distances = new HashMap<T, Double>();
         final var previous = new HashMap<T, T>();
         queue.add(source);
+        distances.put(source, .0);
 
         while (!queue.isEmpty()) {
             final var prev = queue.pollFirst();
