@@ -4,9 +4,9 @@ import spock.lang.Specification
 import spock.lang.Subject
 import spock.lang.Unroll
 
-class DijkstrasSpec extends Specification {
+class DijkstrasAlgorithmSpec extends Specification {
     @Subject
-    def algorithm = new Dijkstras<String>()
+    def algorithm = new DijkstrasAlgorithm<String>()
 
     @Unroll("from #source to #target the time is #time and the path is #fastest")
     def 'should find a route for a simple graph'() {

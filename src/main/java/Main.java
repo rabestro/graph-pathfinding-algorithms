@@ -1,4 +1,4 @@
-import algorithm.Dijkstras;
+import algorithm.DijkstrasAlgorithm;
 import algorithm.Graph;
 
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello!");
-        var algorithm = new Dijkstras<String>();
+        var algorithm = new DijkstrasAlgorithm<String>();
 
         var graph = new Graph<>(Map.of(
                 "A", Map.of("B", 5),
