@@ -35,6 +35,36 @@ class DijkstrasSpec extends Specification {
     }
 
     @Unroll("from #source to #target the time is #time and the path is #fastest")
+    def 'should find a route for a medium graph'() {
+        given:
+        def graph = new Graph([
+                A: [B: 5],
+                B: [A: 5, C: 10],
+                C: [B: 20, D: 5],
+                D: [E: 5],
+                E: [B: 5]
+        ])
+
+        when:
+        def path = algorithm.findPath(graph, source, target)
+
+        then:
+        path == fastest
+
+        and:
+        graph.getDistance(path) == time as double
+
+        where:
+        source | target || time | fastest
+        'A'    | 'A'    || 0    | ['A']
+        'B'    | 'B'    || 0    | ['B']
+        'A'    | 'B'    || 5    | ['A', 'B']
+        'B'    | 'A'    || 5    | ['B', 'A']
+        'A'    | 'C'    || 15   | ['A', 'B', 'C']
+        'C'    | 'A'    || 20   | ['C', 'D', 'E', 'B', 'A']
+    }
+
+    @Unroll("from #source to #target the time is #time and the path is #fastest")
     def 'should find a route for a complex graph'() {
         given:
         def graph = new Graph([
