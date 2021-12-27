@@ -251,7 +251,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Mon Dec 27 21:30:57 EET 2021 by rabes</div>
+<div class='date-test-ran'>Created on Mon Dec 27 22:02:37 EET 2021 by rabes</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -272,7 +272,7 @@ div.footer {
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.162 seconds</td>
+<td>0.049 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -297,14 +297,6 @@ div.footer {
 <span style='float: right; font-size: 60%;'>
 <a href='#toc'>Return</a>
 </span>
-<div class='issues'>
-<div>Issues:</div>
-<ul>
-<li>
-<a href='https://github.com/rabestro/graph-search-algorithm-java/blob/master/docs/complex.gif'>complex.gif</a>
-</li>
-</ul>
-</div>
 </div>
 </td>
 </tr>
@@ -317,11 +309,32 @@ div.footer {
 </td>
 </tr>
 <tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = new Graph&lt;String&gt;([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
 <td>
 <div class='block-kind'>When:</div>
 </td>
 <td>
 <div class='block-text'>we use Breadth First Search algorithm for the first route</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def routeOne = bfsAlgorithm.findPath(graph, source, target)</pre>
 </td>
 </tr>
 <tr>
@@ -333,11 +346,23 @@ div.footer {
 </td>
 </tr>
 <tr>
+<td></td>
+<td>
+<pre class='block-source'>def routeTwo = dijkstras.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
 <td>
 <div class='block-kind'>Then:</div>
 </td>
 <td>
 <div class='block-text'>the first route is the shortest</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>routeOne == shortest</pre>
 </td>
 </tr>
 <tr>
@@ -349,6 +374,12 @@ div.footer {
 </td>
 </tr>
 <tr>
+<td></td>
+<td>
+<pre class='block-source'>routeTwo == fastest</pre>
+</td>
+</tr>
+<tr>
 <td>
 <div class='block-kind'>And:</div>
 </td>
@@ -357,11 +388,10 @@ div.footer {
 </td>
 </tr>
 <tr>
+<td></td>
 <td>
-<div class='block-kind'>Where:</div>
-</td>
-<td>
-<div class='block-text'>----</div>
+<pre class='block-source'>graph.getDistance(routeOne) == d1 as double
+graph.getDistance(routeTwo) == d2 as double</pre>
 </td>
 </tr>
 <tr>
