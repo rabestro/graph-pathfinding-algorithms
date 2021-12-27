@@ -13,7 +13,6 @@ class SearchAlgorithmSpec extends Specification {
     @Subject
     def dijkstras = new DijkstrasAlgorithm<String>()
 
-    @Issue("https://github.com/rabestro/graph-search-algorithm-java/blob/master/docs/complex.gif")
     def 'should find a route for a complex graph'() {
         given: 'A complex graph sample'
         def graph = new Graph<String>([
