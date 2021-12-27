@@ -2,28 +2,26 @@ package algorithm
 
 import spock.lang.Specification
 import spock.lang.Subject
-import spock.lang.Unroll
 
 class DijkstrasAlgorithmSpec extends Specification {
     @Subject
     def algorithm = new DijkstrasAlgorithm<String>()
 
-    @Unroll("from #source to #target the time is #time and the path is #fastest")
     def 'should find a route for a simple graph'() {
-        given:
+        given: 'A simple graph'
         def graph = new Graph([
                 A: [B: 7, C: 2],
                 B: [A: 3, C: 5],
                 C: [A: 1, B: 3]
         ])
 
-        when:
+        when: "we use Dijkstra's algorithm to find a path"
         def path = algorithm.findPath(graph, source, target)
 
-        then:
+        then: 'we get the fastest way'
         path == fastest
 
-        and:
+        and: 'the distance calculated correctly'
         graph.getDistance(path) == time as double
 
         where:
@@ -34,9 +32,8 @@ class DijkstrasAlgorithmSpec extends Specification {
         'A'    | 'B'    || 5    | ['A', 'C', 'B']
     }
 
-    @Unroll("from #source to #target the time is #time and the path is #fastest")
     def 'should find a route for a medium graph'() {
-        given:
+        given: 'A medium graph'
         def graph = new Graph([
                 A: [B: 5],
                 B: [A: 5, C: 10],
@@ -45,13 +42,13 @@ class DijkstrasAlgorithmSpec extends Specification {
                 E: [B: 5]
         ])
 
-        when:
+        when: "we use Dijkstra's algorithm to find a path"
         def path = algorithm.findPath(graph, source, target)
 
-        then:
+        then: 'we get the fastest way'
         path == fastest
 
-        and:
+        and: 'the distance calculated correctly'
         graph.getDistance(path) == time as double
 
         where:
@@ -64,9 +61,8 @@ class DijkstrasAlgorithmSpec extends Specification {
         'C'    | 'A'    || 20   | ['C', 'D', 'E', 'B', 'A']
     }
 
-    @Unroll("from #source to #target the time is #time and the path is #fastest")
     def 'should find a route for a complex graph'() {
-        given:
+        given: 'A complex graph'
         def graph = new Graph([
                 A: [B: 5, H: 2],
                 B: [A: 5, C: 7],
@@ -78,13 +74,13 @@ class DijkstrasAlgorithmSpec extends Specification {
                 H: [G: 3]
         ])
 
-        when:
+        when: "we use Dijkstra's algorithm to find a path"
         def path = algorithm.findPath(graph, source, target)
 
-        then:
+        then: 'we get the fastest way'
         path == fastest
 
-        and:
+        and: 'the distance calculated correctly'
         graph.getDistance(path) == time as double
 
         where:

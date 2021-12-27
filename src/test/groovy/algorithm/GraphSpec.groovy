@@ -1,20 +1,18 @@
 package algorithm
 
 import spock.lang.Specification
-import spock.lang.Unroll
 
 class GraphSpec extends Specification {
 
-    @Unroll("distance is #distance for path #path")
     def "should calculate distance"() {
-        given:
+        given: 'A simple graph'
         def graph = new Graph([
                 A: [B: 7, C: 2],
                 B: [A: 3, C: 5],
                 C: [A: 1, B: 3]
         ])
 
-        expect:
+        expect: 'the distance calculated correctly'
         graph.getDistance(path) == distance as double
 
         where:

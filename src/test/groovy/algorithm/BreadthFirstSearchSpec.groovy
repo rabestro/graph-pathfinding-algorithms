@@ -2,28 +2,26 @@ package algorithm
 
 import spock.lang.Specification
 import spock.lang.Subject
-import spock.lang.Unroll
 
 class BreadthFirstSearchSpec extends Specification {
     @Subject
     def algorithm = new BreadthFirstSearch()
 
-    @Unroll("from #source to #target the time is #time and the path is #shortest")
     def 'should find a route for simple graph'() {
-        given:
+        given: 'A simple graph'
         def graph = new Graph([
                 A: [B: 7, C: 2],
                 B: [A: 3, C: 5],
                 C: [A: 1, B: 3]
         ])
 
-        when:
+        when: 'we use Breadth First Search algorithm to find a path'
         def path = algorithm.findPath(graph, source, target)
 
-        then:
+        then: 'we get the shortest path'
         path == shortest
 
-        and:
+        and: 'the distance calculated correctly'
         graph.getDistance(path) == time as double
 
         where:
@@ -34,9 +32,8 @@ class BreadthFirstSearchSpec extends Specification {
         'C'    | 'B'    || 3    | ['C', 'B']
     }
 
-    @Unroll("from #source to #target the time is #time and the path is #shortest")
     def 'should find a route for complex graph'() {
-        given:
+        given: 'A complex graph'
         def graph = new Graph([
                 A: [B: 1],
                 B: [A: 1, D: 1],
@@ -45,13 +42,13 @@ class BreadthFirstSearchSpec extends Specification {
                 E: [F: 1],
                 F: [D: 1, E: 1]])
 
-        when:
+        when: 'we use Breadth First Search algorithm to find a path'
         def path = algorithm.findPath(graph, source, target)
 
-        then:
+        then: 'we get the shortest path'
         path == shortest
 
-        and:
+        and: 'the distance calculated correctly'
         graph.getDistance(path) == time as double
 
         where:
