@@ -251,7 +251,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Mon Dec 27 22:02:37 EET 2021 by rabes</div>
+<div class='date-test-ran'>Created on Mon Dec 27 22:21:38 EET 2021 by rabes</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -266,13 +266,13 @@ div.footer {
 </thead>
 <tbody>
 <tr>
-<td>8</td>
-<td>8</td>
+<td>1</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.108 seconds</td>
+<td>0.123 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -286,34 +286,13 @@ div.footer {
 <tbody>
 <ul id='toc'>
 <li>
-<a href='#2056688910' class='feature-toc-pass'>distance is 0 for path [A]</a>
-</li>
-<li>
-<a href='#2056688941' class='feature-toc-pass'>distance is 0 for path [B]</a>
-</li>
-<li>
-<a href='#2056688972' class='feature-toc-pass'>distance is 0 for path [C]</a>
-</li>
-<li>
-<a href='#-302320507' class='feature-toc-pass'>distance is 7 for path [A, B]</a>
-</li>
-<li>
-<a href='#1286950947' class='feature-toc-pass'>distance is 5 for path [B, C]</a>
-</li>
-<li>
-<a href='#884561638' class='feature-toc-pass'>distance is 12 for path [A, B, C]</a>
-</li>
-<li>
-<a href='#169602914' class='feature-toc-pass'>distance is 1 for path [C, A]</a>
-</li>
-<li>
-<a href='#-700233016' class='feature-toc-pass'>distance is 13 for path [A, B, C, A]</a>
+<a href='#-1636252932' class='feature-toc-pass'>should calculate distance</a>
 </li>
 </ul>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='2056688910'>
-<span>distance is 0 for path [A]</span>
+<div class='feature-description' id='-1636252932'>
+<span>should calculate distance</span>
 <span style='float: right; font-size: 60%;'>
 <a href='#toc'>Return</a>
 </span>
@@ -324,6 +303,12 @@ div.footer {
 <td>
 <div class='block-kind'>Given:</div>
 </td>
+<td>
+<div class='block-text'>A simple graph</div>
+</td>
+</tr>
+<tr>
+<td></td>
 <td>
 <pre class='block-source'>def graph = new Graph([
         A: [B: 7, C: 2],
@@ -336,6 +321,12 @@ div.footer {
 <td>
 <div class='block-kind'>Expect:</div>
 </td>
+<td>
+<div class='block-text'>the distance calculated correctly</div>
+</td>
+</tr>
+<tr>
+<td></td>
 <td>
 <pre class='block-source'>graph.getDistance(path) == distance as double</pre>
 </td>
@@ -359,379 +350,36 @@ div.footer {
 <td class='ex-value'>0</td>
 <td class='ex-result'>OK</td>
 </tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-<tr>
-<td colspan='10'>
-<div class='feature-description' id='2056688941'>
-<span>distance is 0 for path [B]</span>
-<span style='float: right; font-size: 60%;'>
-<a href='#toc'>Return</a>
-</span>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Given:</div>
-</td>
-<td>
-<pre class='block-source'>def graph = new Graph([
-        A: [B: 7, C: 2],
-        B: [A: 3, C: 5],
-        C: [A: 1, B: 3]
-])</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Expect:</div>
-</td>
-<td>
-<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Examples:</div>
-</td>
-<td>
-<div class='spec-examples'>
-<table class='ex-table'>
-<thead>
-<tr>
-<th class='ex-header'>path</th>
-<th class='ex-header'>distance</th>
-</tr>
-</thead>
-<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[B]</td>
 <td class='ex-value'>0</td>
 <td class='ex-result'>OK</td>
 </tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-<tr>
-<td colspan='10'>
-<div class='feature-description' id='2056688972'>
-<span>distance is 0 for path [C]</span>
-<span style='float: right; font-size: 60%;'>
-<a href='#toc'>Return</a>
-</span>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Given:</div>
-</td>
-<td>
-<pre class='block-source'>def graph = new Graph([
-        A: [B: 7, C: 2],
-        B: [A: 3, C: 5],
-        C: [A: 1, B: 3]
-])</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Expect:</div>
-</td>
-<td>
-<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Examples:</div>
-</td>
-<td>
-<div class='spec-examples'>
-<table class='ex-table'>
-<thead>
-<tr>
-<th class='ex-header'>path</th>
-<th class='ex-header'>distance</th>
-</tr>
-</thead>
-<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[C]</td>
 <td class='ex-value'>0</td>
 <td class='ex-result'>OK</td>
 </tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-<tr>
-<td colspan='10'>
-<div class='feature-description' id='-302320507'>
-<span>distance is 7 for path [A, B]</span>
-<span style='float: right; font-size: 60%;'>
-<a href='#toc'>Return</a>
-</span>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Given:</div>
-</td>
-<td>
-<pre class='block-source'>def graph = new Graph([
-        A: [B: 7, C: 2],
-        B: [A: 3, C: 5],
-        C: [A: 1, B: 3]
-])</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Expect:</div>
-</td>
-<td>
-<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Examples:</div>
-</td>
-<td>
-<div class='spec-examples'>
-<table class='ex-table'>
-<thead>
-<tr>
-<th class='ex-header'>path</th>
-<th class='ex-header'>distance</th>
-</tr>
-</thead>
-<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[A, B]</td>
 <td class='ex-value'>7</td>
 <td class='ex-result'>OK</td>
 </tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-<tr>
-<td colspan='10'>
-<div class='feature-description' id='1286950947'>
-<span>distance is 5 for path [B, C]</span>
-<span style='float: right; font-size: 60%;'>
-<a href='#toc'>Return</a>
-</span>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Given:</div>
-</td>
-<td>
-<pre class='block-source'>def graph = new Graph([
-        A: [B: 7, C: 2],
-        B: [A: 3, C: 5],
-        C: [A: 1, B: 3]
-])</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Expect:</div>
-</td>
-<td>
-<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Examples:</div>
-</td>
-<td>
-<div class='spec-examples'>
-<table class='ex-table'>
-<thead>
-<tr>
-<th class='ex-header'>path</th>
-<th class='ex-header'>distance</th>
-</tr>
-</thead>
-<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[B, C]</td>
 <td class='ex-value'>5</td>
 <td class='ex-result'>OK</td>
 </tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-<tr>
-<td colspan='10'>
-<div class='feature-description' id='884561638'>
-<span>distance is 12 for path [A, B, C]</span>
-<span style='float: right; font-size: 60%;'>
-<a href='#toc'>Return</a>
-</span>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Given:</div>
-</td>
-<td>
-<pre class='block-source'>def graph = new Graph([
-        A: [B: 7, C: 2],
-        B: [A: 3, C: 5],
-        C: [A: 1, B: 3]
-])</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Expect:</div>
-</td>
-<td>
-<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Examples:</div>
-</td>
-<td>
-<div class='spec-examples'>
-<table class='ex-table'>
-<thead>
-<tr>
-<th class='ex-header'>path</th>
-<th class='ex-header'>distance</th>
-</tr>
-</thead>
-<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[A, B, C]</td>
 <td class='ex-value'>12</td>
 <td class='ex-result'>OK</td>
 </tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-<tr>
-<td colspan='10'>
-<div class='feature-description' id='169602914'>
-<span>distance is 1 for path [C, A]</span>
-<span style='float: right; font-size: 60%;'>
-<a href='#toc'>Return</a>
-</span>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Given:</div>
-</td>
-<td>
-<pre class='block-source'>def graph = new Graph([
-        A: [B: 7, C: 2],
-        B: [A: 3, C: 5],
-        C: [A: 1, B: 3]
-])</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Expect:</div>
-</td>
-<td>
-<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Examples:</div>
-</td>
-<td>
-<div class='spec-examples'>
-<table class='ex-table'>
-<thead>
-<tr>
-<th class='ex-header'>path</th>
-<th class='ex-header'>distance</th>
-</tr>
-</thead>
-<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[C, A]</td>
 <td class='ex-value'>1</td>
 <td class='ex-result'>OK</td>
 </tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-<tr>
-<td colspan='10'>
-<div class='feature-description' id='-700233016'>
-<span>distance is 13 for path [A, B, C, A]</span>
-<span style='float: right; font-size: 60%;'>
-<a href='#toc'>Return</a>
-</span>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Given:</div>
-</td>
-<td>
-<pre class='block-source'>def graph = new Graph([
-        A: [B: 7, C: 2],
-        B: [A: 3, C: 5],
-        C: [A: 1, B: 3]
-])</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Expect:</div>
-</td>
-<td>
-<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Examples:</div>
-</td>
-<td>
-<div class='spec-examples'>
-<table class='ex-table'>
-<thead>
-<tr>
-<th class='ex-header'>path</th>
-<th class='ex-header'>distance</th>
-</tr>
-</thead>
-<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[A, B, C, A]</td>
 <td class='ex-value'>13</td>
@@ -740,6 +388,9 @@ div.footer {
 </tbody>
 </table>
 </div>
+</td>
+<td>
+<div class='spec-status'>8/8 passed</div>
 </td>
 </tr>
 </tbody>
