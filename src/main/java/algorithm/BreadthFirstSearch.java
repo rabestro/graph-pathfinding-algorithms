@@ -32,7 +32,7 @@ public class BreadthFirstSearch<T> implements SearchAlgorithm<T> {
                         queue.addLast(it);
                     });
         }
-        return new LinkedList<>();
+        return List.of();
     }
 
 }
