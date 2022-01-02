@@ -7,7 +7,7 @@ There are implementations and tests for two algorithms:
 - [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
 - [Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 
-The implementation is written in Java 17, the API documentation is available [here](api). 
+The implementation is written in Java 17. [API documentation](api) is available. 
 You can also see the [specifications](spock-reports) for the classes generated with the spock-reports.
 
 ### How to use the classes in your program
