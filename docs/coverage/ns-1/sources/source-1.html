@@ -1,0 +1,154 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > AppExample</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">lv.id.jc</a>
+</div>
+
+<h1>Coverage Summary for Class: AppExample (lv.id.jc)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AppExample</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/23)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package lv.id.jc;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import lv.id.jc.algorithm.graph.BreadthFirstSearch;
+<i class="no-highlight">4</i>&nbsp;import lv.id.jc.algorithm.graph.DijkstrasAlgorithm;
+<i class="no-highlight">5</i>&nbsp;import lv.id.jc.algorithm.graph.Graph;
+<i class="no-highlight">6</i>&nbsp;import lv.id.jc.algorithm.graph.SearchAlgorithm;
+<i class="no-highlight">7</i>&nbsp;
+<i class="no-highlight">8</i>&nbsp;import java.util.Map;
+<i class="no-highlight">9</i>&nbsp;
+<b class="nc"><i class="no-highlight">10</i>&nbsp;public class AppExample {</b>
+<b class="nc"><i class="no-highlight">11</i>&nbsp;    private static final Graph&lt;Character&gt; COMPLEX_GRAPH = new Graph&lt;&gt;(Map.of(</b>
+<b class="nc"><i class="no-highlight">12</i>&nbsp;            &#39;A&#39;, Map.of(&#39;B&#39;, 5, &#39;H&#39;, 2),</b>
+<b class="nc"><i class="no-highlight">13</i>&nbsp;            &#39;B&#39;, Map.of(&#39;A&#39;, 5, &#39;C&#39;, 7),</b>
+<b class="nc"><i class="no-highlight">14</i>&nbsp;            &#39;C&#39;, Map.of(&#39;B&#39;, 7, &#39;D&#39;, 3, &#39;G&#39;, 4),</b>
+<b class="nc"><i class="no-highlight">15</i>&nbsp;            &#39;D&#39;, Map.of(&#39;C&#39;, 20, &#39;E&#39;, 4),</b>
+<b class="nc"><i class="no-highlight">16</i>&nbsp;            &#39;E&#39;, Map.of(&#39;F&#39;, 5),</b>
+<b class="nc"><i class="no-highlight">17</i>&nbsp;            &#39;F&#39;, Map.of(&#39;G&#39;, 6),</b>
+<b class="nc"><i class="no-highlight">18</i>&nbsp;            &#39;G&#39;, Map.of(&#39;C&#39;, 4),</b>
+<b class="nc"><i class="no-highlight">19</i>&nbsp;            &#39;H&#39;, Map.of(&#39;G&#39;, 3)</b>
+<i class="no-highlight">20</i>&nbsp;    ));
+<b class="nc"><i class="no-highlight">21</i>&nbsp;    private static final SearchAlgorithm&lt;Character&gt; fastest = new DijkstrasAlgorithm&lt;&gt;();</b>
+<b class="nc"><i class="no-highlight">22</i>&nbsp;    private static final SearchAlgorithm&lt;Character&gt; shortest = new BreadthFirstSearch&lt;&gt;();</b>
+<i class="no-highlight">23</i>&nbsp;
+<i class="no-highlight">24</i>&nbsp;    public static void main(String[] args) {
+<b class="nc"><i class="no-highlight">25</i>&nbsp;        System.out.println(COMPLEX_GRAPH);</b>
+<i class="no-highlight">26</i>&nbsp;
+<b class="nc"><i class="no-highlight">27</i>&nbsp;        printRoute(COMPLEX_GRAPH, &#39;D&#39;, &#39;C&#39;);</b>
+<b class="nc"><i class="no-highlight">28</i>&nbsp;        printRoute(COMPLEX_GRAPH, &#39;A&#39;, &#39;G&#39;);</b>
+<b class="nc"><i class="no-highlight">29</i>&nbsp;        printRoute(COMPLEX_GRAPH, &#39;D&#39;, &#39;H&#39;);</b>
+<i class="no-highlight">30</i>&nbsp;    }
+<i class="no-highlight">31</i>&nbsp;
+<i class="no-highlight">32</i>&nbsp;    private static void printRoute(final Graph&lt;Character&gt; graph,
+<i class="no-highlight">33</i>&nbsp;                                   final Character source,
+<i class="no-highlight">34</i>&nbsp;                                   final Character target) {
+<b class="nc"><i class="no-highlight">35</i>&nbsp;        final var routeOne = shortest.findPath(graph, source, target);</b>
+<b class="nc"><i class="no-highlight">36</i>&nbsp;        final var routeTwo = fastest.findPath(graph, source, target);</b>
+<b class="nc"><i class="no-highlight">37</i>&nbsp;        final var message = &quot;&quot;&quot;</b>
+<i class="no-highlight">38</i>&nbsp;                        
+<i class="no-highlight">39</i>&nbsp;                Find the path from %s to %s
+<i class="no-highlight">40</i>&nbsp;                    - the shortest take %.0f min and the path is %s
+<i class="no-highlight">41</i>&nbsp;                    - the fastest take %.0f min and the path is %s&quot;&quot;&quot;
+<b class="nc"><i class="no-highlight">42</i>&nbsp;                .formatted(</b>
+<i class="no-highlight">43</i>&nbsp;                        source, target,
+<b class="nc"><i class="no-highlight">44</i>&nbsp;                        graph.getDistance(routeOne), routeOne,</b>
+<b class="nc"><i class="no-highlight">45</i>&nbsp;                        graph.getDistance(routeTwo), routeTwo);</b>
+<i class="no-highlight">46</i>&nbsp;
+<b class="nc"><i class="no-highlight">47</i>&nbsp;        System.out.println(message);</b>
+<i class="no-highlight">48</i>&nbsp;    }
+<i class="no-highlight">49</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-01-02 19:54</div>
+</div>
+</body>
+</html>
