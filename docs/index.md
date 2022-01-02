@@ -1,37 +1,59 @@
-## Welcome to GitHub Pages
+## Graph search algorithms
 
-You can use the [editor on GitHub](https://github.com/rabestro/graph-algorithms/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+The project implements a class for the general structure of the graph, as well as two algorithms for finding a path in the graph.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+There are implementations and tests for two algorithms:
 
-### Markdown
+- [Breadth-first search](src/main/java/graph/BreadthFirstSearch.java)
+- [Dijkstra's Algorithm](src/main/java/graph/DijkstrasAlgorithm.java)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The implementation is written in Java 17, the API documentation is available [here](api). 
+You can also see the [specifications](spock-reports) for the classes generated with the spock-reports.
 
-```markdown
-Syntax highlighted code block
+### Unit Tests
 
-# Header 1
-## Header 2
-### Header 3
+Tests are written in groove language. For unit testing, the Spock framework was used. To test the operation of the algorithms, the following sample graphs were created.
 
-- Bulleted
-- List
+#### Small Graph
 
-1. Numbered
-2. List
+![Small Graph](small.gif)
 
-**Bold** and _Italic_ and `Code` text
+```groovy
+        def graph = new Graph([
+                A: [B: 7, C: 2],
+                B: [A: 3, C: 5],
+                C: [A: 1, B: 3]
+        ])
 
-[Link](url) and ![Image](src)
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+#### Medium Graph
 
-### Jekyll Themes
+![Medium Graph](medium.gif)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rabestro/graph-algorithms/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```groovy
+        def graph = new Graph([
+                A: [B: 5],
+                B: [A: 5, C: 10],
+                C: [B: 20, D: 5],
+                D: [E: 5],
+                E: [B: 5]
+        ])
+```
 
-### Support or Contact
+#### Complex Graph
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+![Complex Graph](complex.gif)
+
+```groovy
+        def graph = new Graph([
+                A: [B: 5, H: 2],
+                B: [A: 5, C: 7],
+                C: [B: 7, D: 3, G: 4],
+                D: [C: 20, E: 4],
+                E: [F: 5],
+                F: [G: 6],
+                G: [C: 4],
+                H: [G: 3]
+        ])
+```
