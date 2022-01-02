@@ -1,4 +1,4 @@
-package algorithm;
+package lv.id.jc.algorithm.graph;
 
 import java.util.List;
 

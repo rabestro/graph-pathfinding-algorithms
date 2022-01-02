@@ -1,5 +1,6 @@
-package algorithm
+package graph
 
+import lv.id.jc.algorithm.graph.Graph
 import spock.lang.Specification
 
 class GraphSpec extends Specification {

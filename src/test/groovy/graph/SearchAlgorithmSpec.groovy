@@ -1,6 +1,8 @@
-package algorithm
+package graph
 
-
+import lv.id.jc.algorithm.graph.BreadthFirstSearch
+import lv.id.jc.algorithm.graph.DijkstrasAlgorithm
+import lv.id.jc.algorithm.graph.Graph
 import spock.lang.Specification
 import spock.lang.Subject
 import spock.lang.Title
