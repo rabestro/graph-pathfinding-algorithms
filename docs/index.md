@@ -16,7 +16,7 @@ Tests are written in groove language. For unit testing, the Spock framework was 
 
 #### Small Graph
 
-![Small Graph](small.gif)
+![Small Graph](assets/small.gif)
 
 ```groovy
         def graph = new Graph([
@@ -29,7 +29,7 @@ Tests are written in groove language. For unit testing, the Spock framework was 
 
 #### Medium Graph
 
-![Medium Graph](medium.gif)
+![Medium Graph](assets/medium.gif)
 
 ```groovy
         def graph = new Graph([
@@ -43,7 +43,7 @@ Tests are written in groove language. For unit testing, the Spock framework was 
 
 #### Complex Graph
 
-![Complex Graph](complex.gif)
+![Complex Graph](assets/complex.gif)
 
 ```groovy
         def graph = new Graph([

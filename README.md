@@ -13,12 +13,12 @@ Algorithm code in Java 17. Tests written in Groovy 3 using Spock Framework 2.
 
 To test the operation of the algorithms, the following sample graphs were created.
 
-![Small Graph](docs/small.gif)
+![Small Graph](docs/assets/small.gif)
 
 ### Medium Graph
 
-![Medium Graph](docs/medium.gif)
+![Medium Graph](docs/assets/medium.gif)
 
 ### Complex Graph
 
-![Complex Graph](docs/complex.gif)
+![Complex Graph](docs/assets/complex.gif)
