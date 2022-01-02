@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="SearchAlgorithms" pattern="src[search-algorithm.main]:lv.id.jc.algorithm.graph.*" />
+</component>

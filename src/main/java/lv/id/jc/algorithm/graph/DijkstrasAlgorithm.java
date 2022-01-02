@@ -8,7 +8,7 @@ import java.util.Objects;
 import static java.util.stream.Stream.iterate;
 
 /**
- * Algorithm for finding the fastest paths between nodes in a graph
+ * Algorithm for finding the fastest paths between nodes in a graph.
  *
  * The algorithm uses information about edge's distance to find the fastest path.
  *
