@@ -9,7 +9,15 @@ import java.util.Objects;
 import static java.util.function.Predicate.not;
 import static java.util.stream.Stream.iterate;
 
+/**
+ * Algorithm for finding the shortest paths between nodes in a graph.
+ *
+ * The algorithm doesn't take into account the distance between nodes.
+ *
+ * @param <T> type of vertex id
+ */
 public class BreadthFirstSearch<T> implements SearchAlgorithm<T> {
+
     @Override
     public List<T> findPath(Graph<T> graph, T source, T target) {
         final var queue = new LinkedList<T>();
@@ -25,7 +33,7 @@ public class BreadthFirstSearch<T> implements SearchAlgorithm<T> {
                 return path;
             }
             visited.add(node);
-            graph.nodes().get(node).keySet().stream()
+            graph.edges(node).keySet().stream()
                     .filter(not(visited::contains))
                     .forEach(it -> {
                         previous.computeIfAbsent(it, x -> node);

@@ -2,9 +2,15 @@ package graph
 
 import lv.id.jc.algorithm.graph.DijkstrasAlgorithm
 import lv.id.jc.algorithm.graph.Graph
+import spock.lang.Narrative
+import spock.lang.See
 import spock.lang.Specification
 import spock.lang.Subject
+import spock.lang.Title
 
+@Title("Dijkstra's Algorithm")
+@See("https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm")
+@Narrative("Dijkstra's algorithm is an algorithm for finding the fastest paths between nodes in a graph")
 class DijkstrasAlgorithmSpec extends Specification {
     @Subject
     def algorithm = new DijkstrasAlgorithm<String>()

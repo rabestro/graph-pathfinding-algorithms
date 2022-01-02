@@ -244,14 +244,14 @@ div.footer {
 </style>
 </head>
 <body>
-<h2>Report for graph.GraphSpec</h2>
+<h2>Report for graph.BreadthFirstSearchSpec</h2>
 <hr></hr>
 <div class='back-link'>
 <a href='index.html'>&lt;&lt; Back</a>
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Mon Dec 27 22:21:38 EET 2021 by rabes</div>
+<div class='date-test-ran'>Created on Sun Jan 02 19:39:17 EET 2022 by rabes</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -266,16 +266,26 @@ div.footer {
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>1</td>
+<td>2</td>
+<td>2</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.123 seconds</td>
+<td>0.133 seconds</td>
 </tr>
 </tbody>
 </table>
+</div>
+<pre class='title'>Breadth First Search Algorithm</pre>
+<pre class='narrative'>Breadth First Search algorithm for finding the shortest paths between nodes in a graph</pre>
+<div class='issues'>
+<div>See:</div>
+<ul>
+<li>
+<a href='https://en.wikipedia.org/wiki/Breadth-first_search'>https://en.wikipedia.org/wiki/Breadth-first_search</a>
+</li>
+</ul>
 </div>
 <h3>Features:</h3>
 <table class='features-table'>
@@ -286,13 +296,16 @@ div.footer {
 <tbody>
 <ul id='toc'>
 <li>
-<a href='#-1636252932' class='feature-toc-pass'>should calculate distance</a>
+<a href='#942393799' class='feature-toc-pass'>should find a route for simple graph</a>
+</li>
+<li>
+<a href='#-928009641' class='feature-toc-pass'>should find a route for complex graph</a>
 </li>
 </ul>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='-1636252932'>
-<span>should calculate distance</span>
+<div class='feature-description' id='942393799'>
+<span>should find a route for simple graph</span>
 <span style='float: right; font-size: 60%;'>
 <a href='#toc'>Return</a>
 </span>
@@ -319,7 +332,35 @@ div.footer {
 </tr>
 <tr>
 <td>
-<div class='block-kind'>Expect:</div>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>we use Breadth First Search algorithm to find a path</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>we get the shortest path</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>path == shortest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
 </td>
 <td>
 <div class='block-text'>the distance calculated correctly</div>
@@ -328,7 +369,7 @@ div.footer {
 <tr>
 <td></td>
 <td>
-<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
 </td>
 </tr>
 <tr>
@@ -340,49 +381,39 @@ div.footer {
 <table class='ex-table'>
 <thead>
 <tr>
-<th class='ex-header'>path</th>
-<th class='ex-header'>distance</th>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>shortest</th>
 </tr>
 </thead>
 <tbody>
 <tr class='ex-pass'>
+<td class='ex-value'>A</td>
+<td class='ex-value'>A</td>
+<td class='ex-value'>0</td>
 <td class='ex-value'>[A]</td>
-<td class='ex-value'>0</td>
 <td class='ex-result'>OK</td>
 </tr>
 <tr class='ex-pass'>
-<td class='ex-value'>[B]</td>
-<td class='ex-value'>0</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>[C]</td>
-<td class='ex-value'>0</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>[A, B]</td>
+<td class='ex-value'>A</td>
+<td class='ex-value'>B</td>
 <td class='ex-value'>7</td>
+<td class='ex-value'>[A, B]</td>
 <td class='ex-result'>OK</td>
 </tr>
 <tr class='ex-pass'>
-<td class='ex-value'>[B, C]</td>
+<td class='ex-value'>B</td>
+<td class='ex-value'>C</td>
 <td class='ex-value'>5</td>
+<td class='ex-value'>[B, C]</td>
 <td class='ex-result'>OK</td>
 </tr>
 <tr class='ex-pass'>
-<td class='ex-value'>[A, B, C]</td>
-<td class='ex-value'>12</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>[C, A]</td>
-<td class='ex-value'>1</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>[A, B, C, A]</td>
-<td class='ex-value'>13</td>
+<td class='ex-value'>C</td>
+<td class='ex-value'>B</td>
+<td class='ex-value'>3</td>
+<td class='ex-value'>[C, B]</td>
 <td class='ex-result'>OK</td>
 </tr>
 </tbody>
@@ -390,7 +421,160 @@ div.footer {
 </div>
 </td>
 <td>
-<div class='spec-status'>8/8 passed</div>
+<div class='spec-status'>4/4 passed</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-928009641'>
+<span>should find a route for complex graph</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>A complex graph</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = new Graph([
+A: [B: 1],
+B: [A: 1, D: 1],
+C: [A: 1],
+D: [C: 1, E: 1],
+E: [F: 1],
+F: [D: 1, E: 1]])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>we use Breadth First Search algorithm to find a path</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>we get the shortest path</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>path == shortest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<div class='block-text'>the distance calculated correctly</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>time = shortest.size() - 1</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>shortest</th>
+<th class='ex-header'>time</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>A</td>
+<td class='ex-value'>A</td>
+<td class='ex-value'>[A]</td>
+<td class='ex-value'>0</td>
+<td class='ex-result'>OK</td>
+</tr>
+<tr class='ex-pass'>
+<td class='ex-value'>B</td>
+<td class='ex-value'>B</td>
+<td class='ex-value'>[B]</td>
+<td class='ex-value'>0</td>
+<td class='ex-result'>OK</td>
+</tr>
+<tr class='ex-pass'>
+<td class='ex-value'>A</td>
+<td class='ex-value'>B</td>
+<td class='ex-value'>[A, B]</td>
+<td class='ex-value'>1</td>
+<td class='ex-result'>OK</td>
+</tr>
+<tr class='ex-pass'>
+<td class='ex-value'>B</td>
+<td class='ex-value'>A</td>
+<td class='ex-value'>[B, A]</td>
+<td class='ex-value'>1</td>
+<td class='ex-result'>OK</td>
+</tr>
+<tr class='ex-pass'>
+<td class='ex-value'>A</td>
+<td class='ex-value'>C</td>
+<td class='ex-value'>[A, B, D, C]</td>
+<td class='ex-value'>3</td>
+<td class='ex-result'>OK</td>
+</tr>
+<tr class='ex-pass'>
+<td class='ex-value'>C</td>
+<td class='ex-value'>A</td>
+<td class='ex-value'>[C, A]</td>
+<td class='ex-value'>1</td>
+<td class='ex-result'>OK</td>
+</tr>
+<tr class='ex-pass'>
+<td class='ex-value'>E</td>
+<td class='ex-value'>B</td>
+<td class='ex-value'>[E, F, D, C, A, B]</td>
+<td class='ex-value'>5</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td>
+<div class='spec-status'>7/7 passed</div>
 </td>
 </tr>
 </tbody>

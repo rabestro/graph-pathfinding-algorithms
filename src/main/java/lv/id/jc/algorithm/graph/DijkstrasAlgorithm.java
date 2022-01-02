@@ -7,6 +7,13 @@ import java.util.Objects;
 
 import static java.util.stream.Stream.iterate;
 
+/**
+ * Algorithm for finding the fastest paths between nodes in a graph
+ *
+ * The algorithm uses information about edge's distance to find the fastest path.
+ *
+ * @param <T> type of vertex id
+ */
 public class DijkstrasAlgorithm<T> implements SearchAlgorithm<T> {
 
     @Override
@@ -19,8 +26,7 @@ public class DijkstrasAlgorithm<T> implements SearchAlgorithm<T> {
 
         while (!queue.isEmpty()) {
             final var prev = queue.removeFirst();
-            final var edges = graph.nodes().get(prev);
-            edges.forEach((node, time) -> {
+            graph.edges(prev).forEach((node, time) -> {
                 final var distance = distances.get(prev) + time.doubleValue();
                 if (distance < distances.getOrDefault(node, Double.MAX_VALUE)) {
                     previous.put(node, prev);

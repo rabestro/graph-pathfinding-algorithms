@@ -2,9 +2,17 @@ package graph
 
 import lv.id.jc.algorithm.graph.BreadthFirstSearch
 import lv.id.jc.algorithm.graph.Graph
+import spock.lang.Narrative
+import spock.lang.See
 import spock.lang.Specification
 import spock.lang.Subject
+import spock.lang.Title
 
+@Title("Breadth First Search Algorithm")
+@See("https://en.wikipedia.org/wiki/Breadth-first_search")
+@Narrative("""
+Breadth First Search algorithm for finding the shortest paths between nodes in a graph
+""")
 class BreadthFirstSearchSpec extends Specification {
     @Subject
     def algorithm = new BreadthFirstSearch()
