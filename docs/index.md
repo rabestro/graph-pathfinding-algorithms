@@ -1,4 +1,4 @@
-## Graph search algorithms
+# Graph search algorithms
 
 The project implements a class for the general structure of the graph, as well as two algorithms for finding a path in the graph.
 
@@ -10,11 +10,11 @@ There are implementations and tests for two algorithms:
 The implementation is written in Java 17. [API documentation](api) is available. 
 You can also see the [specifications](spock-reports) for the classes generated with the spock-reports.
 
-### How to use the classes in your program
+## How to use the classes in your program
 
 The first step is create a graph structure. The [Graph class](https://algorithms.jc.id.lv/api/lv/id/jc/algorithm/graph/Graph.html) is generic, and you can use any Java type for vertex and any [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) type for distance. 
 
-#### Example
+### Example
 In the following Java code we create a graph structure with eight nodes. We use [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) class for vertex identification and [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) for the distance. You can see the graphic representation of the scheme [here](assets/complex.gif). 
 
 ```java
@@ -32,7 +32,7 @@ var graph = new Graph<Character>(Map.of(
 
 The second step is creating a search algorithm class. You can choose one of the two algorithms. 
 
-#### Example
+### Example
 
 ```java
 var fastest = new DijkstrasAlgorithm<Character>();
@@ -41,7 +41,7 @@ var shortest = new BreadthFirstSearch<Character>();
 
 Now we can search for the route.
 
-#### Example
+### Example
 
 ```java
 var source = 'D';
@@ -58,11 +58,11 @@ routeOne == ['D', 'C']
 routeTwo == ['D', 'E', 'F', 'G', 'C']
 ```
 
-### Unit Tests
+## Unit Tests
 
 Tests are written in groove language. For unit testing, the Spock framework was used. To test the operation of the algorithms, the following sample graphs were created.
 
-#### Small Graph Sample
+### Small Graph Sample
 
 ```groovy
         def graph = new Graph([
@@ -75,7 +75,7 @@ Tests are written in groove language. For unit testing, the Spock framework was 
 ![Small Graph](assets/small.gif)
 
 
-#### Medium Graph Sample
+### Medium Graph Sample
 
 ```groovy
         def graph = new Graph([
@@ -89,8 +89,7 @@ Tests are written in groove language. For unit testing, the Spock framework was 
 
 ![Medium Graph](assets/medium.gif)
 
-
-#### Complex Graph Sample
+### Complex Graph Sample
 
 ```groovy
         def graph = new Graph([
