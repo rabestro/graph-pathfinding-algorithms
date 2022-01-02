@@ -18,7 +18,7 @@ The first step is create a graph structure. The [Graph class](https://algorithms
 In the following Java code we create a graph structure with eight nodes. We use [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) class for vertex identification and [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) for the distance. You can see the graphic representation of the scheme [here](assets/complex.gif). 
 
 ```java
-final var graph = new Graph<Character>(Map.of(
+var graph = new Graph<Character>(Map.of(
             'A', Map.of('B', 5, 'H', 2),
             'B', Map.of('A', 5, 'C', 7),
             'C', Map.of('B', 7, 'D', 3, 'G', 4),
@@ -35,8 +35,8 @@ The second step is creating a search algorithm class. You can choose one of the 
 #### Example
 
 ```java
-final var fastest = new DijkstrasAlgorithm<Character>();
-final var shortest = new BreadthFirstSearch<Character>();
+var fastest = new DijkstrasAlgorithm<Character>();
+var shortest = new BreadthFirstSearch<Character>();
 ```
 
 Now we can search for the route.
@@ -44,11 +44,11 @@ Now we can search for the route.
 #### Example
 
 ```java
-final var source = 'D';
-final var target = 'C';
+var source = 'D';
+var target = 'C';
 
-final var routeOne = shortest.findPath(graph, source, target);
-final var routeTwo = fastest.findPath(graph, source, target);
+var routeOne = shortest.findPath(graph, source, target);
+var routeTwo = fastest.findPath(graph, source, target);
 ```
 
 As result, you get a list with the path. 
