@@ -12,7 +12,7 @@ You can also see the [specifications](spock-reports) for the classes generated w
 
 ### How to use the classes in your program
 
-The first step is create a graph structure. The Graph class is generic, and you can use any Java type for vertex and any Number type for distance. 
+The first step is create a graph structure. The [Graph class](https://algorithms.jc.id.lv/api/lv/id/jc/algorithm/graph/Graph.html) is generic, and you can use any Java type for vertex and any Number type for distance. 
 
 #### Example
 In the following code we create a graph structure with eight nodes. We use Character class for vertex identification. You can see the graphic representation of the scheme [here](assets/complex.gif). 
