@@ -1,4 +1,4 @@
-## Graph search algorithms
+# Graph search algorithms
 
 The project implements a class for the general structure of the graph, as well as two algorithms for finding a path in the graph.
 
@@ -7,17 +7,18 @@ There are implementations and tests for two algorithms:
 - [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
 - [Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 
-The implementation is written in Java 17, the API documentation is available [here](api). 
+The implementation is written in Java 17. [API documentation](api) is available. 
 You can also see the [specifications](spock-reports) for the classes generated with the spock-reports.
 
-### How to use the classes in your program
+## How to use the classes in your program
 
-The first step is create a graph structure. The [Graph class](http://algorithms.jc.id.lv/api/lv/id/jc/algorithm/graph/Graph.html) is generic, and you can use any Java type for vertex id and any [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) type for distance. 
+The first step is create a graph structure. The [Graph class](https://algorithms.jc.id.lv/api/lv/id/jc/algorithm/graph/Graph.html) is generic, and you can use any Java type for vertex and any [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) type for distance. 
 
-#### Example
-In the following code we create a graph structure with eight nodes. We use Character class for vertex identification. You can see the graphic representation of the scheme [here](assets/complex.gif). 
+### Example
+In the following Java code we create a graph structure with eight nodes. We use [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) class for vertex identification and [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) for the distance. You can see the graphic representation of the scheme [here](assets/complex.gif). 
+
 ```java
-final var graph = new Graph<Character>(Map.of(
+var graph = new Graph<Character>(Map.of(
             'A', Map.of('B', 5, 'H', 2),
             'B', Map.of('A', 5, 'C', 7),
             'C', Map.of('B', 7, 'D', 3, 'G', 4),
@@ -31,23 +32,23 @@ final var graph = new Graph<Character>(Map.of(
 
 The second step is creating a search algorithm class. You can choose one of the two algorithms. 
 
-#### Example
+### Example
 
 ```java
-final var fastest = new DijkstrasAlgorithm<Character>();
-final var shortest = new BreadthFirstSearch<Character>();
+var fastest = new DijkstrasAlgorithm<Character>();
+var shortest = new BreadthFirstSearch<Character>();
 ```
 
 Now we can search for the route.
 
-#### Example
+### Example
 
 ```java
-final var source = 'D';
-final var target = 'C';
+var source = 'D';
+var target = 'C';
 
-final var routeOne = shortest.findPath(graph, source, target);
-final var routeTwo = fastest.findPath(graph, source, target);
+var routeOne = shortest.findPath(graph, source, target);
+var routeTwo = fastest.findPath(graph, source, target);
 ```
 
 As result, you get a list with the path. 
@@ -57,11 +58,11 @@ routeOne == ['D', 'C']
 routeTwo == ['D', 'E', 'F', 'G', 'C']
 ```
 
-### Unit Tests
+## Unit Tests
 
-Tests are written in groove language. For unit testing, the Spock framework was used. You can check the reports for [unit tests](spock-reports) and for [test coverage](coverage). To test the operation of the algorithms, the following sample graphs were created.
+Tests are written in groove language. For unit testing, the Spock framework was used. To test the operation of the algorithms, the following sample graphs were created.
 
-#### Small Graph Sample
+### Small Graph Sample
 
 ```groovy
         def graph = new Graph([
@@ -74,7 +75,7 @@ Tests are written in groove language. For unit testing, the Spock framework was 
 ![Small Graph](assets/small.gif)
 
 
-#### Medium Graph Sample
+### Medium Graph Sample
 
 ```groovy
         def graph = new Graph([
@@ -88,8 +89,7 @@ Tests are written in groove language. For unit testing, the Spock framework was 
 
 ![Medium Graph](assets/medium.gif)
 
-
-#### Complex Graph Sample
+### Complex Graph Sample
 
 ```groovy
         def graph = new Graph([
