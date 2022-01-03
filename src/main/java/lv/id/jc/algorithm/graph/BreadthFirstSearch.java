@@ -20,7 +20,7 @@ import static java.util.stream.Stream.iterate;
 public class BreadthFirstSearch<T> implements SearchAlgorithm<T> {
 
     @Override
-    public List<T> findPath(Graph<T> graph, T source, T target) {
+    public List<T> findPath(final Graph<T> graph, T source, T target) {
         final var queue = new LinkedList<T>();
         final var visited = new HashSet<T>();
         final var previous = new HashMap<T, T>();
