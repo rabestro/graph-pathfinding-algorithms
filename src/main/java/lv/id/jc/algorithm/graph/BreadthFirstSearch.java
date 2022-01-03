@@ -16,6 +16,7 @@ import static java.util.stream.Stream.iterate;
  *
  * @author Jegors Čemisovs
  * @param <T> the type of vertex id
+ * @since 1.0
  */
 public class BreadthFirstSearch<T> implements SearchAlgorithm<T> {
 
