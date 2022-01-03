@@ -7,7 +7,9 @@ import java.util.stream.IntStream;
 /**
  * A generic graph representation
  *
+ * @author Jegors Čemisovs
  * @param <T> the type of vertex id in this graph
+ * @since 1.0
  */
 public record Graph<T>(Map<T, Map<T, Number>> nodes) {
 
