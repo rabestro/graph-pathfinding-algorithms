@@ -12,7 +12,7 @@ You can also see the [specifications](spock-reports) for the classes generated w
 
 ## How to use the classes in your program
 
-The first step is create a graph structure. The [Graph class](https://algorithms.jc.id.lv/api/lv/id/jc/algorithm/graph/Graph.html) is generic, and you can use any Java type for vertex and any [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) type for distance. 
+The first step is create a graph structure. The [Graph](https://algorithms.jc.id.lv/api/lv.id.jc.algorithm/lv/id/jc/algorithm/graph/Graph.html) interface is generic, and you can use any Java type for vertex and any [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) type for distance. 
 
 ### Example
 In the following Java code we create a graph structure with eight nodes. We use [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) class for vertex identification and [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) for the distance. You can see the graphic representation of the scheme [here](assets/complex.gif). 
