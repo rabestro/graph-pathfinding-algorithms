@@ -16,8 +16,6 @@ public interface Graph<T> {
     /**
      * Schema of the graph.
      *
-
-     *
      * @return the graph scheme
      */
     Map<T, Map<T, Number>> schema();
