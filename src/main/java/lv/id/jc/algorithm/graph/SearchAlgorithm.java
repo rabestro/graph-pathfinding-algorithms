@@ -6,6 +6,7 @@ import java.util.List;
  * A functional interface for graph search algorithm
  *
  * @param <T> the type of vertex id
+ * @since 1.0
  */
 @FunctionalInterface
 public interface SearchAlgorithm<T> {
