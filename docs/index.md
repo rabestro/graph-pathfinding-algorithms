@@ -1,6 +1,6 @@
 # Graph search algorithms
 
-The project implements a class for the general structure of the graph, as well as two algorithms for finding a path in the graph.
+The project implements an interface for the weighted graph, as well as two algorithms for finding a path in the graph.
 
 There are implementations and tests for two algorithms:
 
