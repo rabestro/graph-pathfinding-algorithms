@@ -60,7 +60,7 @@ routeTwo == ['D', 'E', 'F', 'G', 'C']
 
 ## Unit Tests
 
-Tests are written in groove language. For unit testing, the Spock framework was used. To test the operation of the algorithms, the following sample graphs were created.
+Tests are written in Groove language. For unit testing, the [Spock Framework](https://spockframework.org/) was used. To test the operation of the algorithms, the following sample graphs were created.
 
 ### Small Graph Sample
 
