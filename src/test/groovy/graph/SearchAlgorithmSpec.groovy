@@ -17,7 +17,7 @@ class SearchAlgorithmSpec extends Specification {
 
     def 'should find a route for a complex graph'() {
         given: 'A complex graph sample'
-        def graph = new Graph<String>([
+        def graph = Graph.of([
                 A: [B: 5, H: 2],
                 B: [A: 5, C: 7],
                 C: [B: 7, D: 3, G: 4],

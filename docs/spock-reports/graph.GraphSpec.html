@@ -251,7 +251,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Mon Jan 03 09:03:11 EET 2022 by jegors.cemisovs</div>
+<div class='date-test-ran'>Created on Mon Jan 03 14:12:35 EET 2022 by jegors.cemisovs</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -272,7 +272,7 @@ div.footer {
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.069 seconds</td>
+<td>0.054 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -324,7 +324,7 @@ div.footer {
 <tr>
 <td></td>
 <td>
-<pre class='block-source'>def graph = new Graph([
+<pre class='block-source'>def graph = Graph.of([
         A: [B: 7, C: 2],
         B: [A: 3, C: 5],
         C: [A: 1, B: 3]
@@ -403,7 +403,7 @@ div.footer {
 <tr>
 <td></td>
 <td>
-<pre class='block-source'>def graph = new Graph([
+<pre class='block-source'>def graph = Graph.of([
         A: [B: 5, H: 2],
         B: [A: 5, C: 7],
         C: [B: 7, D: 3, G: 4],
@@ -520,7 +520,7 @@ div.footer {
 <tr>
 <td></td>
 <td>
-<pre class='block-source'>def graph = new Graph(_ as Map)</pre>
+<pre class='block-source'>def graph = Graph.of(_ as Map)</pre>
 </td>
 </tr>
 <tr>
@@ -558,7 +558,7 @@ div.footer {
 <tr>
 <td></td>
 <td>
-<pre class='block-source'>def graph = new Graph(_ as Map)</pre>
+<pre class='block-source'>def graph = Graph.of(_ as Map)</pre>
 </td>
 </tr>
 <tr>
@@ -645,7 +645,7 @@ div.footer {
 <tr>
 <td></td>
 <td>
-<pre class='block-source'>def graph = new Graph([
+<pre class='block-source'>def graph = Graph.of([
         A: [B: 5],
         B: [A: 5, C: 10],
         C: [B: 20, D: 5],

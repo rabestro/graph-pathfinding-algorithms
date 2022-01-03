@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"lv.id.jc.algorithm.graph"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"lv.id.jc.algorithm","l":"lv.id.jc.algorithm.graph"}];updateSearchResults();
