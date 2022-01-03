@@ -10,7 +10,6 @@ import spock.lang.Title
 class GraphSpec extends Specification {
 
     def "should return edges for a given node"() {
-
         given: 'a simple graph with three nodes'
         def graph = Graph.of([
                 A: [B: 7, C: 2],
