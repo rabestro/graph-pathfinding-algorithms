@@ -14,6 +14,7 @@ import static java.util.stream.Stream.iterate;
  *
  * The algorithm doesn't take into account the distance between nodes.
  *
+ * @author Jegors Čemisovs
  * @param <T> the type of vertex id
  */
 public class BreadthFirstSearch<T> implements SearchAlgorithm<T> {
