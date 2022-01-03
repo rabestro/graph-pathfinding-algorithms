@@ -9,7 +9,7 @@ import static java.util.stream.Stream.iterate;
 
 /**
  * Algorithm for finding the fastest paths between nodes in a graph.
- *
+ * <p>
  * The algorithm uses information about edge's distance to find the fastest path.
  *
  * @param <T> type of vertex id
@@ -35,10 +35,12 @@ public class DijkstrasAlgorithm<T> implements SearchAlgorithm<T> {
                 }
             });
         }
-
-        final var path = new LinkedList<T>();
-        iterate(target, Objects::nonNull, previous::get).forEach(path::addFirst);
-        return path;
+        if (previous.containsKey(target) || source.equals(target)) {
+            final var path = new LinkedList<T>();
+            iterate(target, Objects::nonNull, previous::get).forEach(path::addFirst);
+            return path;
+        }
+        return List.of();
     }
 
 }
