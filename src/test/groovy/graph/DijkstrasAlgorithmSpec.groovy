@@ -9,7 +9,7 @@ import spock.lang.*
 @Narrative("Dijkstra's algorithm is an algorithm for finding the fastest paths between nodes in a graph")
 class DijkstrasAlgorithmSpec extends Specification {
     @Subject
-    def algorithm = new DijkstrasAlgorithm<String>()
+    def algorithm = new DijkstrasAlgorithm()
 
     def 'should find a route for a simple graph'() {
         given: 'A simple graph'
@@ -103,14 +103,14 @@ class DijkstrasAlgorithmSpec extends Specification {
         'D'    | 'H'    || 33   | ['D', 'E', 'F', 'G', 'C', 'B', 'A', 'H']
     }
 
-    def 'should throw NPE for an empty graph'() {
+    def 'should thrown NPE for an empty graph'() {
         given: 'an empty graph'
         def graph = Graph.of([:])
 
         when: "we use Dijkstra's algorithm to find a path"
-        algorithm.findPath(graph, _, _)
+        algorithm.findPath(graph, 'A', 'B')
 
-        then: 'the exception thrown'
+        then: 'the exception was thrown'
         thrown NullPointerException
     }
 

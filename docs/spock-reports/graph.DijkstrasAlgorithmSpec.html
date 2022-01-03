@@ -251,7 +251,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Mon Jan 03 14:12:35 EET 2022 by jegors.cemisovs</div>
+<div class='date-test-ran'>Created on Mon Jan 03 21:16:51 EET 2022 by jegors.cemisovs</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -272,7 +272,7 @@ div.footer {
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.017 seconds</td>
+<td>0.022 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -305,7 +305,7 @@ div.footer {
 <a href='#-1278284136' class='feature-toc-pass'>should find a route for a complex graph</a>
 </li>
 <li>
-<a href='#230557635' class='feature-toc-pass'>should throw NPE for an empty graph</a>
+<a href='#-1670873817' class='feature-toc-pass'>should thrown NPE for an empty graph</a>
 </li>
 <li>
 <a href='#-498380623' class='feature-toc-pass'>should return an empty path if can't find a route</a>
@@ -756,8 +756,8 @@ div.footer {
 </tr>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='230557635'>
-<span>should throw NPE for an empty graph</span>
+<div class='feature-description' id='-1670873817'>
+<span>should thrown NPE for an empty graph</span>
 <span style='float: right; font-size: 60%;'>
 <a href='#toc'>Return</a>
 </span>
@@ -789,7 +789,7 @@ div.footer {
 <tr>
 <td></td>
 <td>
-<pre class='block-source'>algorithm.findPath(graph, _, _)</pre>
+<pre class='block-source'>algorithm.findPath(graph, 'A', 'B')</pre>
 </td>
 </tr>
 <tr>
@@ -797,7 +797,7 @@ div.footer {
 <div class='block-kind'>Then:</div>
 </td>
 <td>
-<div class='block-text'>the exception thrown</div>
+<div class='block-text'>the exception was thrown</div>
 </td>
 </tr>
 <tr>

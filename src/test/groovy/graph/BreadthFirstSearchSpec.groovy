@@ -71,6 +71,17 @@ class BreadthFirstSearchSpec extends Specification {
         time = shortest.size() - 1
     }
 
+    def 'should thrown NPE path for an empty graph'() {
+        given: 'an empty graph'
+        def graph = Graph.of([:])
+
+        when: "we use Dijkstra's algorithm to find a path"
+        algorithm.findPath(graph, 'A', 'B')
+
+        then: 'the exception was thrown'
+        thrown NullPointerException
+    }
+
     def "should return an empty path if can't find a route"() {
         given: 'a simple graph with no edge between nodes'
         def graph = Graph.of([A: [:], B: [:]])
