@@ -251,7 +251,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Sun Jan 02 19:53:53 EET 2022 by rabes</div>
+<div class='date-test-ran'>Created on Mon Jan 03 09:03:11 EET 2022 by jegors.cemisovs</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -266,13 +266,13 @@ div.footer {
 </thead>
 <tbody>
 <tr>
-<td>3</td>
-<td>3</td>
+<td>5</td>
+<td>5</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.074 seconds</td>
+<td>0.031 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -303,6 +303,12 @@ div.footer {
 </li>
 <li>
 <a href='#-1278284136' class='feature-toc-pass'>should find a route for a complex graph</a>
+</li>
+<li>
+<a href='#230557635' class='feature-toc-pass'>should throw NPE for an empty graph</a>
+</li>
+<li>
+<a href='#-498380623' class='feature-toc-pass'>should return an empty path if can't find a route</a>
 </li>
 </ul>
 <tr>
@@ -746,6 +752,110 @@ div.footer {
 </td>
 <td>
 <div class='spec-status'>12/12 passed</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='230557635'>
+<span>should throw NPE for an empty graph</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>an empty graph</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = new Graph([:])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>we use Dijkstra's algorithm to find a path</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>algorithm.findPath(graph, _, _)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>the exception thrown</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>thrown NullPointerException</pre>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-498380623'>
+<span>should return an empty path if can't find a route</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>a simple graph with no edge between nodes</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = new Graph([A: [:], B: [:]])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>we use Dijkstra's algorithm to find a path</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, 'A', 'B')</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>we get an empty path</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>path == []</pre>
 </td>
 </tr>
 </tbody>

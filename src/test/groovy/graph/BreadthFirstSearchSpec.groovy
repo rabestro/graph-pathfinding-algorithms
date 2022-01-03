@@ -2,11 +2,7 @@ package graph
 
 import lv.id.jc.algorithm.graph.BreadthFirstSearch
 import lv.id.jc.algorithm.graph.Graph
-import spock.lang.Narrative
-import spock.lang.See
-import spock.lang.Specification
-import spock.lang.Subject
-import spock.lang.Title
+import spock.lang.*
 
 @Title("Breadth First Search Algorithm")
 @See("https://en.wikipedia.org/wiki/Breadth-first_search")
@@ -75,4 +71,14 @@ class BreadthFirstSearchSpec extends Specification {
         time = shortest.size() - 1
     }
 
+    def "should return an empty path if can't find a route"() {
+        given: 'a simple graph with no edge between nodes'
+        def graph = new Graph([A: [:], B: [:]])
+
+        when: 'we use Breadth First Search algorithm to find a path'
+        def path = algorithm.findPath(graph, 'A', 'B')
+
+        then: 'we get an empty path'
+        path == []
+    }
 }

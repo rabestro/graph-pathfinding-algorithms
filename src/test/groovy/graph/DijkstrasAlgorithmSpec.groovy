@@ -2,11 +2,7 @@ package graph
 
 import lv.id.jc.algorithm.graph.DijkstrasAlgorithm
 import lv.id.jc.algorithm.graph.Graph
-import spock.lang.Narrative
-import spock.lang.See
-import spock.lang.Specification
-import spock.lang.Subject
-import spock.lang.Title
+import spock.lang.*
 
 @Title("Dijkstra's Algorithm")
 @See("https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm")
@@ -107,4 +103,25 @@ class DijkstrasAlgorithmSpec extends Specification {
         'D'    | 'H'    || 33   | ['D', 'E', 'F', 'G', 'C', 'B', 'A', 'H']
     }
 
+    def 'should throw NPE for an empty graph'() {
+        given: 'an empty graph'
+        def graph = new Graph([:])
+
+        when: "we use Dijkstra's algorithm to find a path"
+        algorithm.findPath(graph, _, _)
+
+        then: 'the exception thrown'
+        thrown NullPointerException
+    }
+
+    def "should return an empty path if can't find a route"() {
+        given: 'a simple graph with no edge between nodes'
+        def graph = new Graph([A: [:], B: [:]])
+
+        when: "we use Dijkstra's algorithm to find a path"
+        def path = algorithm.findPath(graph, 'A', 'B')
+
+        then: 'we get an empty path'
+        path == []
+    }
 }
