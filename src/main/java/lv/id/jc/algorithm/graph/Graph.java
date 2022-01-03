@@ -30,7 +30,7 @@ public record Graph<T>(Map<T, Map<T, Number>> nodes) {
      * @return distance for the given path as double
      * @throws NullPointerException if path is incorrect and contains more than one vertex
      */
-    public double getDistance(final List<T> path) {
+    public double getDistance(List<T> path) {
         return IntStream
                 .range(1, path.size())
                 .mapToObj(i -> edges(path.get(i - 1)).get(path.get(i)))
