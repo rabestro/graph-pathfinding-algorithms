@@ -12,6 +12,7 @@ import static java.util.stream.Stream.iterate;
  * <p>
  * The algorithm uses information about edge's distance to find the fastest path.
  *
+ * @author Jegors Čemisovs
  * @param <T> the type of vertex id
  */
 public class DijkstrasAlgorithm<T> implements SearchAlgorithm<T> {
