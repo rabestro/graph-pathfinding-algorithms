@@ -7,27 +7,36 @@ import java.util.stream.IntStream;
 /**
  * An interface for weighted directed graph (network)
  *
- * @author Jegors Čemisovs
  * @param <T> the type of vertex in this graph
- * @since 1.0
+ * @author Jegors Čemisovs
+ * @since 1.1
  */
 @FunctionalInterface
 public interface Graph<T> {
     /**
-     * Schema of the graph
+     * Schema of the graph.
+     *
+
      *
      * @return the graph scheme
      */
     Map<T, Map<T, Number>> schema();
 
     /**
-     * Edges of the given vertex
+     * Returns the edges of the given vertex,
+     * or {@code null} if this graph contains no given vertex.
      *
-     * @param id vertex
+     * <p>A return value of {@code null} does not <i>necessarily</i>
+     * indicate that the specified vertex is not present in the graph;
+     * it's also possible that in the graph schema, {@code null} was specified
+     * for the edges of this vertex instead of an empty map.
+     *
+     * @param vertex vertex
      * @return all links for the given vertex
+     * or null if no such vertex in the graph
      */
-    default Map<T, Number> edges(T id) {
-        return schema().get(id);
+    default Map<T, Number> edges(T vertex) {
+        return schema().get(vertex);
     }
 
     /**
@@ -35,7 +44,7 @@ public interface Graph<T> {
      *
      * @param path the list of vertices representing the path
      * @return distance for the given path as double
-     * @throws NullPointerException if path is incorrect and contains more than one vertex
+     * @throws NullPointerException if {@code path} is incorrect and contains more than one vertex
      */
     default double getDistance(List<T> path) {
         return IntStream
@@ -46,11 +55,14 @@ public interface Graph<T> {
     }
 
     /**
-     * Creates a Graph object by given schema
+     * Creates a Graph object by given schema.
+     *
+     * In a graph schema, each vertex is assigned an edge map.
+     * If the vertex has no edges, then it should be assigned an empty map.
      *
      * @param schema of the graph
-     * @param <T> the type of vertex in this graph
-     * @return graph with given schema
+     * @param <T>    the type of vertex in this graph
+     * @return graph object with given schema
      */
     static <T> Graph<T> of(Map<T, Map<T, Number>> schema) {
         return () -> schema;

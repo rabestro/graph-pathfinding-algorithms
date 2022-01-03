@@ -87,38 +87,40 @@ Current scope:     <a href="../../index.html">all classes</a>
 <i class="no-highlight">12</i>&nbsp; * &lt;p&gt;
 <i class="no-highlight">13</i>&nbsp; * The algorithm uses information about edge&#39;s distance to find the fastest path.
 <i class="no-highlight">14</i>&nbsp; *
-<i class="no-highlight">15</i>&nbsp; * @param &lt;T&gt; type of vertex id
-<i class="no-highlight">16</i>&nbsp; */
-<b class="fc"><i class="no-highlight">17</i>&nbsp;public class DijkstrasAlgorithm&lt;T&gt; implements SearchAlgorithm&lt;T&gt; {</b>
-<i class="no-highlight">18</i>&nbsp;
-<i class="no-highlight">19</i>&nbsp;    @Override
-<i class="no-highlight">20</i>&nbsp;    public List&lt;T&gt; findPath(Graph&lt;T&gt; graph, T source, T target) {
-<b class="fc"><i class="no-highlight">21</i>&nbsp;        final var queue = new LinkedList&lt;T&gt;();</b>
-<b class="fc"><i class="no-highlight">22</i>&nbsp;        final var distances = new HashMap&lt;T, Double&gt;();</b>
-<b class="fc"><i class="no-highlight">23</i>&nbsp;        final var previous = new HashMap&lt;T, T&gt;();</b>
-<b class="fc"><i class="no-highlight">24</i>&nbsp;        queue.add(source);</b>
-<b class="fc"><i class="no-highlight">25</i>&nbsp;        distances.put(source, .0);</b>
-<i class="no-highlight">26</i>&nbsp;
-<b class="fc"><i class="no-highlight">27</i>&nbsp;        while (!queue.isEmpty()) {</b>
-<b class="fc"><i class="no-highlight">28</i>&nbsp;            final var prev = queue.removeFirst();</b>
-<b class="fc"><i class="no-highlight">29</i>&nbsp;            graph.edges(prev).forEach((node, time) -&gt; {</b>
-<b class="fc"><i class="no-highlight">30</i>&nbsp;                final var distance = distances.get(prev) + time.doubleValue();</b>
-<b class="fc"><i class="no-highlight">31</i>&nbsp;                if (distance &lt; distances.getOrDefault(node, Double.MAX_VALUE)) {</b>
-<b class="fc"><i class="no-highlight">32</i>&nbsp;                    previous.put(node, prev);</b>
-<b class="fc"><i class="no-highlight">33</i>&nbsp;                    distances.put(node, distance);</b>
-<b class="fc"><i class="no-highlight">34</i>&nbsp;                    queue.addLast(node);</b>
-<i class="no-highlight">35</i>&nbsp;                }
-<i class="no-highlight">36</i>&nbsp;            });
-<b class="fc"><i class="no-highlight">37</i>&nbsp;        }</b>
-<b class="fc"><i class="no-highlight">38</i>&nbsp;        if (previous.containsKey(target) || source.equals(target)) {</b>
-<b class="fc"><i class="no-highlight">39</i>&nbsp;            final var path = new LinkedList&lt;T&gt;();</b>
-<b class="fc"><i class="no-highlight">40</i>&nbsp;            iterate(target, Objects::nonNull, previous::get).forEach(path::addFirst);</b>
-<b class="fc"><i class="no-highlight">41</i>&nbsp;            return path;</b>
-<i class="no-highlight">42</i>&nbsp;        }
-<b class="fc"><i class="no-highlight">43</i>&nbsp;        return List.of();</b>
-<i class="no-highlight">44</i>&nbsp;    }
-<i class="no-highlight">45</i>&nbsp;
-<i class="no-highlight">46</i>&nbsp;}
+<i class="no-highlight">15</i>&nbsp; * @author Jegors Čemisovs
+<i class="no-highlight">16</i>&nbsp; * @param &lt;T&gt; the type of vertex
+<i class="no-highlight">17</i>&nbsp; * @since 1.0
+<i class="no-highlight">18</i>&nbsp; */
+<b class="fc"><i class="no-highlight">19</i>&nbsp;public class DijkstrasAlgorithm&lt;T&gt; implements SearchAlgorithm&lt;T&gt; {</b>
+<i class="no-highlight">20</i>&nbsp;
+<i class="no-highlight">21</i>&nbsp;    @Override
+<i class="no-highlight">22</i>&nbsp;    public List&lt;T&gt; findPath(Graph&lt;T&gt; graph, T source, T target) {
+<b class="fc"><i class="no-highlight">23</i>&nbsp;        var queue = new LinkedList&lt;T&gt;();</b>
+<b class="fc"><i class="no-highlight">24</i>&nbsp;        var distances = new HashMap&lt;T, Double&gt;();</b>
+<b class="fc"><i class="no-highlight">25</i>&nbsp;        var previous = new HashMap&lt;T, T&gt;();</b>
+<b class="fc"><i class="no-highlight">26</i>&nbsp;        queue.add(source);</b>
+<b class="fc"><i class="no-highlight">27</i>&nbsp;        distances.put(source, .0);</b>
+<i class="no-highlight">28</i>&nbsp;
+<b class="fc"><i class="no-highlight">29</i>&nbsp;        while (!queue.isEmpty()) {</b>
+<b class="fc"><i class="no-highlight">30</i>&nbsp;            var prev = queue.removeFirst();</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;            graph.edges(prev).forEach((node, time) -&gt; {</b>
+<b class="fc"><i class="no-highlight">32</i>&nbsp;                var distance = distances.get(prev) + time.doubleValue();</b>
+<b class="fc"><i class="no-highlight">33</i>&nbsp;                if (distance &lt; distances.getOrDefault(node, Double.MAX_VALUE)) {</b>
+<b class="fc"><i class="no-highlight">34</i>&nbsp;                    previous.put(node, prev);</b>
+<b class="fc"><i class="no-highlight">35</i>&nbsp;                    distances.put(node, distance);</b>
+<b class="fc"><i class="no-highlight">36</i>&nbsp;                    queue.addLast(node);</b>
+<i class="no-highlight">37</i>&nbsp;                }
+<i class="no-highlight">38</i>&nbsp;            });
+<b class="fc"><i class="no-highlight">39</i>&nbsp;        }</b>
+<b class="fc"><i class="no-highlight">40</i>&nbsp;        if (previous.containsKey(target) || source.equals(target)) {</b>
+<b class="fc"><i class="no-highlight">41</i>&nbsp;            var path = new LinkedList&lt;T&gt;();</b>
+<b class="fc"><i class="no-highlight">42</i>&nbsp;            iterate(target, Objects::nonNull, previous::get).forEach(path::addFirst);</b>
+<b class="fc"><i class="no-highlight">43</i>&nbsp;            return path;</b>
+<i class="no-highlight">44</i>&nbsp;        }
+<b class="fc"><i class="no-highlight">45</i>&nbsp;        return List.of();</b>
+<i class="no-highlight">46</i>&nbsp;    }
+<i class="no-highlight">47</i>&nbsp;
+<i class="no-highlight">48</i>&nbsp;}
 </div>
 </pre>
 </div>
@@ -145,7 +147,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-01-03 09:03</div>
+    <div style="float:right;">generated on 2022-01-03 21:07</div>
 </div>
 </body>
 </html>

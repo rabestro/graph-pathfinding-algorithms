@@ -10,10 +10,10 @@ import spock.lang.Title
 @Title("Comparison of two algorithms")
 class SearchAlgorithmSpec extends Specification {
     @Subject
-    def bfsAlgorithm = new BreadthFirstSearch<String>()
+    def bfsAlgorithm = new BreadthFirstSearch()
 
     @Subject
-    def dijkstras = new DijkstrasAlgorithm<String>()
+    def dijkstras = new DijkstrasAlgorithm()
 
     def 'should find a route for a complex graph'() {
         given: 'A complex graph sample'

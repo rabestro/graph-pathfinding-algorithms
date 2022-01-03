@@ -251,7 +251,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Mon Jan 03 14:12:34 EET 2022 by jegors.cemisovs</div>
+<div class='date-test-ran'>Created on Mon Jan 03 21:16:51 EET 2022 by jegors.cemisovs</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -266,13 +266,13 @@ div.footer {
 </thead>
 <tbody>
 <tr>
-<td>3</td>
-<td>3</td>
+<td>4</td>
+<td>4</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.068 seconds</td>
+<td>0.069 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -300,6 +300,9 @@ div.footer {
 </li>
 <li>
 <a href='#-928009641' class='feature-toc-pass'>should find a route for complex graph</a>
+</li>
+<li>
+<a href='#-2095690062' class='feature-toc-pass'>should thrown NPE path for an empty graph</a>
 </li>
 <li>
 <a href='#-498380623' class='feature-toc-pass'>should return an empty path if can't find a route</a>
@@ -578,6 +581,58 @@ F: [D: 1, E: 1]])</pre>
 </td>
 <td>
 <div class='spec-status'>7/7 passed</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2095690062'>
+<span>should thrown NPE path for an empty graph</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>an empty graph</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of([:])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>we use Dijkstra's algorithm to find a path</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>algorithm.findPath(graph, 'A', 'B')</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>the exception was thrown</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>thrown NullPointerException</pre>
 </td>
 </tr>
 <tr>
