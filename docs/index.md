@@ -18,7 +18,7 @@ The first step is create a graph structure. The [Graph class](https://algorithms
 In the following Java code we create a graph structure with eight nodes. We use [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) class for vertex identification and [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) for the distance. You can see the graphic representation of the scheme [here](assets/complex.gif). 
 
 ```java
-var graph = new Graph<Character>(Map.of(
+var graph = Graph.of(Map.of(
             'A', Map.of('B', 5, 'H', 2),
             'B', Map.of('A', 5, 'C', 7),
             'C', Map.of('B', 7, 'D', 3, 'G', 4),
@@ -65,7 +65,7 @@ Tests are written in groove language. For unit testing, the Spock framework was 
 ### Small Graph Sample
 
 ```groovy
-        def graph = new Graph([
+        def graph = Graph.of([
                 A: [B: 7, C: 2],
                 B: [A: 3, C: 5],
                 C: [A: 1, B: 3]
@@ -78,7 +78,7 @@ Tests are written in groove language. For unit testing, the Spock framework was 
 ### Medium Graph Sample
 
 ```groovy
-        def graph = new Graph([
+        def graph = Graph.of([
                 A: [B: 5],
                 B: [A: 5, C: 10],
                 C: [B: 20, D: 5],
@@ -92,7 +92,7 @@ Tests are written in groove language. For unit testing, the Spock framework was 
 ### Complex Graph Sample
 
 ```groovy
-        def graph = new Graph([
+        def graph = Graph.of([
                 A: [B: 5, H: 2],
                 B: [A: 5, C: 7],
                 C: [B: 7, D: 3, G: 4],
