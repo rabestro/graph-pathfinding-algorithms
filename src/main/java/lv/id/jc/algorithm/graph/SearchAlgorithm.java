@@ -5,6 +5,7 @@ import java.util.List;
 /**
  * A functional interface for graph search algorithm
  *
+ * @author Jegors Čemisovs
  * @param <T> the type of vertex id
  * @since 1.0
  */
