@@ -15,7 +15,7 @@ class BreadthFirstSearchSpec extends Specification {
 
     def 'should find a route for simple graph'() {
         given: 'A simple graph'
-        def graph = new Graph([
+        def graph = Graph.of([
                 A: [B: 7, C: 2],
                 B: [A: 3, C: 5],
                 C: [A: 1, B: 3]
@@ -40,7 +40,7 @@ class BreadthFirstSearchSpec extends Specification {
 
     def 'should find a route for complex graph'() {
         given: 'A complex graph'
-        def graph = new Graph([
+        def graph = Graph.of([
                 A: [B: 1],
                 B: [A: 1, D: 1],
                 C: [A: 1],
@@ -73,7 +73,7 @@ class BreadthFirstSearchSpec extends Specification {
 
     def "should return an empty path if can't find a route"() {
         given: 'a simple graph with no edge between nodes'
-        def graph = new Graph([A: [:], B: [:]])
+        def graph = Graph.of([A: [:], B: [:]])
 
         when: 'we use Breadth First Search algorithm to find a path'
         def path = algorithm.findPath(graph, 'A', 'B')

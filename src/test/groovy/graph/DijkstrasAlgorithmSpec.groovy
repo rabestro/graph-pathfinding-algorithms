@@ -13,7 +13,7 @@ class DijkstrasAlgorithmSpec extends Specification {
 
     def 'should find a route for a simple graph'() {
         given: 'A simple graph'
-        def graph = new Graph([
+        def graph = Graph.of([
                 A: [B: 7, C: 2],
                 B: [A: 3, C: 5],
                 C: [A: 1, B: 3]
@@ -38,7 +38,7 @@ class DijkstrasAlgorithmSpec extends Specification {
 
     def 'should find a route for a medium graph'() {
         given: 'A medium graph'
-        def graph = new Graph([
+        def graph = Graph.of([
                 A: [B: 5],
                 B: [A: 5, C: 10],
                 C: [B: 20, D: 5],
@@ -67,7 +67,7 @@ class DijkstrasAlgorithmSpec extends Specification {
 
     def 'should find a route for a complex graph'() {
         given: 'A complex graph'
-        def graph = new Graph([
+        def graph = Graph.of([
                 A: [B: 5, H: 2],
                 B: [A: 5, C: 7],
                 C: [B: 7, D: 3, G: 4],
@@ -105,7 +105,7 @@ class DijkstrasAlgorithmSpec extends Specification {
 
     def 'should throw NPE for an empty graph'() {
         given: 'an empty graph'
-        def graph = new Graph([:])
+        def graph = Graph.of([:])
 
         when: "we use Dijkstra's algorithm to find a path"
         algorithm.findPath(graph, _, _)
@@ -116,7 +116,7 @@ class DijkstrasAlgorithmSpec extends Specification {
 
     def "should return an empty path if can't find a route"() {
         given: 'a simple graph with no edge between nodes'
-        def graph = new Graph([A: [:], B: [:]])
+        def graph = Graph.of([A: [:], B: [:]])
 
         when: "we use Dijkstra's algorithm to find a path"
         def path = algorithm.findPath(graph, 'A', 'B')

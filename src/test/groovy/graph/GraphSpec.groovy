@@ -12,7 +12,7 @@ class GraphSpec extends Specification {
     def "should return edges for a given node"() {
 
         given: 'a simple graph with three nodes'
-        def graph = new Graph([
+        def graph = Graph.of([
                 A: [B: 7, C: 2],
                 B: [A: 3, C: 5],
                 C: [A: 1, B: 3]
@@ -30,7 +30,7 @@ class GraphSpec extends Specification {
 
     def 'should calculate distance for a path'() {
         given: "a complex graph with eight nodes"
-        def graph = new Graph([
+        def graph = Graph.of([
                 A: [B: 5, H: 2],
                 B: [A: 5, C: 7],
                 C: [B: 7, D: 3, G: 4],
@@ -58,7 +58,7 @@ class GraphSpec extends Specification {
 
     def 'should be zero distance for an empty path'() {
         given: 'any graph'
-        def graph = new Graph(_ as Map)
+        def graph = Graph.of(_ as Map)
 
         expect: 'the distance is zero for an empty path'
         graph.getDistance([]) == 0
@@ -66,7 +66,7 @@ class GraphSpec extends Specification {
 
     def 'should be zero distance for any one node path'() {
         given: 'any graph'
-        def graph = new Graph(_ as Map)
+        def graph = Graph.of(_ as Map)
 
         expect: 'the zero distance for any one-node path'
         graph.getDistance(oneNodePath) == 0
@@ -79,7 +79,7 @@ class GraphSpec extends Specification {
 
     def 'should throw NPE for incorrect path'() {
         given: "a medium graph with five nodes"
-        def graph = new Graph([
+        def graph = Graph.of([
                 A: [B: 5],
                 B: [A: 5, C: 10],
                 C: [B: 20, D: 5],

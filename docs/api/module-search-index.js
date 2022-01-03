@@ -1,1 +1,1 @@
-moduleSearchIndex = [];updateSearchResults();
+moduleSearchIndex = [{"l":"lv.id.jc.algorithm"}];updateSearchResults();
