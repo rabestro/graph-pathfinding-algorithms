@@ -18,7 +18,7 @@ publishing {
         // The target repository
         maven {
             // Choose whatever name you want
-            name = "algorithms"
+            name = "Algorithms"
             // The url of the repository, where the artifacts will be published
             url = "https://maven.pkg.github.com/rabestro/algorithms"
             credentials {
