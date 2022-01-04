@@ -1,0 +1,44 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+sourceCompatibility = JavaVersion.VERSION_17
+
+group 'lv.id.jc'
+version '1.1'
+
+repositories {
+    mavenCentral()
+}
+
+// Configures the publishing
+publishing {
+    repositories {
+        // The target repository
+        maven {
+            // Choose whatever name you want
+            name = "algorithms"
+            // The url of the repository, where the artifacts will be published
+            url = "https://maven.pkg.github.com/rabestro/algorithms"
+            credentials {
+                // The credentials (described in the next section)
+                username = project.findProperty("gpr.user")
+                password = project.findProperty("gpr.key")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+            // Fixes the error with dynamic versions when using Spring Boot
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+        }
+    }
+}
