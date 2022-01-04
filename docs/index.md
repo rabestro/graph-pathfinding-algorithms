@@ -65,11 +65,11 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
 ### Small Graph Sample
 
 ```groovy
-        def graph = Graph.of [
+        def graph = Graph.of([
                 A: [B: 7, C: 2],
                 B: [A: 3, C: 5],
                 C: [A: 1, B: 3]
-        ]
+        ])
 ```
 
 ![Small Graph](assets/small.gif)
@@ -78,13 +78,13 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
 ### Medium Graph Sample
 
 ```groovy
-        def graph = Graph.of [
+        def graph = Graph.of([
                 A: [B: 5],
                 B: [A: 5, C: 10],
                 C: [B: 20, D: 5],
                 D: [E: 5],
                 E: [B: 5]
-        ]
+        ])
 ```
 
 ![Medium Graph](assets/medium.gif)
@@ -92,7 +92,7 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
 ### Complex Graph Sample
 
 ```groovy
-        def graph = Graph.of [
+        def graph = Graph.of([
                 A: [B: 5, H: 2],
                 B: [A: 5, C: 7],
                 C: [B: 7, D: 3, G: 4],
@@ -101,7 +101,7 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
                 F: [G: 6],
                 G: [C: 4],
                 H: [G: 3]
-        ]
+        ])
 ```
 ![Complex Graph](assets/complex.gif)
 

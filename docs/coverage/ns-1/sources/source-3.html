@@ -104,58 +104,56 @@ Current scope:     <a href="../../index.html">all classes</a>
 <i class="no-highlight">16</i>&nbsp;    /**
 <i class="no-highlight">17</i>&nbsp;     * Schema of the graph.
 <i class="no-highlight">18</i>&nbsp;     *
-<i class="no-highlight">19</i>&nbsp;
-<i class="no-highlight">20</i>&nbsp;     *
-<i class="no-highlight">21</i>&nbsp;     * @return the graph scheme
-<i class="no-highlight">22</i>&nbsp;     */
-<i class="no-highlight">23</i>&nbsp;    Map&lt;T, Map&lt;T, Number&gt;&gt; schema();
-<i class="no-highlight">24</i>&nbsp;
-<i class="no-highlight">25</i>&nbsp;    /**
-<i class="no-highlight">26</i>&nbsp;     * Returns the edges of the given vertex,
-<i class="no-highlight">27</i>&nbsp;     * or {@code null} if this graph contains no given vertex.
-<i class="no-highlight">28</i>&nbsp;     *
-<i class="no-highlight">29</i>&nbsp;     * &lt;p&gt;A return value of {@code null} does not &lt;i&gt;necessarily&lt;/i&gt;
-<i class="no-highlight">30</i>&nbsp;     * indicate that the specified vertex is not present in the graph;
-<i class="no-highlight">31</i>&nbsp;     * it&#39;s also possible that in the graph schema, {@code null} was specified
-<i class="no-highlight">32</i>&nbsp;     * for the edges of this vertex instead of an empty map.
-<i class="no-highlight">33</i>&nbsp;     *
-<i class="no-highlight">34</i>&nbsp;     * @param vertex vertex
-<i class="no-highlight">35</i>&nbsp;     * @return all links for the given vertex
-<i class="no-highlight">36</i>&nbsp;     * or null if no such vertex in the graph
-<i class="no-highlight">37</i>&nbsp;     */
-<i class="no-highlight">38</i>&nbsp;    default Map&lt;T, Number&gt; edges(T vertex) {
-<b class="fc"><i class="no-highlight">39</i>&nbsp;        return schema().get(vertex);</b>
-<i class="no-highlight">40</i>&nbsp;    }
-<i class="no-highlight">41</i>&nbsp;
-<i class="no-highlight">42</i>&nbsp;    /**
-<i class="no-highlight">43</i>&nbsp;     * Calculate the distance for the given path
-<i class="no-highlight">44</i>&nbsp;     *
-<i class="no-highlight">45</i>&nbsp;     * @param path the list of vertices representing the path
-<i class="no-highlight">46</i>&nbsp;     * @return distance for the given path as double
-<i class="no-highlight">47</i>&nbsp;     * @throws NullPointerException if {@code path} is incorrect and contains more than one vertex
-<i class="no-highlight">48</i>&nbsp;     */
-<i class="no-highlight">49</i>&nbsp;    default double getDistance(List&lt;T&gt; path) {
-<b class="fc"><i class="no-highlight">50</i>&nbsp;        return IntStream</b>
-<b class="fc"><i class="no-highlight">51</i>&nbsp;                .range(1, path.size())</b>
-<b class="fc"><i class="no-highlight">52</i>&nbsp;                .mapToObj(i -&gt; edges(path.get(i - 1)).get(path.get(i)))</b>
-<b class="fc"><i class="no-highlight">53</i>&nbsp;                .mapToDouble(Number::doubleValue)</b>
-<b class="fc"><i class="no-highlight">54</i>&nbsp;                .sum();</b>
-<i class="no-highlight">55</i>&nbsp;    }
-<i class="no-highlight">56</i>&nbsp;
-<i class="no-highlight">57</i>&nbsp;    /**
-<i class="no-highlight">58</i>&nbsp;     * Creates a Graph object by given schema.
-<i class="no-highlight">59</i>&nbsp;     *
-<i class="no-highlight">60</i>&nbsp;     * In a graph schema, each vertex is assigned an edge map.
-<i class="no-highlight">61</i>&nbsp;     * If the vertex has no edges, then it should be assigned an empty map.
-<i class="no-highlight">62</i>&nbsp;     *
-<i class="no-highlight">63</i>&nbsp;     * @param schema of the graph
-<i class="no-highlight">64</i>&nbsp;     * @param &lt;T&gt;    the type of vertex in this graph
-<i class="no-highlight">65</i>&nbsp;     * @return graph object with given schema
-<i class="no-highlight">66</i>&nbsp;     */
-<i class="no-highlight">67</i>&nbsp;    static &lt;T&gt; Graph&lt;T&gt; of(Map&lt;T, Map&lt;T, Number&gt;&gt; schema) {
-<b class="fc"><i class="no-highlight">68</i>&nbsp;        return () -&gt; schema;</b>
-<i class="no-highlight">69</i>&nbsp;    }
-<i class="no-highlight">70</i>&nbsp;}
+<i class="no-highlight">19</i>&nbsp;     * @return the graph scheme
+<i class="no-highlight">20</i>&nbsp;     */
+<i class="no-highlight">21</i>&nbsp;    Map&lt;T, Map&lt;T, Number&gt;&gt; schema();
+<i class="no-highlight">22</i>&nbsp;
+<i class="no-highlight">23</i>&nbsp;    /**
+<i class="no-highlight">24</i>&nbsp;     * Returns the edges of the given vertex,
+<i class="no-highlight">25</i>&nbsp;     * or {@code null} if this graph contains no given vertex.
+<i class="no-highlight">26</i>&nbsp;     *
+<i class="no-highlight">27</i>&nbsp;     * &lt;p&gt;A return value of {@code null} does not &lt;i&gt;necessarily&lt;/i&gt;
+<i class="no-highlight">28</i>&nbsp;     * indicate that the specified vertex is not present in the graph;
+<i class="no-highlight">29</i>&nbsp;     * it&#39;s also possible that in the graph schema, {@code null} was specified
+<i class="no-highlight">30</i>&nbsp;     * for the edges of this vertex instead of an empty map.
+<i class="no-highlight">31</i>&nbsp;     *
+<i class="no-highlight">32</i>&nbsp;     * @param vertex vertex
+<i class="no-highlight">33</i>&nbsp;     * @return all links for the given vertex
+<i class="no-highlight">34</i>&nbsp;     * or null if no such vertex in the graph
+<i class="no-highlight">35</i>&nbsp;     */
+<i class="no-highlight">36</i>&nbsp;    default Map&lt;T, Number&gt; edges(T vertex) {
+<b class="fc"><i class="no-highlight">37</i>&nbsp;        return schema().get(vertex);</b>
+<i class="no-highlight">38</i>&nbsp;    }
+<i class="no-highlight">39</i>&nbsp;
+<i class="no-highlight">40</i>&nbsp;    /**
+<i class="no-highlight">41</i>&nbsp;     * Calculate the distance for the given path
+<i class="no-highlight">42</i>&nbsp;     *
+<i class="no-highlight">43</i>&nbsp;     * @param path the list of vertices representing the path
+<i class="no-highlight">44</i>&nbsp;     * @return distance for the given path as double
+<i class="no-highlight">45</i>&nbsp;     * @throws NullPointerException if {@code path} is incorrect and contains more than one vertex
+<i class="no-highlight">46</i>&nbsp;     */
+<i class="no-highlight">47</i>&nbsp;    default double getDistance(List&lt;T&gt; path) {
+<b class="fc"><i class="no-highlight">48</i>&nbsp;        return IntStream</b>
+<b class="fc"><i class="no-highlight">49</i>&nbsp;                .range(1, path.size())</b>
+<b class="fc"><i class="no-highlight">50</i>&nbsp;                .mapToObj(i -&gt; edges(path.get(i - 1)).get(path.get(i)))</b>
+<b class="fc"><i class="no-highlight">51</i>&nbsp;                .mapToDouble(Number::doubleValue)</b>
+<b class="fc"><i class="no-highlight">52</i>&nbsp;                .sum();</b>
+<i class="no-highlight">53</i>&nbsp;    }
+<i class="no-highlight">54</i>&nbsp;
+<i class="no-highlight">55</i>&nbsp;    /**
+<i class="no-highlight">56</i>&nbsp;     * Creates a Graph object by given schema.
+<i class="no-highlight">57</i>&nbsp;     *
+<i class="no-highlight">58</i>&nbsp;     * In a graph schema, each vertex is assigned an edge map.
+<i class="no-highlight">59</i>&nbsp;     * If the vertex has no edges, then it should be assigned an empty map.
+<i class="no-highlight">60</i>&nbsp;     *
+<i class="no-highlight">61</i>&nbsp;     * @param schema of the graph
+<i class="no-highlight">62</i>&nbsp;     * @param &lt;T&gt;    the type of vertex in this graph
+<i class="no-highlight">63</i>&nbsp;     * @return graph object with given schema
+<i class="no-highlight">64</i>&nbsp;     */
+<i class="no-highlight">65</i>&nbsp;    static &lt;T&gt; Graph&lt;T&gt; of(Map&lt;T, Map&lt;T, Number&gt;&gt; schema) {
+<b class="fc"><i class="no-highlight">66</i>&nbsp;        return () -&gt; schema;</b>
+<i class="no-highlight">67</i>&nbsp;    }
+<i class="no-highlight">68</i>&nbsp;}
 </div>
 </pre>
 </div>
@@ -182,7 +180,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-01-03 21:07</div>
+    <div style="float:right;">generated on 2022-01-04 18:33</div>
 </div>
 </body>
 </html>
