@@ -14,7 +14,10 @@ import java.util.stream.IntStream;
 @FunctionalInterface
 public interface Graph<T> {
     /**
-     * Schema of the graph.
+     * The schema of this graph.
+     *
+     * In a graph schema, each vertex is assigned an edge map.
+     * If the vertex has no edges, then it should be assigned an empty map.
      *
      * @return the graph scheme
      */
