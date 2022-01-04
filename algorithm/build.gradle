@@ -1,4 +1,5 @@
 plugins {
+    id 'groovy'
     id 'java-library'
     id 'maven-publish'
 }
@@ -41,4 +42,22 @@ publishing {
             }
         }
     }
+}
+
+dependencies {
+    // Spock Framework
+    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
+    testImplementation 'org.codehaus.groovy:groovy-all:3.0.9'
+
+    // Spock Reports
+    testRuntimeClasspath( "com.athaydes:spock-reports:2.1.1-groovy-3.0" ) {
+        transitive = false // this avoids affecting your version of Groovy/Spock
+    }
+    // Required for spock-reports
+    testImplementation 'org.slf4j:slf4j-api:1.7.32'
+    testRuntimeClasspath 'org.slf4j:slf4j-simple:1.7.32'
+}
+
+test {
+    useJUnitPlatform()
 }
