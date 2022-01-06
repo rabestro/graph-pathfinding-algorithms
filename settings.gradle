@@ -1,1 +1,2 @@
-rootProject.name = 'search-algorithm'
+rootProject.name = 'graphs-algorithms'
+include 'algorithm', 'application'

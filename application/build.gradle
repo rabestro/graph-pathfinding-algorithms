@@ -1,0 +1,13 @@
+plugins {
+    id 'application'
+}
+
+dependencies {
+    implementation project(':algorithm')
+}
+
+application {
+    mainModule = 'lv.id.jc.application'
+    mainClass = 'lv.id.jc.application.GraphApp'
+    applicationDefaultJvmArgs = ['-Dgreeting.language=en']
+}

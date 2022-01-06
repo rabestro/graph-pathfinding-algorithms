@@ -33,3 +33,5 @@ out/
 ## OS X
 ##############################
 .DS_Store
+/algorithm/gradle.properties
+/sample/gradle.properties

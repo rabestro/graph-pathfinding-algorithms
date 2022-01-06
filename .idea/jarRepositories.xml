@@ -16,5 +16,10 @@
       <option name="name" value="MavenRepo" />
       <option name="url" value="https://repo.maven.apache.org/maven2/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="Algorithms" />
+      <option name="name" value="Algorithms" />
+      <option name="url" value="https://maven.pkg.github.com/rabestro/algorithms" />
+    </remote-repository>
   </component>
 </project>

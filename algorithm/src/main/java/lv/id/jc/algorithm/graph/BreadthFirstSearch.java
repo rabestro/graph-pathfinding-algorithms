@@ -1,5 +1,6 @@
 package lv.id.jc.algorithm.graph;
 
+import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -11,18 +12,18 @@ import static java.util.stream.Stream.iterate;
 
 /**
  * Algorithm for finding the shortest paths between nodes in a graph.
- *
+ * <p>
  * The algorithm doesn't take into account the distance between nodes.
  *
- * @author Jegors Čemisovs
  * @param <T> the type of vertex
+ * @author Jegors Čemisovs
  * @since 1.0
  */
 public class BreadthFirstSearch<T> implements SearchAlgorithm<T> {
 
     @Override
     public List<T> findPath(Graph<T> graph, T source, T target) {
-        var queue = new LinkedList<T>();
+        var queue = new ArrayDeque<T>();
         var visited = new HashSet<T>();
         var previous = new HashMap<T, T>();
         queue.add(source);

@@ -1,4 +1,4 @@
-package graph
+package lv.id.jc.graph
 
 import lv.id.jc.algorithm.graph.DijkstrasAlgorithm
 import lv.id.jc.algorithm.graph.Graph
