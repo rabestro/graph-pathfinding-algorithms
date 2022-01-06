@@ -2,6 +2,10 @@ plugins {
     id 'application'
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+}
+
 dependencies {
     implementation project(':algorithm')
 }
