@@ -3,7 +3,6 @@ plugins {
     id 'java-library'
     id 'maven-publish'
 }
-sourceCompatibility = JavaVersion.VERSION_17
 
 group 'lv.id.jc'
 version '1.1'
