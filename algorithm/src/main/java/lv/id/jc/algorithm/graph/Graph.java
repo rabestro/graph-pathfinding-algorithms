@@ -14,8 +14,22 @@ import java.util.stream.IntStream;
 @FunctionalInterface
 public interface Graph<T> {
     /**
-     * The schema of this graph.
+     * Creates a Graph object by given schema.
+     * <p>
+     * In a graph schema, each vertex is assigned an edge map.
+     * If the vertex has no edges, then it should be assigned an empty map.
      *
+     * @param schema of the graph
+     * @param <T>    the type of vertex in this graph
+     * @return graph object with given schema
+     */
+    static <T> Graph<T> of(Map<T, Map<T, Number>> schema) {
+        return () -> schema;
+    }
+
+    /**
+     * The schema of this graph.
+     * <p>
      * In a graph schema, each vertex is assigned an edge map.
      * If the vertex has no edges, then it should be assigned an empty map.
      *
@@ -53,19 +67,5 @@ public interface Graph<T> {
                 .mapToObj(i -> edges(path.get(i - 1)).get(path.get(i)))
                 .mapToDouble(Number::doubleValue)
                 .sum();
-    }
-
-    /**
-     * Creates a Graph object by given schema.
-     *
-     * In a graph schema, each vertex is assigned an edge map.
-     * If the vertex has no edges, then it should be assigned an empty map.
-     *
-     * @param schema of the graph
-     * @param <T>    the type of vertex in this graph
-     * @return graph object with given schema
-     */
-    static <T> Graph<T> of(Map<T, Map<T, Number>> schema) {
-        return () -> schema;
     }
 }

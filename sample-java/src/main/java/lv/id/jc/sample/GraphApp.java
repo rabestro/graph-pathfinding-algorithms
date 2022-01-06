@@ -1,4 +1,4 @@
-package lv.id.jc.application;
+package lv.id.jc.sample;
 
 import lv.id.jc.algorithm.graph.BreadthFirstSearch;
 import lv.id.jc.algorithm.graph.DijkstrasAlgorithm;

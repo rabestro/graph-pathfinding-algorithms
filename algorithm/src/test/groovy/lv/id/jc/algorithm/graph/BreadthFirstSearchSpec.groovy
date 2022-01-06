@@ -1,4 +1,4 @@
-package lv.id.jc.graph
+package lv.id.jc.algorithm.graph
 
 import lv.id.jc.algorithm.graph.BreadthFirstSearch
 import lv.id.jc.algorithm.graph.Graph
@@ -14,20 +14,20 @@ class BreadthFirstSearchSpec extends Specification {
     def algorithm = new BreadthFirstSearch()
 
     def 'should find a route for simple graph'() {
-        given: 'A simple graph'
+        given:
         def graph = Graph.of([
                 A: [B: 7, C: 2],
                 B: [A: 3, C: 5],
                 C: [A: 1, B: 3]
         ])
 
-        when: 'we use Breadth First Search algorithm to find a path'
+        when:
         def path = algorithm.findPath(graph, source, target)
 
-        then: 'we get the shortest path'
+        then:
         path == shortest
 
-        and: 'the distance calculated correctly'
+        and:
         graph.getDistance(path) == time as double
 
         where:
@@ -39,7 +39,7 @@ class BreadthFirstSearchSpec extends Specification {
     }
 
     def 'should find a route for complex graph'() {
-        given: 'A complex graph'
+        given:
         def graph = Graph.of([
                 A: [B: 1],
                 B: [A: 1, D: 1],
@@ -48,13 +48,13 @@ class BreadthFirstSearchSpec extends Specification {
                 E: [F: 1],
                 F: [D: 1, E: 1]])
 
-        when: 'we use Breadth First Search algorithm to find a path'
+        when:
         def path = algorithm.findPath(graph, source, target)
 
-        then: 'we get the shortest path'
+        then:
         path == shortest
 
-        and: 'the distance calculated correctly'
+        and:
         graph.getDistance(path) == time as double
 
         where:
@@ -72,13 +72,13 @@ class BreadthFirstSearchSpec extends Specification {
     }
 
     def 'should thrown NPE path for an empty graph'() {
-        given: 'an empty graph'
+        given:
         def graph = Graph.of([:])
 
-        when: "we use Dijkstra's algorithm to find a path"
+        when:
         algorithm.findPath(graph, 'A', 'B')
 
-        then: 'the exception was thrown'
+        then:
         thrown NullPointerException
     }
 
@@ -86,10 +86,10 @@ class BreadthFirstSearchSpec extends Specification {
         given: 'a simple graph with no edge between nodes'
         def graph = Graph.of([A: [:], B: [:]])
 
-        when: 'we use Breadth First Search algorithm to find a path'
+        when:
         def path = algorithm.findPath(graph, 'A', 'B')
 
-        then: 'we get an empty path'
+        then:
         path == []
     }
 }

@@ -1,4 +1,4 @@
-package lv.id.jc.graph
+package lv.id.jc.algorithm.graph
 
 import lv.id.jc.algorithm.graph.Graph
 import spock.lang.Narrative
