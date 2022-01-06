@@ -1,3 +1,5 @@
+package lv.id.jc.algorithm.graph
+
 import lv.id.jc.algorithm.graph.DijkstrasAlgorithm
 import lv.id.jc.algorithm.graph.Graph
 import spock.lang.*

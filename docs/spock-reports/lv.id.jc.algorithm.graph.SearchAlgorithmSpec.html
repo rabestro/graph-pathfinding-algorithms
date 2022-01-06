@@ -244,14 +244,14 @@ div.footer {
 </style>
 </head>
 <body>
-<h2>Report for graph.SearchAlgorithmSpec</h2>
+<h2>Report for lv.id.jc.algorithm.graph.SearchAlgorithmSpec</h2>
 <hr></hr>
 <div class='back-link'>
 <a href='index.html'>&lt;&lt; Back</a>
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Tue Jan 04 19:56:49 EET 2022 by jegors.cemisovs</div>
+<div class='date-test-ran'>Created on Thu Jan 06 23:11:33 EET 2022 by jegors.cemisovs</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -272,7 +272,7 @@ div.footer {
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.015 seconds</td>
+<td>0.012 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -305,12 +305,6 @@ div.footer {
 <div class='block-kind'>Given:</div>
 </td>
 <td>
-<div class='block-text'>A complex graph sample</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
 <pre class='block-source'>def graph = Graph.of([
         A: [B: 5, H: 2],
         B: [A: 5, C: 7],
@@ -328,12 +322,6 @@ div.footer {
 <div class='block-kind'>When:</div>
 </td>
 <td>
-<div class='block-text'>we use Breadth First Search algorithm for the first route</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
 <pre class='block-source'>def routeOne = bfsAlgorithm.findPath(graph, source, target)</pre>
 </td>
 </tr>
@@ -341,12 +329,6 @@ div.footer {
 <td>
 <div class='block-kind'>And:</div>
 </td>
-<td>
-<div class='block-text'>we use Dijkstras algorithm for the second route</div>
-</td>
-</tr>
-<tr>
-<td></td>
 <td>
 <pre class='block-source'>def routeTwo = dijkstras.findPath(graph, source, target)</pre>
 </td>
@@ -356,12 +338,6 @@ div.footer {
 <div class='block-kind'>Then:</div>
 </td>
 <td>
-<div class='block-text'>the first route is the shortest</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
 <pre class='block-source'>routeOne == shortest</pre>
 </td>
 </tr>
@@ -370,12 +346,6 @@ div.footer {
 <div class='block-kind'>And:</div>
 </td>
 <td>
-<div class='block-text'>the second route is the fastest</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
 <pre class='block-source'>routeTwo == fastest</pre>
 </td>
 </tr>
@@ -383,12 +353,6 @@ div.footer {
 <td>
 <div class='block-kind'>And:</div>
 </td>
-<td>
-<div class='block-text'>the distance calculated correctly</div>
-</td>
-</tr>
-<tr>
-<td></td>
 <td>
 <pre class='block-source'>graph.getDistance(routeOne) == d1 as double
 graph.getDistance(routeTwo) == d2 as double</pre>

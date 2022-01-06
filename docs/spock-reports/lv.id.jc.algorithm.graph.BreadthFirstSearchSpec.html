@@ -244,14 +244,14 @@ div.footer {
 </style>
 </head>
 <body>
-<h2>Report for graph.DijkstrasAlgorithmSpec</h2>
+<h2>Report for lv.id.jc.algorithm.graph.BreadthFirstSearchSpec</h2>
 <hr></hr>
 <div class='back-link'>
 <a href='index.html'>&lt;&lt; Back</a>
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Tue Jan 04 19:56:49 EET 2022 by jegors.cemisovs</div>
+<div class='date-test-ran'>Created on Thu Jan 06 23:11:33 EET 2022 by jegors.cemisovs</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -266,24 +266,24 @@ div.footer {
 </thead>
 <tbody>
 <tr>
-<td>5</td>
-<td>5</td>
+<td>4</td>
+<td>4</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.037 seconds</td>
+<td>0.065 seconds</td>
 </tr>
 </tbody>
 </table>
 </div>
-<pre class='title'>Dijkstra's Algorithm</pre>
-<pre class='narrative'>Dijkstra's algorithm is an algorithm for finding the fastest paths between nodes in a graph</pre>
+<pre class='title'>Breadth First Search Algorithm</pre>
+<pre class='narrative'>Breadth First Search algorithm for finding the shortest paths between nodes in a graph</pre>
 <div class='issues'>
 <div>See:</div>
 <ul>
 <li>
-<a href='https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm'>https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm</a>
+<a href='https://en.wikipedia.org/wiki/Breadth-first_search'>https://en.wikipedia.org/wiki/Breadth-first_search</a>
 </li>
 </ul>
 </div>
@@ -296,16 +296,13 @@ div.footer {
 <tbody>
 <ul id='toc'>
 <li>
-<a href='#1208189286' class='feature-toc-pass'>should find a route for a simple graph</a>
+<a href='#942393799' class='feature-toc-pass'>should find a route for simple graph</a>
 </li>
 <li>
-<a href='#1877950697' class='feature-toc-pass'>should find a route for a medium graph</a>
+<a href='#-928009641' class='feature-toc-pass'>should find a route for complex graph</a>
 </li>
 <li>
-<a href='#-1278284136' class='feature-toc-pass'>should find a route for a complex graph</a>
-</li>
-<li>
-<a href='#-1670873817' class='feature-toc-pass'>should thrown NPE for an empty graph</a>
+<a href='#-2095690062' class='feature-toc-pass'>should thrown NPE path for an empty graph</a>
 </li>
 <li>
 <a href='#-498380623' class='feature-toc-pass'>should return an empty path if can't find a route</a>
@@ -313,8 +310,8 @@ div.footer {
 </ul>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='1208189286'>
-<span>should find a route for a simple graph</span>
+<div class='feature-description' id='942393799'>
+<span>should find a route for simple graph</span>
 <span style='float: right; font-size: 60%;'>
 <a href='#toc'>Return</a>
 </span>
@@ -325,12 +322,6 @@ div.footer {
 <td>
 <div class='block-kind'>Given:</div>
 </td>
-<td>
-<div class='block-text'>A simple graph</div>
-</td>
-</tr>
-<tr>
-<td></td>
 <td>
 <pre class='block-source'>def graph = Graph.of([
         A: [B: 7, C: 2],
@@ -344,12 +335,6 @@ div.footer {
 <div class='block-kind'>When:</div>
 </td>
 <td>
-<div class='block-text'>we use Dijkstra's algorithm to find a path</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
 <pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
 </td>
 </tr>
@@ -358,25 +343,13 @@ div.footer {
 <div class='block-kind'>Then:</div>
 </td>
 <td>
-<div class='block-text'>we get the fastest way</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
-<pre class='block-source'>path == fastest</pre>
+<pre class='block-source'>path == shortest</pre>
 </td>
 </tr>
 <tr>
 <td>
 <div class='block-kind'>And:</div>
 </td>
-<td>
-<div class='block-text'>the distance calculated correctly</div>
-</td>
-</tr>
-<tr>
-<td></td>
 <td>
 <pre class='block-source'>graph.getDistance(path) == time as double</pre>
 </td>
@@ -393,7 +366,7 @@ div.footer {
 <th class='ex-header'>source</th>
 <th class='ex-header'>target</th>
 <th class='ex-header'>time</th>
-<th class='ex-header'>fastest</th>
+<th class='ex-header'>shortest</th>
 </tr>
 </thead>
 <tbody>
@@ -405,24 +378,24 @@ div.footer {
 <td class='ex-result'>OK</td>
 </tr>
 <tr class='ex-pass'>
-<td class='ex-value'>B</td>
-<td class='ex-value'>B</td>
-<td class='ex-value'>0</td>
-<td class='ex-value'>[B]</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>C</td>
-<td class='ex-value'>C</td>
-<td class='ex-value'>0</td>
-<td class='ex-value'>[C]</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
 <td class='ex-value'>A</td>
 <td class='ex-value'>B</td>
+<td class='ex-value'>7</td>
+<td class='ex-value'>[A, B]</td>
+<td class='ex-result'>OK</td>
+</tr>
+<tr class='ex-pass'>
+<td class='ex-value'>B</td>
+<td class='ex-value'>C</td>
 <td class='ex-value'>5</td>
-<td class='ex-value'>[A, C, B]</td>
+<td class='ex-value'>[B, C]</td>
+<td class='ex-result'>OK</td>
+</tr>
+<tr class='ex-pass'>
+<td class='ex-value'>C</td>
+<td class='ex-value'>B</td>
+<td class='ex-value'>3</td>
+<td class='ex-value'>[C, B]</td>
 <td class='ex-result'>OK</td>
 </tr>
 </tbody>
@@ -435,8 +408,8 @@ div.footer {
 </tr>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='1877950697'>
-<span>should find a route for a medium graph</span>
+<div class='feature-description' id='-928009641'>
+<span>should find a route for complex graph</span>
 <span style='float: right; font-size: 60%;'>
 <a href='#toc'>Return</a>
 </span>
@@ -448,31 +421,19 @@ div.footer {
 <div class='block-kind'>Given:</div>
 </td>
 <td>
-<div class='block-text'>A medium graph</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
 <pre class='block-source'>def graph = Graph.of([
-        A: [B: 5],
-        B: [A: 5, C: 10],
-        C: [B: 20, D: 5],
-        D: [E: 5],
-        E: [B: 5]
-])</pre>
+A: [B: 1],
+B: [A: 1, D: 1],
+C: [A: 1],
+D: [C: 1, E: 1],
+E: [F: 1],
+F: [D: 1, E: 1]])</pre>
 </td>
 </tr>
 <tr>
 <td>
 <div class='block-kind'>When:</div>
 </td>
-<td>
-<div class='block-text'>we use Dijkstra's algorithm to find a path</div>
-</td>
-</tr>
-<tr>
-<td></td>
 <td>
 <pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
 </td>
@@ -482,13 +443,7 @@ div.footer {
 <div class='block-kind'>Then:</div>
 </td>
 <td>
-<div class='block-text'>we get the fastest way</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
-<pre class='block-source'>path == fastest</pre>
+<pre class='block-source'>path == shortest</pre>
 </td>
 </tr>
 <tr>
@@ -496,13 +451,15 @@ div.footer {
 <div class='block-kind'>And:</div>
 </td>
 <td>
-<div class='block-text'>the distance calculated correctly</div>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
 </td>
 </tr>
 <tr>
-<td></td>
 <td>
-<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>time = shortest.size() - 1</pre>
 </td>
 </tr>
 <tr>
@@ -516,234 +473,58 @@ div.footer {
 <tr>
 <th class='ex-header'>source</th>
 <th class='ex-header'>target</th>
+<th class='ex-header'>shortest</th>
 <th class='ex-header'>time</th>
-<th class='ex-header'>fastest</th>
 </tr>
 </thead>
 <tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>A</td>
 <td class='ex-value'>A</td>
-<td class='ex-value'>0</td>
 <td class='ex-value'>[A]</td>
+<td class='ex-value'>0</td>
 <td class='ex-result'>OK</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>B</td>
 <td class='ex-value'>B</td>
-<td class='ex-value'>0</td>
 <td class='ex-value'>[B]</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>A</td>
-<td class='ex-value'>B</td>
-<td class='ex-value'>5</td>
-<td class='ex-value'>[A, B]</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>B</td>
-<td class='ex-value'>A</td>
-<td class='ex-value'>5</td>
-<td class='ex-value'>[B, A]</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>A</td>
-<td class='ex-value'>C</td>
-<td class='ex-value'>15</td>
-<td class='ex-value'>[A, B, C]</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>C</td>
-<td class='ex-value'>A</td>
-<td class='ex-value'>20</td>
-<td class='ex-value'>[C, D, E, B, A]</td>
-<td class='ex-result'>OK</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-<td>
-<div class='spec-status'>6/6 passed</div>
-</td>
-</tr>
-<tr>
-<td colspan='10'>
-<div class='feature-description' id='-1278284136'>
-<span>should find a route for a complex graph</span>
-<span style='float: right; font-size: 60%;'>
-<a href='#toc'>Return</a>
-</span>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Given:</div>
-</td>
-<td>
-<div class='block-text'>A complex graph</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
-<pre class='block-source'>def graph = Graph.of([
-        A: [B: 5, H: 2],
-        B: [A: 5, C: 7],
-        C: [B: 7, D: 3, G: 4],
-        D: [C: 20, E: 4],
-        E: [F: 5],
-        F: [G: 6],
-        G: [C: 4],
-        H: [G: 3]
-])</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>When:</div>
-</td>
-<td>
-<div class='block-text'>we use Dijkstra's algorithm to find a path</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
-<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Then:</div>
-</td>
-<td>
-<div class='block-text'>we get the fastest way</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
-<pre class='block-source'>path == fastest</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>And:</div>
-</td>
-<td>
-<div class='block-text'>the distance calculated correctly</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
-<pre class='block-source'>graph.getDistance(path) == time as double</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Examples:</div>
-</td>
-<td>
-<div class='spec-examples'>
-<table class='ex-table'>
-<thead>
-<tr>
-<th class='ex-header'>source</th>
-<th class='ex-header'>target</th>
-<th class='ex-header'>time</th>
-<th class='ex-header'>fastest</th>
-</tr>
-</thead>
-<tbody>
-<tr class='ex-pass'>
-<td class='ex-value'>A</td>
-<td class='ex-value'>A</td>
 <td class='ex-value'>0</td>
-<td class='ex-value'>[A]</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>B</td>
-<td class='ex-value'>B</td>
-<td class='ex-value'>0</td>
-<td class='ex-value'>[B]</td>
 <td class='ex-result'>OK</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>A</td>
 <td class='ex-value'>B</td>
-<td class='ex-value'>5</td>
 <td class='ex-value'>[A, B]</td>
+<td class='ex-value'>1</td>
 <td class='ex-result'>OK</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>B</td>
 <td class='ex-value'>A</td>
-<td class='ex-value'>5</td>
 <td class='ex-value'>[B, A]</td>
+<td class='ex-value'>1</td>
 <td class='ex-result'>OK</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>A</td>
 <td class='ex-value'>C</td>
-<td class='ex-value'>9</td>
-<td class='ex-value'>[A, H, G, C]</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>C</td>
-<td class='ex-value'>A</td>
-<td class='ex-value'>12</td>
-<td class='ex-value'>[C, B, A]</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>A</td>
-<td class='ex-value'>G</td>
-<td class='ex-value'>5</td>
-<td class='ex-value'>[A, H, G]</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>C</td>
-<td class='ex-value'>D</td>
+<td class='ex-value'>[A, B, D, C]</td>
 <td class='ex-value'>3</td>
-<td class='ex-value'>[C, D]</td>
 <td class='ex-result'>OK</td>
 </tr>
 <tr class='ex-pass'>
-<td class='ex-value'>D</td>
 <td class='ex-value'>C</td>
-<td class='ex-value'>19</td>
-<td class='ex-value'>[D, E, F, G, C]</td>
+<td class='ex-value'>A</td>
+<td class='ex-value'>[C, A]</td>
+<td class='ex-value'>1</td>
 <td class='ex-result'>OK</td>
 </tr>
 <tr class='ex-pass'>
+<td class='ex-value'>E</td>
 <td class='ex-value'>B</td>
-<td class='ex-value'>D</td>
-<td class='ex-value'>10</td>
-<td class='ex-value'>[B, C, D]</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>D</td>
-<td class='ex-value'>B</td>
-<td class='ex-value'>26</td>
-<td class='ex-value'>[D, E, F, G, C, B]</td>
-<td class='ex-result'>OK</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>D</td>
-<td class='ex-value'>H</td>
-<td class='ex-value'>33</td>
-<td class='ex-value'>[D, E, F, G, C, B, A, H]</td>
+<td class='ex-value'>[E, F, D, C, A, B]</td>
+<td class='ex-value'>5</td>
 <td class='ex-result'>OK</td>
 </tr>
 </tbody>
@@ -751,13 +532,13 @@ div.footer {
 </div>
 </td>
 <td>
-<div class='spec-status'>12/12 passed</div>
+<div class='spec-status'>7/7 passed</div>
 </td>
 </tr>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='-1670873817'>
-<span>should thrown NPE for an empty graph</span>
+<div class='feature-description' id='-2095690062'>
+<span>should thrown NPE path for an empty graph</span>
 <span style='float: right; font-size: 60%;'>
 <a href='#toc'>Return</a>
 </span>
@@ -768,12 +549,6 @@ div.footer {
 <td>
 <div class='block-kind'>Given:</div>
 </td>
-<td>
-<div class='block-text'>an empty graph</div>
-</td>
-</tr>
-<tr>
-<td></td>
 <td>
 <pre class='block-source'>def graph = Graph.of([:])</pre>
 </td>
@@ -783,12 +558,6 @@ div.footer {
 <div class='block-kind'>When:</div>
 </td>
 <td>
-<div class='block-text'>we use Dijkstra's algorithm to find a path</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
 <pre class='block-source'>algorithm.findPath(graph, 'A', 'B')</pre>
 </td>
 </tr>
@@ -796,12 +565,6 @@ div.footer {
 <td>
 <div class='block-kind'>Then:</div>
 </td>
-<td>
-<div class='block-text'>the exception was thrown</div>
-</td>
-</tr>
-<tr>
-<td></td>
 <td>
 <pre class='block-source'>thrown NullPointerException</pre>
 </td>
@@ -835,12 +598,6 @@ div.footer {
 <div class='block-kind'>When:</div>
 </td>
 <td>
-<div class='block-text'>we use Dijkstra's algorithm to find a path</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
 <pre class='block-source'>def path = algorithm.findPath(graph, 'A', 'B')</pre>
 </td>
 </tr>
@@ -848,12 +605,6 @@ div.footer {
 <td>
 <div class='block-kind'>Then:</div>
 </td>
-<td>
-<div class='block-text'>we get an empty path</div>
-</td>
-</tr>
-<tr>
-<td></td>
 <td>
 <pre class='block-source'>path == []</pre>
 </td>
