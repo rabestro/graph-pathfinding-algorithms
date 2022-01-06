@@ -1,5 +1,6 @@
 package lv.id.jc.algorithm.graph;
 
+import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -12,15 +13,15 @@ import static java.util.stream.Stream.iterate;
  * <p>
  * The algorithm uses information about edge's distance to find the fastest path.
  *
- * @author Jegors Čemisovs
  * @param <T> the type of vertex
+ * @author Jegors Čemisovs
  * @since 1.0
  */
 public class DijkstrasAlgorithm<T> implements SearchAlgorithm<T> {
 
     @Override
     public List<T> findPath(Graph<T> graph, T source, T target) {
-        var queue = new LinkedList<T>();
+        var queue = new ArrayDeque<T>();
         var distances = new HashMap<T, Double>();
         var previous = new HashMap<T, T>();
         queue.add(source);
