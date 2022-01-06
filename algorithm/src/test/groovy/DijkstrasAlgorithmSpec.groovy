@@ -1,5 +1,3 @@
-package lv.id.jc.graph
-
 import lv.id.jc.algorithm.graph.DijkstrasAlgorithm
 import lv.id.jc.algorithm.graph.Graph
 import spock.lang.*
@@ -12,20 +10,20 @@ class DijkstrasAlgorithmSpec extends Specification {
     def algorithm = new DijkstrasAlgorithm()
 
     def 'should find a route for a simple graph'() {
-        given: 'A simple graph'
+        given:
         def graph = Graph.of([
                 A: [B: 7, C: 2],
                 B: [A: 3, C: 5],
                 C: [A: 1, B: 3]
         ])
 
-        when: "we use Dijkstra's algorithm to find a path"
+        when:
         def path = algorithm.findPath(graph, source, target)
 
-        then: 'we get the fastest way'
+        then:
         path == fastest
 
-        and: 'the distance calculated correctly'
+        and:
         graph.getDistance(path) == time as double
 
         where:
@@ -37,7 +35,7 @@ class DijkstrasAlgorithmSpec extends Specification {
     }
 
     def 'should find a route for a medium graph'() {
-        given: 'A medium graph'
+        given:
         def graph = Graph.of([
                 A: [B: 5],
                 B: [A: 5, C: 10],
@@ -46,13 +44,13 @@ class DijkstrasAlgorithmSpec extends Specification {
                 E: [B: 5]
         ])
 
-        when: "we use Dijkstra's algorithm to find a path"
+        when:
         def path = algorithm.findPath(graph, source, target)
 
-        then: 'we get the fastest way'
+        then:
         path == fastest
 
-        and: 'the distance calculated correctly'
+        and:
         graph.getDistance(path) == time as double
 
         where:
@@ -66,7 +64,7 @@ class DijkstrasAlgorithmSpec extends Specification {
     }
 
     def 'should find a route for a complex graph'() {
-        given: 'A complex graph'
+        given:
         def graph = Graph.of([
                 A: [B: 5, H: 2],
                 B: [A: 5, C: 7],
@@ -78,13 +76,13 @@ class DijkstrasAlgorithmSpec extends Specification {
                 H: [G: 3]
         ])
 
-        when: "we use Dijkstra's algorithm to find a path"
+        when:
         def path = algorithm.findPath(graph, source, target)
 
-        then: 'we get the fastest way'
+        then:
         path == fastest
 
-        and: 'the distance calculated correctly'
+        and:
         graph.getDistance(path) == time as double
 
         where:
@@ -104,13 +102,13 @@ class DijkstrasAlgorithmSpec extends Specification {
     }
 
     def 'should thrown NPE for an empty graph'() {
-        given: 'an empty graph'
+        given:
         def graph = Graph.of([:])
 
-        when: "we use Dijkstra's algorithm to find a path"
+        when:
         algorithm.findPath(graph, 'A', 'B')
 
-        then: 'the exception was thrown'
+        then:
         thrown NullPointerException
     }
 
@@ -118,10 +116,10 @@ class DijkstrasAlgorithmSpec extends Specification {
         given: 'a simple graph with no edge between nodes'
         def graph = Graph.of([A: [:], B: [:]])
 
-        when: "we use Dijkstra's algorithm to find a path"
+        when:
         def path = algorithm.findPath(graph, 'A', 'B')
 
-        then: 'we get an empty path'
+        then:
         path == []
     }
 }

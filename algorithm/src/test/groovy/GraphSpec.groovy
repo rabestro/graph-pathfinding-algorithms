@@ -1,5 +1,3 @@
-package lv.id.jc.graph
-
 import lv.id.jc.algorithm.graph.Graph
 import spock.lang.Narrative
 import spock.lang.Specification

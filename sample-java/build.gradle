@@ -11,7 +11,6 @@ dependencies {
 }
 
 application {
-    mainModule = 'lv.id.jc.application'
-    mainClass = 'lv.id.jc.application.GraphApp'
-    applicationDefaultJvmArgs = ['-Dgreeting.language=en']
+    mainModule = 'lv.id.jc.sample'
+    mainClass = 'lv.id.jc.sample.GraphApp'
 }

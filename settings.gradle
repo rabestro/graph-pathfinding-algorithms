@@ -1,2 +1,2 @@
-rootProject.name = 'graphs-algorithms'
-include 'algorithm', 'application'
+rootProject.name = 'algorithms'
+include 'algorithm', 'sample-java', 'sample-groovy'
