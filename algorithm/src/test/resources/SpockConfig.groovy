@@ -1,5 +1,9 @@
-spockReports {
+report {
+    issueNamePrefix 'Issue #'
+    issueUrlPrefix 'https://github.com/rabestro/algorithms/issues/'
+}
 
+spockReports {
     set(['com.athaydes.spockframework.report.showCodeBlocks'                    : true,
          'com.athaydes.spockframework.report.outputDir'                         : '../docs/spock-reports',
          'com.athaydes.spockframework.report.projectName'                       : 'Graph search algorithms',

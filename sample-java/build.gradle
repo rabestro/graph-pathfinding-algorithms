@@ -14,3 +14,7 @@ application {
     mainModule = 'lv.id.jc.sample'
     mainClass = 'lv.id.jc.sample.GraphApp'
 }
+
+run {
+    standardInput = System.in
+}

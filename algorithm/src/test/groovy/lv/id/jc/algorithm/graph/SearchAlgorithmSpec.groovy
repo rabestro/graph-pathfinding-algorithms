@@ -1,10 +1,15 @@
 package lv.id.jc.algorithm.graph
 
+import spock.lang.Issue
+import spock.lang.See
 import spock.lang.Specification
 import spock.lang.Subject
 import spock.lang.Title
 
+@Issue("30")
 @Title("Comparison of two algorithms")
+@See("https://en.wikipedia.org/wiki/Breadth-first_search")
+@See("https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm")
 class SearchAlgorithmSpec extends Specification {
     @Subject
     def bfsAlgorithm = new BreadthFirstSearch()
