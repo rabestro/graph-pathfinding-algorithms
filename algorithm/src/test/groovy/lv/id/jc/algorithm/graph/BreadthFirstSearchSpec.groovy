@@ -1,7 +1,5 @@
 package lv.id.jc.algorithm.graph
 
-import lv.id.jc.algorithm.graph.BreadthFirstSearch
-import lv.id.jc.algorithm.graph.Graph
 import spock.lang.*
 
 @Title("Breadth First Search Algorithm")

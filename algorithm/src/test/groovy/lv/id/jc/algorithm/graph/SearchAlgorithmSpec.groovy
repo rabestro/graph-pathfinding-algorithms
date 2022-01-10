@@ -1,8 +1,5 @@
 package lv.id.jc.algorithm.graph
 
-import lv.id.jc.algorithm.graph.BreadthFirstSearch
-import lv.id.jc.algorithm.graph.DijkstrasAlgorithm
-import lv.id.jc.algorithm.graph.Graph
 import spock.lang.Specification
 import spock.lang.Subject
 import spock.lang.Title
@@ -16,7 +13,7 @@ class SearchAlgorithmSpec extends Specification {
     def dijkstras = new DijkstrasAlgorithm()
 
     def 'should find a route for a complex graph'() {
-        given:
+        given: "a complex graph with eight nodes"
         def graph = Graph.of([
                 A: [B: 5, H: 2],
                 B: [A: 5, C: 7],
@@ -28,19 +25,19 @@ class SearchAlgorithmSpec extends Specification {
                 H: [G: 3]
         ])
 
-        when:
+        when: "we use Breadth First Search algorithm for the first route"
         def routeOne = bfsAlgorithm.findPath(graph, source, target)
 
-        and:
+        and: "we use Dijkstra's algorithm for the second route"
         def routeTwo = dijkstras.findPath(graph, source, target)
 
-        then:
+        then: "the first route is the shortest"
         routeOne == shortest
 
-        and:
+        and: 'the second route is the fastest'
         routeTwo == fastest
 
-        and:
+        and: 'the distance calculated correctly'
         graph.getDistance(routeOne) == d1 as double
         graph.getDistance(routeTwo) == d2 as double
 
