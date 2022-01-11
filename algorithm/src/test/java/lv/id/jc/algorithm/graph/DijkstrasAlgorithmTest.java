@@ -64,7 +64,7 @@ class DijkstrasAlgorithmTest {
     }
 
     @Test
-    void findPathAA() {
+    void testFindPathAA() {
         // Java 8
 
         String source = "A";
@@ -87,7 +87,7 @@ class DijkstrasAlgorithmTest {
     }
 
     @Test
-    void findPathBB() {
+    void testFindPathBB() {
         // Java 11
 
         var source = "B";
@@ -96,10 +96,8 @@ class DijkstrasAlgorithmTest {
         var shortest = List.of("B");
         var fastest = List.of("B");
 
-        var actual = dijkstras.findPath(graph, source, target);
-
-        List<String> routeOne = bfsAlgorithm.findPath(graph, source, target);
-        List<String> routeTwo = dijkstras.findPath(graph, source, target);
+        var routeOne = bfsAlgorithm.findPath(graph, source, target);
+        var routeTwo = dijkstras.findPath(graph, source, target);
 
         assertEquals(shortest, routeOne);
         assertEquals(fastest, routeTwo);
@@ -109,25 +107,38 @@ class DijkstrasAlgorithmTest {
     }
 
     @Test
-    void findPathCD() {
+    void testFindPathCD() {
         var source = "C";
         var target = "D";
 
-        var expected = List.of("C", "D");
-        var actual = dijkstras.findPath(graph, source, target);
+        var shortest = List.of("C", "D");
+        var fastest = List.of("C", "D");
 
-        assertEquals(expected, actual);
+        var routeOne = bfsAlgorithm.findPath(graph, source, target);
+        var routeTwo = dijkstras.findPath(graph, source, target);
+
+        assertEquals(shortest, routeOne);
+        assertEquals(fastest, routeTwo);
+
+        assertEquals(3, graph.getDistance(shortest));
+        assertEquals(3, graph.getDistance(fastest));
     }
 
     @Test
-    void findPathDC() {
+    void testFindPathDC() {
         var source = "D";
         var target = "C";
+        var shortest = List.of("D", "C");
+        var fastest = List.of("D", "E", "F", "G", "C");
 
-        var expected = List.of("D", "E", "F", "G", "C");
-        var actual = dijkstras.findPath(graph, source, target);
+        var routeOne = bfsAlgorithm.findPath(graph, source, target);
+        var routeTwo = dijkstras.findPath(graph, source, target);
 
-        assertEquals(expected, actual);
+        assertEquals(shortest, routeOne);
+        assertEquals(fastest, routeTwo);
+
+        assertEquals(20, graph.getDistance(shortest));
+        assertEquals(19, graph.getDistance(fastest));
     }
 
 }
