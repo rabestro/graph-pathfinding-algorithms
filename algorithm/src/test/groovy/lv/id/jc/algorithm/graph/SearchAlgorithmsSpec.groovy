@@ -6,7 +6,7 @@ import spock.lang.*
 @Title("Comparison of two algorithms")
 @See("https://en.wikipedia.org/wiki/Breadth-first_search")
 @See("https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm")
-class SearchAlgorithmSpec extends Specification {
+class SearchAlgorithmsSpec extends Specification {
     @Subject
     def bfsAlgorithm = new BreadthFirstSearch()
 

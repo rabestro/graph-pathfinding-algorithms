@@ -11,7 +11,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DijkstrasAlgorithmTest {
+class SearchAlgorithmsTest {
 
     private SearchAlgorithm<String> bfsAlgorithm;
     private SearchAlgorithm<String> dijkstras;
