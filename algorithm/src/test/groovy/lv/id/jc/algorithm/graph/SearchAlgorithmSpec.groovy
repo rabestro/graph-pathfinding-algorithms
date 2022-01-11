@@ -1,10 +1,6 @@
 package lv.id.jc.algorithm.graph
 
-import spock.lang.Issue
-import spock.lang.See
-import spock.lang.Specification
-import spock.lang.Subject
-import spock.lang.Title
+import spock.lang.*
 
 @Issue("30")
 @Title("Comparison of two algorithms")
@@ -43,11 +39,11 @@ class SearchAlgorithmSpec extends Specification {
         routeTwo == fastest
 
         and: 'the distance calculated correctly'
-        graph.getDistance(routeOne) == d1 as double
-        graph.getDistance(routeTwo) == d2 as double
+        graph.getDistance(routeOne) == t1 as double
+        graph.getDistance(routeTwo) == t2 as double
 
         where:
-        source | target || d1 | shortest                  | d2 | fastest
+        source | target || t1 | shortest                  | t2 | fastest
         'A'    | 'A'    || 0  | ['A']                     | 0  | ['A']
         'B'    | 'B'    || 0  | ['B']                     | 0  | ['B']
         'A'    | 'B'    || 5  | ['A', 'B']                | 5  | ['A', 'B']
