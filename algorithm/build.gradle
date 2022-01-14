@@ -2,6 +2,15 @@ plugins {
     id 'groovy'
     id 'java-library'
     id 'maven-publish'
+    id 'org.sonarqube' version '3.3'
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "rabestro_algorithms"
+    property "sonar.organization", "rabestro"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
 }
 
 group 'lv.id.jc'
