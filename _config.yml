@@ -2,7 +2,7 @@ theme: jekyll-theme-minimal
 title: Algorithms
 author: Jegors Čemisovs
 email: jegors.cemisovs@outlook.lv
-description: > # this means to ignore newlines until "baseurl:"
+description: > 
   Graph pathfinding algorithms.
   
 # social links
