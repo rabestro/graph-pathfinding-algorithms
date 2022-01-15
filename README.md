@@ -7,8 +7,8 @@ There are implementations and tests for two algorithms:
 - [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
 - [Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 
-The implementation is written in Java 17. [API documentation](api) is available. 
-You can also see the [specifications](spock-reports) generated with the spock-reports.
+The implementation is written in Java 17. [API documentation](docs/api) is available. 
+You can also see the [specifications](docs/spock-reports) generated with the spock-reports.
 
 ## How to use the classes in your program
 
@@ -72,7 +72,7 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
         ])
 ```
 
-![Small Graph](assets/small.gif)
+![Small Graph](docs/assets/small.gif)
 
 
 ### Medium Graph Sample
@@ -87,7 +87,7 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
         ])
 ```
 
-![Medium Graph](assets/medium.gif)
+![Medium Graph](docs/assets/medium.gif)
 
 ### Complex Graph Sample
 
@@ -103,5 +103,5 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
                 H: [G: 3]
         ])
 ```
-![Complex Graph](assets/complex.gif)
+![Complex Graph](docs/assets/complex.gif)
 
