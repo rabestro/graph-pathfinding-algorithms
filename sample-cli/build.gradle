@@ -15,6 +15,10 @@ dependencies {
     implementation 'org.springframework.shell:spring-shell-starter:2.0.1.RELEASE'
 }
 
+bootJar {
+    launchScript()
+}
+
 group 'lv.id.jc'
 version '1.0-SNAPSHOT'
 
