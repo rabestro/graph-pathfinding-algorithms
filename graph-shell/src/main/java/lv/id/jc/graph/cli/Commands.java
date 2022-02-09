@@ -15,6 +15,7 @@ import org.springframework.shell.standard.ShellMethod;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 import java.util.Map;
 
@@ -56,7 +57,7 @@ public class Commands implements PromptProvider, InitializingBean, ConstraintVal
     }
 
     @ShellMethod("prints distance for the path")
-    public double distance(List<String> path) {
+    public double distance(@NotEmpty List<String> path) {
         return graph.getDistance(path);
     }
 
