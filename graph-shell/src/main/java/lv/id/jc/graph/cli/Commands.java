@@ -60,6 +60,13 @@ public class Commands implements PromptProvider, InitializingBean, ConstraintVal
         return graph.getDistance(path);
     }
 
+    /**
+     * Implementation of java bean verification for @Vertex annotation
+     *
+     * @param value   to check
+     * @param context of validation
+     * @return is value existing vertex in the graph scheme
+     */
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
         return graph.schema().containsKey(value);
