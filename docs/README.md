@@ -10,11 +10,13 @@ There are implementations and tests for two algorithms:
 The implementation is written in Java 17. [API documentation](https://algorithms.jc.id.lv/docs/api/) is available. You
 can also see the [specifications](https://algorithms.jc.id.lv/docs/spock-reports/) generated with the spock-reports.
 
-## How to use the classes in your program
+## How to use the algorithms in your program
 
-The first step is create a graph structure. The Graph interface is generic, and you can use any Java type for vertex and
-any [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) type for distance. You
-can check the operation of the algorithms using the [Graph Shell](GraphShell.md) program.
+The first step is to create a graph structure. The Graph interface is generic, so you can use any Java type for vertex
+and any [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) type for distance.
+You can play around with the algorithms using the [Graph Shell](_posts/2022-02-09-graph-shell.md) program. You can also
+see the use of these algorithms in the [Hypermetro](https://rabestro.github.io/hypermetro/) project, where they are
+utilized to find the optimal route.
 
 ### Example
 In the following Java code we create a graph structure with eight nodes. We use [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) class for vertex identification and [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) for the distance. You can see the graphic representation of the scheme [here](assets/complex.gif). 
