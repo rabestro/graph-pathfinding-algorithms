@@ -13,11 +13,13 @@ import org.springframework.shell.jline.PromptProvider;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 import java.util.List;
 import java.util.Map;
 
 @ShellComponent
-public class Commands implements PromptProvider, InitializingBean {
+public class Commands implements PromptProvider, InitializingBean, ConstraintValidator<Vertex, String> {
     private final SearchAlgorithm<String> bfgAlgorithm = new BreadthFirstSearch<>();
     private final SearchAlgorithm<String> dijkstrasAlgorithm = new DijkstrasAlgorithm<>();
 
@@ -39,12 +41,12 @@ public class Commands implements PromptProvider, InitializingBean {
     }
 
     @ShellMethod("finds the shortest path by using Breadth First Search Algorithm")
-    public List<String> shortest(String source, String target) {
+    public List<String> shortest(@Vertex String source, @Vertex String target) {
         return bfgAlgorithm.findPath(graph, source, target);
     }
 
     @ShellMethod("finds the fastest path by using Dijkstra's Algorithm")
-    public List<String> fastest(String source, String target) {
+    public List<String> fastest(@Vertex String source, @Vertex String target) {
         return dijkstrasAlgorithm.findPath(graph, source, target);
     }
 
@@ -56,5 +58,10 @@ public class Commands implements PromptProvider, InitializingBean {
     @ShellMethod("prints distance for the path")
     public double distance(List<String> path) {
         return graph.getDistance(path);
+    }
+
+    @Override
+    public boolean isValid(String value, ConstraintValidatorContext context) {
+        return graph.schema().containsKey(value);
     }
 }
