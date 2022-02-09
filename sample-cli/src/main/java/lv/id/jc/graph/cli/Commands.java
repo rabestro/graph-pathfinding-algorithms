@@ -1,4 +1,4 @@
-package lv.id.jc.sample;
+package lv.id.jc.graph.cli;
 
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import lv.id.jc.algorithm.graph.BreadthFirstSearch;

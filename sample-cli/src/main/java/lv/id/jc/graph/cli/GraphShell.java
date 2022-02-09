@@ -1,4 +1,4 @@
-package lv.id.jc.sample;
+package lv.id.jc.graph.cli;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
