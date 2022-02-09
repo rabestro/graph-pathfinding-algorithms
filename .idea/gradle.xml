@@ -13,6 +13,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/algorithm" />
+            <option value="$PROJECT_DIR$/graph-shell" />
             <option value="$PROJECT_DIR$/sample-groovy" />
             <option value="$PROJECT_DIR$/sample-java" />
           </set>
