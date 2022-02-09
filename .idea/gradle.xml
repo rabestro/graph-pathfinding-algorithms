@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/algorithm" />
             <option value="$PROJECT_DIR$/sample-groovy" />
             <option value="$PROJECT_DIR$/sample-java" />
+            <option value="$PROJECT_DIR$/sample-yaml" />
           </set>
         </option>
       </GradleProjectSettings>
