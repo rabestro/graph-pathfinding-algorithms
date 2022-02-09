@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 @ShellComponent
-public class Commands implements PromptProvider, InitializingBean, ConstraintValidator<Vertex, String> {
+public class Commands implements InitializingBean, PromptProvider, ConstraintValidator<Vertex, String> {
     private final SearchAlgorithm<String> bfgAlgorithm = new BreadthFirstSearch<>();
     private final SearchAlgorithm<String> dijkstrasAlgorithm = new DijkstrasAlgorithm<>();
 
@@ -39,6 +39,11 @@ public class Commands implements PromptProvider, InitializingBean, ConstraintVal
     @Override
     public AttributedString getPrompt() {
         return new AttributedString(graphName + ":> ", AttributedStyle.DEFAULT.foreground(AttributedStyle.YELLOW));
+    }
+
+    @Override
+    public boolean isValid(String vertex, ConstraintValidatorContext context) {
+        return graph.schema().containsKey(vertex);
     }
 
     @ShellMethod("finds the shortest path by using Breadth First Search Algorithm")
@@ -61,15 +66,4 @@ public class Commands implements PromptProvider, InitializingBean, ConstraintVal
         return graph.getDistance(path);
     }
 
-    /**
-     * Implementation of java bean verification for @Vertex annotation
-     *
-     * @param value   to check
-     * @param context of validation
-     * @return is value existing vertex in the graph scheme
-     */
-    @Override
-    public boolean isValid(String value, ConstraintValidatorContext context) {
-        return graph.schema().containsKey(value);
-    }
 }

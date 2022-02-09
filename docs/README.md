@@ -1,3 +1,7 @@
+---
+title: Graph search algorithms
+---
+
 # Graph search algorithms
 
 The project implements an interface for the weighted graph, as well as two algorithms for finding a path in the graph.
