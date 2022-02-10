@@ -121,3 +121,4 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
 
 ![Complex Graph](docs/assets/complex.gif)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=rabestro_algorithms&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=rabestro_algorithms)
