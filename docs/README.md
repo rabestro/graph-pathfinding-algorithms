@@ -14,9 +14,16 @@ can also see the [specifications](https://algorithms.jc.id.lv/docs/spock-reports
 
 The first step is to create a graph structure. The Graph interface is generic, so you can use any Java type for vertex
 and any [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) type for distance.
-You can play around with the algorithms using the [Graph Shell](_posts/2022-02-09-graph-shell.md) program. You can also
-see the use of these algorithms in the [Hypermetro](https://rabestro.github.io/hypermetro/) project, where they are
-utilized to find the optimal route.
+
+To demonstrate the work of search algorithms, I made a small console program. The program allows you to select one of three graph samples and search for a path using two algorithms. The source code of the program is located in `graph-shell` module.
+
+[![asciicast](https://asciinema.org/a/468058.svg)](https://asciinema.org/a/468058)
+
+### Usage in other projects
+
+These algorithms used in the [Hypermetro](https://rabestro.github.io/hypermetro/) project, where they are
+utilized to find the optimal route in the metro schema. 
+
 
 ### Example
 In the following Java code we create a graph structure with eight nodes. We use [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) class for vertex identification and [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) for the distance. You can see the graphic representation of the scheme [here](assets/complex.gif). 
