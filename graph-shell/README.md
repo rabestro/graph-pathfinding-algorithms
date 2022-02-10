@@ -1,5 +1,4 @@
 ---
-layout: post 
 title: Sample application: Graph Shell
 ---
 
