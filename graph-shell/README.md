@@ -1,5 +1,4 @@
 ---
-layout: post 
 title: Sample application: Graph Shell
 ---
 
@@ -12,19 +11,19 @@ To demonstrate the work of search algorithms, I made a small console program. Th
 To compile the program, use the command:
 
 ```shell
-~/algorithms/graph-shell$ gradle assemble
+$ gradle assemble
 ```
 
 This command will create an executable jar, so in Linux or macOS you may run the application by
 
 ```shell
-~/algorithms/graph-shell$ ./build/libs/graph-shell-1.0-SNAPSHOT.jar 
+$ ./build/libs/graph-shell-1.0-SNAPSHOT.jar 
 ```
 
 On the Windows machine you should run the application using java:
 
 ```shell
-~/algorithms/graph-shell$ java -jar ./build/libs/graph-shell-1.0-SNAPSHOT.jar 
+$ java -jar ./build/libs/graph-shell-1.0-SNAPSHOT.jar 
 ```
 
 ## Using Graph Shell
@@ -38,13 +37,13 @@ graph=simple
 Alternatively you may specify the command line parameter when you run the application:
 
 ```shell
-~/algorithms/graph-shell$ ./build/libs/graph-shell-1.0-SNAPSHOT.jar --graph=medium
+$ ./build/libs/graph-shell-1.0-SNAPSHOT.jar --graph=medium
 ```
 
 After starting the program you will see the banner and the prompt indicating the current graph scheme.
 
 ```shell
-jegors@X570UD:~/IdeaProjects/algorithms/graph-shell$ ./build/libs/graph-shell-1.0-SNAPSHOT.jar 
+$ ./build/libs/graph-shell-1.0-SNAPSHOT.jar 
 
    _____                          _          _____   _              _   _
   / ____|                        | |        / ____| | |            | | | |
