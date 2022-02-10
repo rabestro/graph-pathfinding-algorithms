@@ -10,12 +10,9 @@ There are implementations and tests for two algorithms:
 The implementation is written in Java 17. [API documentation](https://algorithms.jc.id.lv/docs/api/) is available. You
 can also see the [specifications](https://algorithms.jc.id.lv/docs/spock-reports/) generated with the spock-reports.
 
-## How to use the algorithms in your program
+## Demo. Graph Shell
 
-The first step is to create a graph structure. The Graph interface is generic, so you can use any Java type for vertex
-and any [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) type for distance.
-
-To demonstrate the work of search algorithms, I made a small console program '[Graph Shell](graph-shell/README.md)'. The program allows you to select one of three graph samples and search for a path using two algorithms. The source code of the program is located in `graph-shell` module.
+To demonstrate the work of search algorithms, I made a small console program '[Graph Shell](graph-shell/README.md)'. The program allows you to select [one of three build-in graph samples](#Graph-Samples) and search for a path using two algorithms. The source code of the program is located in `graph-shell` module. 
 
 [![asciicast](https://asciinema.org/a/468058.svg)](https://asciinema.org/a/468058)
 
@@ -24,6 +21,11 @@ To demonstrate the work of search algorithms, I made a small console program '[G
 These algorithms used in the [Hypermetro](https://rabestro.github.io/hypermetro/) project, where they are
 utilized to find the optimal route in the metro schema. 
 
+
+## How to use the algorithms in your program
+
+The first step is to create a graph structure. The Graph interface is generic, so you can use any Java type for vertex
+and any [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) type for distance.
 
 ### Example
 In the following Java code we create a graph structure with eight nodes. We use [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) class for vertex identification and [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) for the distance. You can see the graphic representation of the scheme [here](docs/assets/complex.gif). 
@@ -72,6 +74,8 @@ routeTwo == ['D', 'E', 'F', 'G', 'C']
 ## Unit Tests
 
 Tests are written in Groove language. For unit testing, the [Spock Framework](https://spockframework.org/) was used. To test the operation of the algorithms, the following sample graphs were created.
+
+## Graph Samples
 
 ### Small Graph Sample
 
