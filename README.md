@@ -7,19 +7,26 @@ There are implementations and tests for two algorithms:
 - [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
 - [Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 
-The implementation is written in Java 17. [API documentation](https://algorithms.jc.id.lv/api/) is available. You
-can also see the [specifications](https://algorithms.jc.id.lv/spock-reports/) generated with the spock-reports.
+The implementation is written in Java 17. [API documentation](https://algorithms.jc.id.lv/docs/api/) is available. You
+can also see the [specifications](https://algorithms.jc.id.lv/docs/spock-reports/) generated with the spock-reports.
 
 ## How to use the algorithms in your program
 
 The first step is to create a graph structure. The Graph interface is generic, so you can use any Java type for vertex
 and any [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) type for distance.
-You can play around with the algorithms using the [Graph Shell](_posts/2022-02-09-graph-shell.md) program. You can also
-see the use of these algorithms in the [Hypermetro](https://rabestro.github.io/hypermetro/) project, where they are
-utilized to find the optimal route.
+
+To demonstrate the work of search algorithms, I made a small console program '[Graph Shell](graph-shell/README.md)'. The program allows you to select one of three graph samples and search for a path using two algorithms. The source code of the program is located in `graph-shell` module.
+
+[![asciicast](https://asciinema.org/a/468058.svg)](https://asciinema.org/a/468058)
+
+### Usage in other projects
+
+These algorithms used in the [Hypermetro](https://rabestro.github.io/hypermetro/) project, where they are
+utilized to find the optimal route in the metro schema. 
+
 
 ### Example
-In the following Java code we create a graph structure with eight nodes. We use [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) class for vertex identification and [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) for the distance. You can see the graphic representation of the scheme [here](assets/complex.gif). 
+In the following Java code we create a graph structure with eight nodes. We use [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) class for vertex identification and [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) for the distance. You can see the graphic representation of the scheme [here](docs/assets/complex.gif). 
 
 ```java
 var graph = Graph.of(Map.of(
@@ -76,7 +83,7 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
         ])
 ```
 
-![Small Graph](assets/small.gif)
+![Small Graph](docs/assets/small.gif)
 
 
 ### Medium Graph Sample
@@ -91,7 +98,7 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
         ])
 ```
 
-![Medium Graph](assets/medium.gif)
+![Medium Graph](docs/assets/medium.gif)
 
 ### Complex Graph Sample
 
@@ -108,5 +115,5 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
         ])
 ```
 
-![Complex Graph](assets/complex.gif)
+![Complex Graph](docs/assets/complex.gif)
 
