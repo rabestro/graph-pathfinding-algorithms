@@ -15,7 +15,7 @@ can also see the [specifications](https://algorithms.jc.id.lv/docs/spock-reports
 The first step is to create a graph structure. The Graph interface is generic, so you can use any Java type for vertex
 and any [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) type for distance.
 
-To demonstrate the work of search algorithms, I made a small console program. The program allows you to select one of three graph samples and search for a path using two algorithms. The source code of the program is located in `graph-shell` module.
+To demonstrate the work of search algorithms, I made a small console program '[Graph Shell](graph-shell/README.md)'. The program allows you to select one of three graph samples and search for a path using two algorithms. The source code of the program is located in `graph-shell` module.
 
 [![asciicast](https://asciinema.org/a/468058.svg)](https://asciinema.org/a/468058)
 
@@ -26,7 +26,7 @@ utilized to find the optimal route in the metro schema.
 
 
 ### Example
-In the following Java code we create a graph structure with eight nodes. We use [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) class for vertex identification and [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) for the distance. You can see the graphic representation of the scheme [here](assets/complex.gif). 
+In the following Java code we create a graph structure with eight nodes. We use [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) class for vertex identification and [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) for the distance. You can see the graphic representation of the scheme [here](docs/assets/complex.gif). 
 
 ```java
 var graph = Graph.of(Map.of(
@@ -83,7 +83,7 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
         ])
 ```
 
-![Small Graph](assets/small.gif)
+![Small Graph](docs/assets/small.gif)
 
 
 ### Medium Graph Sample
@@ -98,7 +98,7 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
         ])
 ```
 
-![Medium Graph](assets/medium.gif)
+![Medium Graph](docs/assets/medium.gif)
 
 ### Complex Graph Sample
 
@@ -115,5 +115,5 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
         ])
 ```
 
-![Complex Graph](assets/complex.gif)
+![Complex Graph](docs/assets/complex.gif)
 
