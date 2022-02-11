@@ -7,20 +7,22 @@ import lv.id.jc.algorithm.graph.Graph;
 import lv.id.jc.algorithm.graph.SearchAlgorithm;
 import org.jline.utils.AttributedString;
 import org.jline.utils.AttributedStyle;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.shell.jline.PromptProvider;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 
+import javax.annotation.PostConstruct;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import javax.validation.constraints.NotEmpty;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 @ShellComponent
-public class Commands implements InitializingBean, PromptProvider, ConstraintValidator<Vertex, String> {
+public class Commands implements PromptProvider, ConstraintValidator<Vertex, String> {
     private final SearchAlgorithm<String> bfgAlgorithm = new BreadthFirstSearch<>();
     private final SearchAlgorithm<String> dijkstrasAlgorithm = new DijkstrasAlgorithm<>();
 
@@ -29,10 +31,10 @@ public class Commands implements InitializingBean, PromptProvider, ConstraintVal
 
     private Graph<String> graph;
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        var in = Commands.class.getClassLoader().getResourceAsStream(graphName + ".yaml");
-        var schema = new YAMLMapper().readValue(in, Map.class);
+    @PostConstruct
+    public void loadGraph() throws IOException {
+        var resource = new ClassPathResource(graphName + ".yaml");
+        var schema = new YAMLMapper().readValue(resource.getInputStream(), Map.class);
         graph = Graph.of(schema);
     }
 
@@ -46,22 +48,27 @@ public class Commands implements InitializingBean, PromptProvider, ConstraintVal
         return graph.schema().containsKey(vertex);
     }
 
-    @ShellMethod("finds the shortest path by using Breadth First Search Algorithm")
+    @ShellMethod("Find the shortest path by using Breadth First Search Algorithm.")
     public List<String> shortest(@Vertex String source, @Vertex String target) {
         return bfgAlgorithm.findPath(graph, source, target);
     }
 
-    @ShellMethod("finds the fastest path by using Dijkstra's Algorithm")
+    @ShellMethod("Find the fastest path by using Dijkstra's Algorithm.")
     public List<String> fastest(@Vertex String source, @Vertex String target) {
         return dijkstrasAlgorithm.findPath(graph, source, target);
     }
 
-    @ShellMethod("prints schema of the graph")
+    @ShellMethod("Print the edges of the given vertex.")
+    public Map<String, Number> edges(@Vertex String vertex) {
+        return graph.edges(vertex);
+    }
+
+    @ShellMethod("Print schema of the graph.")
     public Map<String, Map<String, Number>> schema() {
         return graph.schema();
     }
 
-    @ShellMethod("prints distance for the path")
+    @ShellMethod("Calculate the distance for the given path.")
     public double distance(@NotEmpty List<String> path) {
         return graph.getDistance(path);
     }

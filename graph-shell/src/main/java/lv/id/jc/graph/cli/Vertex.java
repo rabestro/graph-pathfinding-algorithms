@@ -12,7 +12,7 @@ import static java.lang.annotation.ElementType.PARAMETER;
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = {Commands.class})
 public @interface Vertex {
-    String message() default "this vertex was not found in the graph diagram";
+    String message() default "must be present in the graph scheme";
 
     Class<?>[] groups() default {};
 
