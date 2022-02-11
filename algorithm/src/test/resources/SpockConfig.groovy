@@ -11,6 +11,4 @@ spockReports {
          'com.athaydes.spockframework.report.internal.HtmlReportCreator.enabled': true,
          'com.athaydes.spockframework.report.IReportCreator'                    : 'com.athaydes.spockframework.report.internal.HtmlReportCreator'
     ])
-    // com.athaydes.spockframework.report.template.TemplateReportCreator
-    // com.athaydes.spockframework.report.internal.HtmlReportCreator
 }
