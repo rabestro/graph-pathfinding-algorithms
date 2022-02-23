@@ -79,12 +79,14 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
 
 ### Small Graph Sample
 
-```groovy
-        def graph = Graph.of([
-                A: [B: 7, C: 2],
-                B: [A: 3, C: 5],
-                C: [A: 1, B: 3]
-        ])
+```mermaid
+flowchart LR
+    A --> |7| B
+    A --> |2| C
+    B --> |3| A
+    B --> |5| C
+    C --> |1| A
+    C --> |3| B
 ```
 
 ![Small Graph](docs/assets/small.gif)
@@ -92,31 +94,35 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
 
 ### Medium Graph Sample
 
-```groovy
-        def graph = Graph.of([
-                A: [B: 5],
-                B: [A: 5, C: 10],
-                C: [B: 20, D: 5],
-                D: [E: 5],
-                E: [B: 5]
-        ])
+```mermaid
+flowchart LR
+    A --> |5 | B
+    B --> |5 | A
+    B --> |10| C
+    C --> |5 | D
+    C --> |20| B
+    D --> |5 | E
+    E --> |5 | B
 ```
 
 ![Medium Graph](docs/assets/medium.gif)
 
 ### Complex Graph Sample
 
-```groovy
-        def graph = Graph.of([
-                A: [B: 5, H: 2],
-                B: [A: 5, C: 7],
-                C: [B: 7, D: 3, G: 4],
-                D: [C: 20, E: 4],
-                E: [F: 5],
-                F: [G: 6],
-                G: [C: 4],
-                H: [G: 3]
-        ])
+```mermaid
+flowchart LR
+    A --> |5 | B
+    A --> |2 | H
+    B --> |5 | A
+    B --> |7 | C
+    C --> |7 | B
+    C --> |3 | D
+    C --> |4 | G
+    D --> |20| C
+    D --> |4 | E
+    E --> |5 | F
+    G --> |4 | C
+    H --> |3 | G
 ```
 
 ![Complex Graph](docs/assets/complex.gif)
