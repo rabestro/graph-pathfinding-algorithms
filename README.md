@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=rabestro_algorithms&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=rabestro_algorithms)
+
 # Graph search algorithms
 
 The project implements an interface for the weighted graph, as well as two algorithms for finding a path in the graph.
@@ -127,4 +129,3 @@ flowchart LR
 
 ![Complex Graph](docs/assets/complex.gif)
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=rabestro_algorithms&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=rabestro_algorithms)
