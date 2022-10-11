@@ -69,7 +69,7 @@ class BreadthFirstSearchSpec extends Specification {
         time = shortest.size() - 1
     }
 
-    def 'should thrown NPE path for an empty graph'() {
+    def 'should thrown an exception for an empty graph'() {
         given:
         def graph = Graph.of([:])
 
