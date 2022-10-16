@@ -4,8 +4,12 @@ import spock.lang.*
 
 @Title("Dijkstra's Algorithm")
 @See("https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm")
-@Narrative("Dijkstra's algorithm is an algorithm for finding the fastest paths between nodes in a graph")
+@Narrative("""
+Dijkstra's algorithm is an algorithm for finding 
+the fastest paths between nodes in a graph
+""")
 class DijkstrasAlgorithmSpec extends Specification {
+
     @Subject
     def algorithm = new DijkstrasAlgorithm()
 
@@ -19,19 +23,17 @@ class DijkstrasAlgorithmSpec extends Specification {
 
         when:
         def path = algorithm.findPath(graph, source, target)
+        def time = graph.getDistance(path)
 
         then:
-        path == fastest
-
-        and:
-        graph.getDistance(path) == time as double
+        path == fastestPath
+        time == fastestTime
 
         where:
-        source | target || time | fastest
-        'A'    | 'A'    || 0    | ['A']
-        'B'    | 'B'    || 0    | ['B']
-        'C'    | 'C'    || 0    | ['C']
-        'A'    | 'B'    || 5    | ['A', 'C', 'B']
+        source | target || fastestPath     | fastestTime
+        'A'    | 'A'    || ['A']           | 0
+        'B'    | 'A'    || ['B', 'A']      | 3
+        'A'    | 'B'    || ['A', 'C', 'B'] | 5
     }
 
     def 'should find a route for a medium graph'() {

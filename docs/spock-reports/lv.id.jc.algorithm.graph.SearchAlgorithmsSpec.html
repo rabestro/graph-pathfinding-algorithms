@@ -27,6 +27,10 @@ div.date-test-ran {
   font-style: italic;
 }
 
+.return-toc {
+    float: right; font-size: 60%;
+}
+
 table.features-table {
   width: 800px;
 }
@@ -191,6 +195,11 @@ td.ex-result {
   background: white !important;
 }
 
+.ex-time {
+  font-style: italic;
+  font-size: smaller;
+}
+
 .ex-pass {
   color: darkgreen;
 }
@@ -251,7 +260,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Tue Jan 11 09:12:51 EET 2022 by jegors.cemisovs</div>
+<div class='date-test-ran'>Created on Sun Oct 16 12:33:47 EEST 2022 by jegors</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -272,7 +281,7 @@ div.footer {
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.046 seconds</td>
+<td>0.005 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -311,8 +320,9 @@ div.footer {
 <td colspan='10'>
 <div class='feature-description' id='-1278284136'>
 <span>should find a route for a complex graph</span>
-<span style='float: right; font-size: 60%;'>
+<span class='return-toc'>
 <a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
 </span>
 </div>
 </td>
@@ -436,7 +446,10 @@ graph.getDistance(routeTwo) == t2 as double</pre>
 <td class='ex-value'>[A]</td>
 <td class='ex-value'>0</td>
 <td class='ex-value'>[A]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>B</td>
@@ -445,7 +458,10 @@ graph.getDistance(routeTwo) == t2 as double</pre>
 <td class='ex-value'>[B]</td>
 <td class='ex-value'>0</td>
 <td class='ex-value'>[B]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>A</td>
@@ -454,7 +470,10 @@ graph.getDistance(routeTwo) == t2 as double</pre>
 <td class='ex-value'>[A, B]</td>
 <td class='ex-value'>5</td>
 <td class='ex-value'>[A, B]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>B</td>
@@ -463,7 +482,10 @@ graph.getDistance(routeTwo) == t2 as double</pre>
 <td class='ex-value'>[B, A]</td>
 <td class='ex-value'>5</td>
 <td class='ex-value'>[B, A]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>A</td>
@@ -472,7 +494,10 @@ graph.getDistance(routeTwo) == t2 as double</pre>
 <td class='ex-value'>[A, B, C]</td>
 <td class='ex-value'>9</td>
 <td class='ex-value'>[A, H, G, C]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>C</td>
@@ -481,7 +506,10 @@ graph.getDistance(routeTwo) == t2 as double</pre>
 <td class='ex-value'>[C, B, A]</td>
 <td class='ex-value'>12</td>
 <td class='ex-value'>[C, B, A]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>A</td>
@@ -490,7 +518,10 @@ graph.getDistance(routeTwo) == t2 as double</pre>
 <td class='ex-value'>[A, H, G]</td>
 <td class='ex-value'>5</td>
 <td class='ex-value'>[A, H, G]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>C</td>
@@ -499,7 +530,10 @@ graph.getDistance(routeTwo) == t2 as double</pre>
 <td class='ex-value'>[C, D]</td>
 <td class='ex-value'>3</td>
 <td class='ex-value'>[C, D]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>D</td>
@@ -508,7 +542,10 @@ graph.getDistance(routeTwo) == t2 as double</pre>
 <td class='ex-value'>[D, C]</td>
 <td class='ex-value'>19</td>
 <td class='ex-value'>[D, E, F, G, C]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>B</td>
@@ -517,7 +554,10 @@ graph.getDistance(routeTwo) == t2 as double</pre>
 <td class='ex-value'>[B, C, D]</td>
 <td class='ex-value'>10</td>
 <td class='ex-value'>[B, C, D]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>D</td>
@@ -526,7 +566,10 @@ graph.getDistance(routeTwo) == t2 as double</pre>
 <td class='ex-value'>[D, C, B]</td>
 <td class='ex-value'>26</td>
 <td class='ex-value'>[D, E, F, G, C, B]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>D</td>
@@ -535,7 +578,10 @@ graph.getDistance(routeTwo) == t2 as double</pre>
 <td class='ex-value'>[D, C, B, A, H]</td>
 <td class='ex-value'>33</td>
 <td class='ex-value'>[D, E, F, G, C, B, A, H]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 </tbody>
 </table>

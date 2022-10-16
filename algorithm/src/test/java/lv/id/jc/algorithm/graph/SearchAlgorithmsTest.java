@@ -67,6 +67,7 @@ class SearchAlgorithmsTest {
     void testFindPathAA() {
         // Java 8
 
+        // given
         String source = "A";
         String target = "A";
 
@@ -76,9 +77,11 @@ class SearchAlgorithmsTest {
         List<String> fastest = new ArrayList<>();
         fastest.add("A");
 
+        // when
         List<String> routeOne = bfsAlgorithm.findPath(graph, source, target);
         List<String> routeTwo = dijkstras.findPath(graph, source, target);
 
+        // then
         assertEquals(shortest, routeOne);
         assertEquals(fastest, routeTwo);
 

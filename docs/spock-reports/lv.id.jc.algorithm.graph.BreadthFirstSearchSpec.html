@@ -27,6 +27,10 @@ div.date-test-ran {
   font-style: italic;
 }
 
+.return-toc {
+    float: right; font-size: 60%;
+}
+
 table.features-table {
   width: 800px;
 }
@@ -191,6 +195,11 @@ td.ex-result {
   background: white !important;
 }
 
+.ex-time {
+  font-style: italic;
+  font-size: smaller;
+}
+
 .ex-pass {
   color: darkgreen;
 }
@@ -251,7 +260,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Tue Jan 11 09:12:51 EET 2022 by jegors.cemisovs</div>
+<div class='date-test-ran'>Created on Sun Oct 16 12:33:47 EEST 2022 by jegors</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -272,7 +281,7 @@ div.footer {
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.016 seconds</td>
+<td>0.037 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -302,7 +311,7 @@ div.footer {
 <a href='#-928009641' class='feature-toc-pass'>should find a route for complex graph</a>
 </li>
 <li>
-<a href='#-2095690062' class='feature-toc-pass'>should thrown NPE path for an empty graph</a>
+<a href='#-1390663368' class='feature-toc-pass'>should thrown an exception for an empty graph</a>
 </li>
 <li>
 <a href='#-498380623' class='feature-toc-pass'>should return an empty path if can't find a route</a>
@@ -312,8 +321,9 @@ div.footer {
 <td colspan='10'>
 <div class='feature-description' id='942393799'>
 <span>should find a route for simple graph</span>
-<span style='float: right; font-size: 60%;'>
+<span class='return-toc'>
 <a href='#toc'>Return</a>
+<div class='ex-time'>(0.006 seconds)</div>
 </span>
 </div>
 </td>
@@ -375,28 +385,40 @@ div.footer {
 <td class='ex-value'>A</td>
 <td class='ex-value'>0</td>
 <td class='ex-value'>[A]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0.006 seconds)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>A</td>
 <td class='ex-value'>B</td>
 <td class='ex-value'>7</td>
 <td class='ex-value'>[A, B]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>B</td>
 <td class='ex-value'>C</td>
 <td class='ex-value'>5</td>
 <td class='ex-value'>[B, C]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>C</td>
 <td class='ex-value'>B</td>
 <td class='ex-value'>3</td>
 <td class='ex-value'>[C, B]</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 </tbody>
 </table>
@@ -410,8 +432,9 @@ div.footer {
 <td colspan='10'>
 <div class='feature-description' id='-928009641'>
 <span>should find a route for complex graph</span>
-<span style='float: right; font-size: 60%;'>
+<span class='return-toc'>
 <a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
 </span>
 </div>
 </td>
@@ -483,49 +506,70 @@ F: [D: 1, E: 1]])</pre>
 <td class='ex-value'>A</td>
 <td class='ex-value'>[A]</td>
 <td class='ex-value'>0</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>B</td>
 <td class='ex-value'>B</td>
 <td class='ex-value'>[B]</td>
 <td class='ex-value'>0</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>A</td>
 <td class='ex-value'>B</td>
 <td class='ex-value'>[A, B]</td>
 <td class='ex-value'>1</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>B</td>
 <td class='ex-value'>A</td>
 <td class='ex-value'>[B, A]</td>
 <td class='ex-value'>1</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>A</td>
 <td class='ex-value'>C</td>
 <td class='ex-value'>[A, B, D, C]</td>
 <td class='ex-value'>3</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>C</td>
 <td class='ex-value'>A</td>
 <td class='ex-value'>[C, A]</td>
 <td class='ex-value'>1</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 <tr class='ex-pass'>
 <td class='ex-value'>E</td>
 <td class='ex-value'>B</td>
 <td class='ex-value'>[E, F, D, C, A, B]</td>
 <td class='ex-value'>5</td>
-<td class='ex-result'>OK</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
 </tr>
 </tbody>
 </table>
@@ -537,10 +581,11 @@ F: [D: 1, E: 1]])</pre>
 </tr>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='-2095690062'>
-<span>should thrown NPE path for an empty graph</span>
-<span style='float: right; font-size: 60%;'>
+<div class='feature-description' id='-1390663368'>
+<span>should thrown an exception for an empty graph</span>
+<span class='return-toc'>
 <a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
 </span>
 </div>
 </td>
@@ -573,8 +618,9 @@ F: [D: 1, E: 1]])</pre>
 <td colspan='10'>
 <div class='feature-description' id='-498380623'>
 <span>should return an empty path if can't find a route</span>
-<span style='float: right; font-size: 60%;'>
+<span class='return-toc'>
 <a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
 </span>
 </div>
 </td>

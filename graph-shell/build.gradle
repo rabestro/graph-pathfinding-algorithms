@@ -10,7 +10,7 @@ repositories {
 
 dependencies {
     implementation project(':algorithm')
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.0-rc1'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.1'
     implementation 'org.springframework.shell:spring-shell-starter:2.0.1.RELEASE'
 }

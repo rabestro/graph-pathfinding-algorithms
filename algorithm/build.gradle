@@ -46,7 +46,7 @@ publishing {
                     fromResolutionOf('runtimeClasspath')
                 }
                 usage('java-runtime') {
-                    fromResolutionResult()
+                    fromResolutionResult(null)
                 }
             }
         }
@@ -65,6 +65,9 @@ dependencies {
     // Required for spock-reports
     testImplementation 'org.slf4j:slf4j-api:2.0.1'
     testRuntimeClasspath 'org.slf4j:slf4j-simple:2.0.1'
+
+    // JUnit 5 Parameterized Tests
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.8.1'
 }
 
 test {
