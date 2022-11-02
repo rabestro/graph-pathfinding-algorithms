@@ -260,7 +260,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Sun Oct 16 13:46:14 EEST 2022 by jegors</div>
+<div class='date-test-ran'>Created on Sun Oct 16 16:27:44 EEST 2022 by jegors</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -275,13 +275,13 @@ div.footer {
 </thead>
 <tbody>
 <tr>
-<td>5</td>
-<td>5</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100.0%</td>
-<td>0.044 seconds</td>
+<td>0.0%</td>
+<td>0.037 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -306,28 +306,28 @@ the fastest paths between nodes in a graph</pre>
 <tbody>
 <ul id='toc'>
 <li>
-<a href='#1208189286' class='feature-toc-pass'>should find a route for a simple graph</a>
+<a href='#1208189286' class='feature-toc-failure'>should find a route for a simple graph</a>
 </li>
 <li>
-<a href='#1877950697' class='feature-toc-pass'>should find a route for a medium graph</a>
+<a href='#1877950697' class='feature-toc-ignored'>should find a route for a medium graph</a>
 </li>
 <li>
-<a href='#-1278284136' class='feature-toc-pass'>should find a route for a complex graph</a>
+<a href='#-1278284136' class='feature-toc-ignored'>should find a route for a complex graph</a>
 </li>
 <li>
-<a href='#-1670873817' class='feature-toc-pass'>should thrown NPE for an empty graph</a>
+<a href='#-1670873817' class='feature-toc-ignored'>should thrown NPE for an empty graph</a>
 </li>
 <li>
-<a href='#-498380623' class='feature-toc-pass'>should return an empty path if can't find a route</a>
+<a href='#-498380623' class='feature-toc-ignored'>should return an empty path if can't find a route</a>
 </li>
 </ul>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='1208189286'>
+<div class='feature-description failure' id='1208189286'>
 <span>should find a route for a simple graph</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0.006 seconds)</div>
+<div class='ex-time'>(0.016 seconds)</div>
 </span>
 </div>
 </td>
@@ -337,7 +337,7 @@ the fastest paths between nodes in a graph</pre>
 <div class='block-kind'>Given:</div>
 </td>
 <td>
-<pre class='block-source'>def graph = Graph.of([
+<pre class='block-source pre-error'>def graph = Graph.of([
         A: [B: 7, C: 2],
         B: [A: 3, C: 5],
         C: [A: 1, B: 3]
@@ -349,7 +349,7 @@ the fastest paths between nodes in a graph</pre>
 <div class='block-kind'>When:</div>
 </td>
 <td>
-<pre class='block-source'>def path = algorithm.findPath(graph, source, target)
+<pre class='block-source pre-error'>def path = algorithm.findPath(graph, source, target)
 def time = graph.getDistance(path)</pre>
 </td>
 </tr>
@@ -358,8 +358,8 @@ def time = graph.getDistance(path)</pre>
 <div class='block-kind'>Then:</div>
 </td>
 <td>
-<pre class='block-source'>path == fastestPath
-time == fastestTime</pre>
+<pre class='block-source error'>path == fastestPath // line 29</pre>
+<pre class='block-source after-error'>time == fastestTime</pre>
 </td>
 </tr>
 <tr>
@@ -385,7 +385,7 @@ time == fastestTime</pre>
 <td class='ex-value'>0</td>
 <td class='ex-result'>
 <span>OK</span>
-<span class='ex-time'>(0.006 seconds)</span>
+<span class='ex-time'>(0.005 seconds)</span>
 </td>
 </tr>
 <tr class='ex-pass'>
@@ -398,14 +398,14 @@ time == fastestTime</pre>
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
-<tr class='ex-pass'>
+<tr class='ex-fail'>
 <td class='ex-value'>A</td>
 <td class='ex-value'>B</td>
-<td class='ex-value'>[A, C, B]</td>
+<td class='ex-value'>[A, B]</td>
 <td class='ex-value'>5</td>
 <td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
+<span>FAIL</span>
+<span class='ex-time'>(0.011 seconds)</span>
 </td>
 </tr>
 </tbody>
@@ -413,16 +413,34 @@ time == fastestTime</pre>
 </div>
 </td>
 <td>
-<div class='spec-status'>3/3 passed</div>
+<div class='spec-status'>2/3 passed</div>
 </td>
 </tr>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='1877950697'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<div>[A, B, [A, B], 5]</div>
+<ul>
+<li>
+<pre>Condition not satisfied:<br/><br/>path == fastestPath<br/>|    |  |<br/>|    |  [A, B]<br/>|    false<br/>[A, C, B]<br/></pre>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description ignored' id='1877950697'>
 <span>should find a route for a medium graph</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0)</div>
 </span>
 </div>
 </td>
@@ -466,96 +484,11 @@ time == fastestTime</pre>
 </td>
 </tr>
 <tr>
-<td>
-<div class='block-kind'>Examples:</div>
-</td>
-<td>
-<div class='spec-examples'>
-<table class='ex-table'>
-<thead>
-<tr>
-<th class='ex-header'>source</th>
-<th class='ex-header'>target</th>
-<th class='ex-header'>time</th>
-<th class='ex-header'>fastest</th>
-</tr>
-</thead>
-<tbody>
-<tr class='ex-pass'>
-<td class='ex-value'>A</td>
-<td class='ex-value'>A</td>
-<td class='ex-value'>0</td>
-<td class='ex-value'>[A]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>B</td>
-<td class='ex-value'>B</td>
-<td class='ex-value'>0</td>
-<td class='ex-value'>[B]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>A</td>
-<td class='ex-value'>B</td>
-<td class='ex-value'>5</td>
-<td class='ex-value'>[A, B]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>B</td>
-<td class='ex-value'>A</td>
-<td class='ex-value'>5</td>
-<td class='ex-value'>[B, A]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>A</td>
-<td class='ex-value'>C</td>
-<td class='ex-value'>15</td>
-<td class='ex-value'>[A, B, C]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>C</td>
-<td class='ex-value'>A</td>
-<td class='ex-value'>20</td>
-<td class='ex-value'>[C, D, E, B, A]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-<td>
-<div class='spec-status'>6/6 passed</div>
-</td>
-</tr>
-<tr>
 <td colspan='10'>
-<div class='feature-description' id='-1278284136'>
+<div class='feature-description ignored' id='-1278284136'>
 <span>should find a route for a complex graph</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0)</div>
 </span>
 </div>
 </td>
@@ -602,156 +535,11 @@ time == fastestTime</pre>
 </td>
 </tr>
 <tr>
-<td>
-<div class='block-kind'>Examples:</div>
-</td>
-<td>
-<div class='spec-examples'>
-<table class='ex-table'>
-<thead>
-<tr>
-<th class='ex-header'>source</th>
-<th class='ex-header'>target</th>
-<th class='ex-header'>time</th>
-<th class='ex-header'>fastest</th>
-</tr>
-</thead>
-<tbody>
-<tr class='ex-pass'>
-<td class='ex-value'>A</td>
-<td class='ex-value'>A</td>
-<td class='ex-value'>0</td>
-<td class='ex-value'>[A]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>B</td>
-<td class='ex-value'>B</td>
-<td class='ex-value'>0</td>
-<td class='ex-value'>[B]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>A</td>
-<td class='ex-value'>B</td>
-<td class='ex-value'>5</td>
-<td class='ex-value'>[A, B]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>B</td>
-<td class='ex-value'>A</td>
-<td class='ex-value'>5</td>
-<td class='ex-value'>[B, A]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>A</td>
-<td class='ex-value'>C</td>
-<td class='ex-value'>9</td>
-<td class='ex-value'>[A, H, G, C]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>C</td>
-<td class='ex-value'>A</td>
-<td class='ex-value'>12</td>
-<td class='ex-value'>[C, B, A]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>A</td>
-<td class='ex-value'>G</td>
-<td class='ex-value'>5</td>
-<td class='ex-value'>[A, H, G]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>C</td>
-<td class='ex-value'>D</td>
-<td class='ex-value'>3</td>
-<td class='ex-value'>[C, D]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>D</td>
-<td class='ex-value'>C</td>
-<td class='ex-value'>19</td>
-<td class='ex-value'>[D, E, F, G, C]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>B</td>
-<td class='ex-value'>D</td>
-<td class='ex-value'>10</td>
-<td class='ex-value'>[B, C, D]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>D</td>
-<td class='ex-value'>B</td>
-<td class='ex-value'>26</td>
-<td class='ex-value'>[D, E, F, G, C, B]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-<tr class='ex-pass'>
-<td class='ex-value'>D</td>
-<td class='ex-value'>H</td>
-<td class='ex-value'>33</td>
-<td class='ex-value'>[D, E, F, G, C, B, A, H]</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-<td>
-<div class='spec-status'>12/12 passed</div>
-</td>
-</tr>
-<tr>
 <td colspan='10'>
-<div class='feature-description' id='-1670873817'>
+<div class='feature-description ignored' id='-1670873817'>
 <span>should thrown NPE for an empty graph</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0)</div>
 </span>
 </div>
 </td>
@@ -782,11 +570,10 @@ time == fastestTime</pre>
 </tr>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='-498380623'>
+<div class='feature-description ignored' id='-498380623'>
 <span>should return an empty path if can't find a route</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0)</div>
 </span>
 </div>
 </td>
