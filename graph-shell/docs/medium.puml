@@ -1,0 +1,20 @@
+@startdot
+digraph medium {
+fontname="Helvetica,Arial,sans-serif"
+node [fontname="Helvetica,Arial,sans-serif"]
+edge [fontname="Helvetica,Arial,sans-serif"]
+node [color=lightblue2, style=filled, shape=circle];
+A
+A -> B [label=5];
+B
+B -> A [label=5];
+B -> C [label=10];
+C
+C -> B [label=20];
+C -> D [label=5];
+D
+D -> E [label=5];
+E
+E -> B [label=5];
+}
+@enddot

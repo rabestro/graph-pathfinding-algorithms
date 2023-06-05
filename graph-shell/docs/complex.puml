@@ -1,0 +1,29 @@
+@startdot
+digraph complex {
+fontname="Helvetica,Arial,sans-serif"
+node [fontname="Helvetica,Arial,sans-serif"]
+edge [fontname="Helvetica,Arial,sans-serif"]
+node [color=lightblue2, style=filled, shape=circle];
+A
+A -> B [label=5];
+A -> H [label=2];
+B
+B -> A [label=5];
+B -> C [label=7];
+C
+C -> B [label=7];
+C -> D [label=3];
+C -> G [label=4];
+D
+D -> C [label=20];
+D -> E [label=4];
+E
+E -> F [label=5];
+F
+F -> G [label=6];
+G
+G -> C [label=4];
+H
+H -> G [label=3];
+}
+@enddot
