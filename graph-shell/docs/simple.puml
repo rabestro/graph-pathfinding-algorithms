@@ -1,0 +1,17 @@
+@startdot
+digraph simple {
+fontname="Helvetica,Arial,sans-serif"
+node [fontname="Helvetica,Arial,sans-serif"]
+edge [fontname="Helvetica,Arial,sans-serif"]
+node [color=lightblue2, style=filled, shape=circle];
+A
+A -> B [label=7];
+A -> C [label=2];
+B
+B -> A [label=3];
+B -> C [label=5];
+C
+C -> A [label=1];
+C -> B [label=3];
+}
+@enddot
