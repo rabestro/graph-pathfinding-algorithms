@@ -1,3 +1,9 @@
+#!/usr/bin/env gawk --exec
+#
+# Copyright (c) 2023 Jegors Čemisovs
+# License: MIT License
+# Repository: https://github.com/rabestro/graph-pathfinding-algorithms
+#
 BEGIN {
     FS = "[ :,{}]+"
 
