@@ -14,14 +14,16 @@ can also see the [specifications](https://algorithms.jc.id.lv/docs/spock-reports
 
 ## Demo. Graph Shell
 
-To demonstrate the work of search algorithms, I made a small console program '[Graph Shell](graph-shell/README.md)'. The program allows you to select [one of three build-in graph samples](#Graph-Samples) and search for a path using two algorithms. The source code of the program is located in `graph-shell` module. 
+To demonstrate the work of search algorithms, I made a small console program '[Graph Shell](graph-shell/README.md)'. The program
+allows you to select [one of three build-in graph samples](#Graph-Samples) and search for a path using two algorithms. The source
+code of the program is located in `graph-shell` module.
 
 [![asciicast](https://asciinema.org/a/468058.svg)](https://asciinema.org/a/468058)
 
 ### Usage in other projects
 
 These algorithms used in the [Hypermetro](https://rabestro.github.io/hypermetro/) project, where they are
-utilized to find the optimal route in the metro schema. 
+utilized to find the optimal route in the metro schema.
 
 
 ## How to use the algorithms in your program
@@ -30,7 +32,11 @@ The first step is to create a graph structure. The Graph interface is generic, s
 and any [Number](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Number.html) type for distance.
 
 ### Example
-In the following Java code we create a graph structure with eight nodes. We use [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) class for vertex identification and [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) for the distance. You can see the graphic representation of the scheme [here](docs/assets/complex.gif). 
+
+In the following Java code we create a graph structure with eight nodes. We
+use [Character](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html) class for vertex
+identification and [Integer](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html) for the
+distance. You can see the graphic representation of the scheme [here](docs/assets/complex.gif).
 
 ```java
 var graph = Graph.of(Map.of(
@@ -45,7 +51,7 @@ var graph = Graph.of(Map.of(
     ));
 ```
 
-The second step is creating a search algorithm class. You can choose one of the two algorithms. 
+The second step is creating a search algorithm class. You can choose one of the two algorithms.
 
 ### Example
 
@@ -66,11 +72,11 @@ var routeOne = shortest.findPath(graph, source, target);
 var routeTwo = fastest.findPath(graph, source, target);
 ```
 
-As result, you get a list with the path. 
+As result, you get a list with the path.
 
 ```java
-routeOne == ['D', 'C']   
-routeTwo == ['D', 'E', 'F', 'G', 'C']
+routeOne==['D','C']
+        routeTwo==['D','E','F','G','C']
 ```
 
 ## Unit Tests
@@ -83,12 +89,15 @@ Tests are written in Groove language. For unit testing, the [Spock Framework](ht
 
 ```mermaid
 flowchart LR
-    A --> |7| B
-    A --> |2| C
-    B --> |3| A
-    B --> |5| C
-    C --> |1| A
-    C --> |3| B
+    A((A))
+    B((B))
+    C((C))
+    A -->|7| B
+    A -->|2| C
+    B -->|3| A
+    B -->|5| C
+    C -->|1| A
+    C -->|3| B
 ```
 
 ![Small Graph](docs/assets/small.gif)
@@ -128,4 +137,3 @@ flowchart LR
 ```
 
 ![Complex Graph](docs/assets/complex.gif)
-
