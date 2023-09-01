@@ -1,5 +1,5 @@
 ---
-title: Sample application: Graph Shell
+title: "Sample application: Graph Shell"
 ---
 
 ## About
