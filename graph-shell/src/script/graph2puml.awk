@@ -1,3 +1,4 @@
+
 #!/usr/bin/env gawk --exec
 #
 # Copyright (c) 2023 Jegors Čemisovs
@@ -17,6 +18,7 @@ BEGIN {
 }
 {
     print $1
+
     for (i = 2; i < NF; i += 2)
         print $1, "->", $i, "[label=" $(i + 1) "];"
 }

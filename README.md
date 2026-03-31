@@ -99,8 +99,7 @@ flowchart LR
     C -->|1| A
     C -->|3| B
 ```
-
-![Small Graph](docs/assets/small.gif)
+![Small Graph PlantUML](http://www.plantuml.com/plantuml/svg/bT2n3e8m483XcJv5mmo36EDWQWGMTqV2SD03cXmjQQk9CRwx4CN0fhVTbpyttCbvi5uQpwHgBGmTl_H0n1yiQ8ps6deKuHdfXbxL4ALM0KKEj8iTMjM4BD168Yz-YaiMe6p_gD-tQqF62b9jvokwOX9nv--4eb54ACUjWm55hMnDM1vOaFBuo3DU45H8Ol-bVAPaecoYTARjI7oSR1NkFfglsirIi-M59pkXbkCtNm00)
 
 
 ### Medium Graph Sample
@@ -137,3 +136,6 @@ flowchart LR
 ```
 
 ![Complex Graph](docs/assets/complex.gif)
+
+![Complex Graph PlantUML](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rabestro/graph-pathfinding-algorithms/master/graph-shell/docs/complex.puml)
+
