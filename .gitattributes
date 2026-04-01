@@ -1,0 +1,47 @@
+# Default behavior:
+* text=auto eol=lf
+
+# Python files
+*.py      text eol=lf
+
+# Configuration and text files
+*.toml    text eol=lf
+*.ini     text eol=lf
+*.cfg     text eol=lf
+*.md      text eol=lf
+*.txt     text eol=lf
+*.json    text eol=lf
+*.yml     text eol=lf
+*.yaml          text eol=lf
+.editorconfig   text eol=lf
+.gitignore      text eol=lf
+.gitattributes  text eol=lf
+
+# Lock files should be treated as text with LF endings
+uv.lock  text eol=lf
+
+# Make Jupyter Notebook diffs readable
+# Requires users to install nbdime (pip install nbdime)
+# and run `nbdime config-git --enable --global`
+*.ipynb   diff=nbdime
+
+# Mark binary files to prevent Git from trying to change their line endings
+# This prevents corruption of these files.
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.ico     binary
+*.pyc     binary
+*.so      binary
+*.sqlite3 binary
+*.db      binary
+*.zip     binary
+*.gz      binary
+*.pdf     binary
+
+# Exclude specific files/directories from git archive (e.g., when downloading a zip)
+# This is great for providing students with a clean project download.
+/.github        export-ignore
+/tests/         export-ignore
+/.pytest_cache/ export-ignore
