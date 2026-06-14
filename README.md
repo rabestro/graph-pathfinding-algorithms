@@ -1,5 +1,3 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=rabestro_algorithms&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=rabestro_algorithms)
-
 # Graph search algorithms
 
 The project implements an interface for the weighted graph, as well as two algorithms for finding a path in the graph.
@@ -11,6 +9,43 @@ There are implementations and tests for two algorithms:
 
 The implementation is written in Java 17. [API documentation](https://algorithms.jc.id.lv/docs/api/) is available. You
 can also see the [specifications](https://algorithms.jc.id.lv/docs/spock-reports/) generated with the spock-reports.
+
+## Development Setup with Mise
+
+This project uses [mise](https://mise.jdx.dev/) to manage its toolchain (Java 17 and Gradle 7.5.1) and run development tasks.
+
+To set up the development environment:
+
+1. Install `mise` if you haven't already.
+2. Trust the project configuration:
+   ```shell
+   mise trust
+   ```
+3. Install the required tools (Java and Gradle):
+   ```shell
+   mise install
+   ```
+
+### Available Tasks
+
+You can run various tasks defined in `mise.toml`:
+
+* **Build and Test**: Run the test suite and build the project:
+  ```shell
+  mise run build
+  ```
+* **Run Java Demo**: Launch the Java application demo:
+  ```shell
+  mise run demo-java
+  ```
+* **Run Groovy Demo**: Launch the Groovy script demo:
+  ```shell
+  mise run demo-groovy
+  ```
+* **Run Graph Shell**: Launch the interactive console shell:
+  ```shell
+  mise run demo-shell
+  ```
 
 ## Demo. Graph Shell
 

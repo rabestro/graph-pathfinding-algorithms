@@ -8,20 +8,25 @@ To demonstrate the work of search algorithms, I made a small console program. Th
 
 ## Build & Run
 
-To compile the program, use the command:
+You can build and run this program easily using **mise**:
 
+```shell
+$ mise run demo-shell
+```
+
+Alternatively, you can compile and run using Gradle manually (using the toolchain managed by `mise` or system tools):
+
+To compile:
 ```shell
 $ gradle assemble
 ```
 
-This command will create an executable jar, so in Linux or macOS you may run the application by
-
+This command will create an executable JAR. On Linux or macOS you can run it via:
 ```shell
 $ ./build/libs/graph-shell-1.0-SNAPSHOT.jar 
 ```
 
-On the Windows machine you should run the application using java:
-
+On a Windows machine you should run the application using Java:
 ```shell
 $ java -jar ./build/libs/graph-shell-1.0-SNAPSHOT.jar 
 ```

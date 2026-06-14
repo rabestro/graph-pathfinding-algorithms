@@ -35,3 +35,6 @@ out/
 .DS_Store
 /algorithm/gradle.properties
 /sample/gradle.properties
+
+# Logs
+spring-shell.log
