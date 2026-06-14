@@ -260,7 +260,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Sun Oct 16 12:33:47 EEST 2022 by jegors</div>
+<div class='date-test-ran'>Created on Sun Jun 14 19:44:22 EEST 2026 by jcemisovs</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -275,13 +275,13 @@ div.footer {
 </thead>
 <tbody>
 <tr>
-<td>5</td>
-<td>5</td>
+<td>20</td>
+<td>20</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.032 seconds</td>
+<td>0.024 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -297,25 +297,70 @@ div.footer {
 <tbody>
 <ul id='toc'>
 <li>
-<a href='#1895788456' class='feature-toc-pass'>should return edges for a given node</a>
+<a href='#-16825520' class='feature-toc-pass'>should return edges for a given node [0]</a>
 </li>
 <li>
-<a href='#449388383' class='feature-toc-pass'>should calculate distance for a path</a>
+<a href='#-16825489' class='feature-toc-pass'>should return edges for a given node [1]</a>
+</li>
+<li>
+<a href='#-16825458' class='feature-toc-pass'>should return edges for a given node [2]</a>
+</li>
+<li>
+<a href='#1215053703' class='feature-toc-pass'>should calculate distance for a path [0]</a>
+</li>
+<li>
+<a href='#1215053734' class='feature-toc-pass'>should calculate distance for a path [1]</a>
+</li>
+<li>
+<a href='#1215053765' class='feature-toc-pass'>should calculate distance for a path [2]</a>
+</li>
+<li>
+<a href='#1215053796' class='feature-toc-pass'>should calculate distance for a path [3]</a>
+</li>
+<li>
+<a href='#1215053827' class='feature-toc-pass'>should calculate distance for a path [4]</a>
+</li>
+<li>
+<a href='#1215053858' class='feature-toc-pass'>should calculate distance for a path [5]</a>
+</li>
+<li>
+<a href='#1215053889' class='feature-toc-pass'>should calculate distance for a path [6]</a>
+</li>
+<li>
+<a href='#1215053920' class='feature-toc-pass'>should calculate distance for a path [7]</a>
 </li>
 <li>
 <a href='#-1304864623' class='feature-toc-pass'>should be zero distance for an empty path</a>
 </li>
 <li>
-<a href='#-1756519493' class='feature-toc-pass'>should be zero distance for any one node path</a>
+<a href='#740242915' class='feature-toc-pass'>should be zero distance for any one node path [0]</a>
 </li>
 <li>
-<a href='#-930833861' class='feature-toc-pass'>should throw NPE for incorrect path</a>
+<a href='#740242946' class='feature-toc-pass'>should be zero distance for any one node path [1]</a>
+</li>
+<li>
+<a href='#740242977' class='feature-toc-pass'>should be zero distance for any one node path [2]</a>
+</li>
+<li>
+<a href='#740243008' class='feature-toc-pass'>should be zero distance for any one node path [3]</a>
+</li>
+<li>
+<a href='#740243039' class='feature-toc-pass'>should be zero distance for any one node path [4]</a>
+</li>
+<li>
+<a href='#1677126755' class='feature-toc-pass'>should throw NPE for incorrect path [0]</a>
+</li>
+<li>
+<a href='#1677126786' class='feature-toc-pass'>should throw NPE for incorrect path [1]</a>
+</li>
+<li>
+<a href='#1677126817' class='feature-toc-pass'>should throw NPE for incorrect path [2]</a>
 </li>
 </ul>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='1895788456'>
-<span>should return edges for a given node</span>
+<div class='feature-description' id='-16825520'>
+<span>should return edges for a given node [0]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
 <div class='ex-time'>(0)</div>
@@ -377,6 +422,68 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-16825489'>
+<span>should return edges for a given node [1]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>a simple graph with three nodes</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 7, C: 2],
+        B: [A: 3, C: 5],
+        C: [A: 1, B: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>The method returns expected edges for given node</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.edges(node) == expected</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>node</th>
+<th class='ex-header'>expected</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>B</td>
 <td class='ex-value'>[A:3, C:5]</td>
@@ -385,6 +492,68 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-16825458'>
+<span>should return edges for a given node [2]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>a simple graph with three nodes</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 7, C: 2],
+        B: [A: 3, C: 5],
+        C: [A: 1, B: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>The method returns expected edges for given node</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.edges(node) == expected</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>node</th>
+<th class='ex-header'>expected</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>C</td>
 <td class='ex-value'>[A:1, B:3]</td>
@@ -397,14 +566,11 @@ div.footer {
 </table>
 </div>
 </td>
-<td>
-<div class='spec-status'>3/3 passed</div>
-</td>
 </tr>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='449388383'>
-<span>should calculate distance for a path</span>
+<div class='feature-description' id='1215053703'>
+<span>should calculate distance for a path [0]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
 <div class='ex-time'>(0)</div>
@@ -479,6 +645,81 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1215053734'>
+<span>should calculate distance for a path [1]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>a complex graph with eight nodes</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>the distance for a path correctly calculated</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>path and expected distance</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>path</th>
+<th class='ex-header'>distance</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[A, B]</td>
 <td class='ex-value'>5</td>
@@ -487,6 +728,81 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1215053765'>
+<span>should calculate distance for a path [2]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>a complex graph with eight nodes</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>the distance for a path correctly calculated</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>path and expected distance</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>path</th>
+<th class='ex-header'>distance</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[B, A]</td>
 <td class='ex-value'>5</td>
@@ -495,6 +811,81 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1215053796'>
+<span>should calculate distance for a path [3]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>a complex graph with eight nodes</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>the distance for a path correctly calculated</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>path and expected distance</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>path</th>
+<th class='ex-header'>distance</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[A, B, A]</td>
 <td class='ex-value'>10</td>
@@ -503,6 +894,81 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1215053827'>
+<span>should calculate distance for a path [4]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>a complex graph with eight nodes</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>the distance for a path correctly calculated</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>path and expected distance</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>path</th>
+<th class='ex-header'>distance</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[A, B, A, B]</td>
 <td class='ex-value'>15</td>
@@ -511,6 +977,81 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1215053858'>
+<span>should calculate distance for a path [5]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>a complex graph with eight nodes</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>the distance for a path correctly calculated</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>path and expected distance</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>path</th>
+<th class='ex-header'>distance</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[C, D]</td>
 <td class='ex-value'>3</td>
@@ -519,6 +1060,81 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1215053889'>
+<span>should calculate distance for a path [6]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>a complex graph with eight nodes</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>the distance for a path correctly calculated</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>path and expected distance</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>path</th>
+<th class='ex-header'>distance</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[D, C]</td>
 <td class='ex-value'>20</td>
@@ -527,6 +1143,81 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1215053920'>
+<span>should calculate distance for a path [7]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>a complex graph with eight nodes</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>the distance for a path correctly calculated</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == distance as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>path and expected distance</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>path</th>
+<th class='ex-header'>distance</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[D, E, F, G, C]</td>
 <td class='ex-value'>19</td>
@@ -539,9 +1230,6 @@ div.footer {
 </table>
 </div>
 </td>
-<td>
-<div class='spec-status'>8/8 passed</div>
-</td>
 </tr>
 <tr>
 <td colspan='10'>
@@ -549,7 +1237,7 @@ div.footer {
 <span>should be zero distance for an empty path</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0.020 seconds)</div>
+<div class='ex-time'>(0.014 seconds)</div>
 </span>
 </div>
 </td>
@@ -584,8 +1272,8 @@ div.footer {
 </tr>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='-1756519493'>
-<span>should be zero distance for any one node path</span>
+<div class='feature-description' id='740242915'>
+<span>should be zero distance for any one node path [0]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
 <div class='ex-time'>(0)</div>
@@ -649,6 +1337,71 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='740242946'>
+<span>should be zero distance for any one node path [1]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>any graph</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of(_ as Map)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>the zero distance for any one-node path</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.getDistance(oneNodePath) == 0</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>the node may be of any type and even non-existent</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>oneNodePath</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[B]</td>
 <td class='ex-result'>
@@ -656,6 +1409,71 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='740242977'>
+<span>should be zero distance for any one node path [2]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>any graph</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of(_ as Map)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>the zero distance for any one-node path</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.getDistance(oneNodePath) == 0</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>the node may be of any type and even non-existent</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>oneNodePath</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[2]</td>
 <td class='ex-result'>
@@ -663,6 +1481,71 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='740243008'>
+<span>should be zero distance for any one node path [3]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>any graph</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of(_ as Map)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>the zero distance for any one-node path</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.getDistance(oneNodePath) == 0</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>the node may be of any type and even non-existent</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>oneNodePath</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[X]</td>
 <td class='ex-result'>
@@ -670,6 +1553,71 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='740243039'>
+<span>should be zero distance for any one node path [4]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>any graph</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of(_ as Map)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>the zero distance for any one-node path</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.getDistance(oneNodePath) == 0</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>the node may be of any type and even non-existent</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>oneNodePath</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[12.56]</td>
 <td class='ex-result'>
@@ -681,14 +1629,11 @@ div.footer {
 </table>
 </div>
 </td>
-<td>
-<div class='spec-status'>5/5 passed</div>
-</td>
 </tr>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='-930833861'>
-<span>should throw NPE for incorrect path</span>
+<div class='feature-description' id='1677126755'>
+<span>should throw NPE for incorrect path [0]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
 <div class='ex-time'>(0)</div>
@@ -772,6 +1717,91 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1677126786'>
+<span>should throw NPE for incorrect path [1]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>a medium graph with five nodes</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5],
+        B: [A: 5, C: 10],
+        C: [B: 20, D: 5],
+        D: [E: 5],
+        E: [B: 5]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>we call the method with incorrect path</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.getDistance(incorrectPath)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>the NPE thrown</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>thrown NullPointerException</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>path is more then one node</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>incorrectPath</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[A, C]</td>
 <td class='ex-result'>
@@ -779,6 +1809,91 @@ div.footer {
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1677126817'>
+<span>should throw NPE for incorrect path [2]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>a medium graph with five nodes</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5],
+        B: [A: 5, C: 10],
+        C: [B: 20, D: 5],
+        D: [E: 5],
+        E: [B: 5]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>we call the method with incorrect path</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>graph.getDistance(incorrectPath)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>the NPE thrown</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>thrown NullPointerException</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>path is more then one node</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>incorrectPath</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>[A, B, D]</td>
 <td class='ex-result'>
@@ -789,9 +1904,6 @@ div.footer {
 </tbody>
 </table>
 </div>
-</td>
-<td>
-<div class='spec-status'>3/3 passed</div>
 </td>
 </tr>
 </tbody>

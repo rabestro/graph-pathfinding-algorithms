@@ -260,7 +260,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Sun Oct 16 16:27:44 EEST 2022 by jegors</div>
+<div class='date-test-ran'>Created on Sun Jun 14 19:44:22 EEST 2026 by jcemisovs</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -275,13 +275,13 @@ div.footer {
 </thead>
 <tbody>
 <tr>
-<td>1</td>
+<td>23</td>
+<td>23</td>
 <td>0</td>
-<td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0.0%</td>
-<td>0.037 seconds</td>
+<td>100.0%</td>
+<td>0.012 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -306,28 +306,82 @@ the fastest paths between nodes in a graph</pre>
 <tbody>
 <ul id='toc'>
 <li>
-<a href='#1208189286' class='feature-toc-failure'>should find a route for a simple graph</a>
+<a href='#-1375189490' class='feature-toc-pass'>should find a route for a simple graph [0]</a>
 </li>
 <li>
-<a href='#1877950697' class='feature-toc-ignored'>should find a route for a medium graph</a>
+<a href='#-1375189459' class='feature-toc-pass'>should find a route for a simple graph [1]</a>
 </li>
 <li>
-<a href='#-1278284136' class='feature-toc-ignored'>should find a route for a complex graph</a>
+<a href='#-1375189428' class='feature-toc-pass'>should find a route for a simple graph [2]</a>
 </li>
 <li>
-<a href='#-1670873817' class='feature-toc-ignored'>should thrown NPE for an empty graph</a>
+<a href='#1932692497' class='feature-toc-pass'>should find a route for a medium graph [0]</a>
 </li>
 <li>
-<a href='#-498380623' class='feature-toc-ignored'>should return an empty path if can't find a route</a>
+<a href='#1932692528' class='feature-toc-pass'>should find a route for a medium graph [1]</a>
+</li>
+<li>
+<a href='#1932692559' class='feature-toc-pass'>should find a route for a medium graph [2]</a>
+</li>
+<li>
+<a href='#1932692590' class='feature-toc-pass'>should find a route for a medium graph [3]</a>
+</li>
+<li>
+<a href='#1932692621' class='feature-toc-pass'>should find a route for a medium graph [4]</a>
+</li>
+<li>
+<a href='#1932692652' class='feature-toc-pass'>should find a route for a medium graph [5]</a>
+</li>
+<li>
+<a href='#1058392640' class='feature-toc-pass'>should find a route for a complex graph [0]</a>
+</li>
+<li>
+<a href='#1058392671' class='feature-toc-pass'>should find a route for a complex graph [1]</a>
+</li>
+<li>
+<a href='#1058392702' class='feature-toc-pass'>should find a route for a complex graph [2]</a>
+</li>
+<li>
+<a href='#1058392733' class='feature-toc-pass'>should find a route for a complex graph [3]</a>
+</li>
+<li>
+<a href='#1058392764' class='feature-toc-pass'>should find a route for a complex graph [4]</a>
+</li>
+<li>
+<a href='#1058392795' class='feature-toc-pass'>should find a route for a complex graph [5]</a>
+</li>
+<li>
+<a href='#1058392826' class='feature-toc-pass'>should find a route for a complex graph [6]</a>
+</li>
+<li>
+<a href='#1058392857' class='feature-toc-pass'>should find a route for a complex graph [7]</a>
+</li>
+<li>
+<a href='#1058392888' class='feature-toc-pass'>should find a route for a complex graph [8]</a>
+</li>
+<li>
+<a href='#1058392919' class='feature-toc-pass'>should find a route for a complex graph [9]</a>
+</li>
+<li>
+<a href='#-1549566869' class='feature-toc-pass'>should find a route for a complex graph [10]</a>
+</li>
+<li>
+<a href='#-1549566838' class='feature-toc-pass'>should find a route for a complex graph [11]</a>
+</li>
+<li>
+<a href='#-1670873817' class='feature-toc-pass'>should thrown NPE for an empty graph</a>
+</li>
+<li>
+<a href='#-498380623' class='feature-toc-pass'>should return an empty path if can't find a route</a>
 </li>
 </ul>
 <tr>
 <td colspan='10'>
-<div class='feature-description failure' id='1208189286'>
-<span>should find a route for a simple graph</span>
+<div class='feature-description' id='-1375189490'>
+<span>should find a route for a simple graph [0]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0.016 seconds)</div>
+<div class='ex-time'>(0)</div>
 </span>
 </div>
 </td>
@@ -337,7 +391,7 @@ the fastest paths between nodes in a graph</pre>
 <div class='block-kind'>Given:</div>
 </td>
 <td>
-<pre class='block-source pre-error'>def graph = Graph.of([
+<pre class='block-source'>def graph = Graph.of([
         A: [B: 7, C: 2],
         B: [A: 3, C: 5],
         C: [A: 1, B: 3]
@@ -349,7 +403,7 @@ the fastest paths between nodes in a graph</pre>
 <div class='block-kind'>When:</div>
 </td>
 <td>
-<pre class='block-source pre-error'>def path = algorithm.findPath(graph, source, target)
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)
 def time = graph.getDistance(path)</pre>
 </td>
 </tr>
@@ -358,8 +412,8 @@ def time = graph.getDistance(path)</pre>
 <div class='block-kind'>Then:</div>
 </td>
 <td>
-<pre class='block-source error'>path == fastestPath // line 29</pre>
-<pre class='block-source after-error'>time == fastestTime</pre>
+<pre class='block-source'>path == fastestPath
+time == fastestTime</pre>
 </td>
 </tr>
 <tr>
@@ -385,9 +439,71 @@ def time = graph.getDistance(path)</pre>
 <td class='ex-value'>0</td>
 <td class='ex-result'>
 <span>OK</span>
-<span class='ex-time'>(0.005 seconds)</span>
+<span class='ex-time'>(0)</span>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1375189459'>
+<span>should find a route for a simple graph [1]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 7, C: 2],
+        B: [A: 3, C: 5],
+        C: [A: 1, B: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)
+def time = graph.getDistance(path)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastestPath
+time == fastestTime</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>fastestPath</th>
+<th class='ex-header'>fastestTime</th>
+</tr>
+</thead>
+<tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>B</td>
 <td class='ex-value'>A</td>
@@ -398,49 +514,90 @@ def time = graph.getDistance(path)</pre>
 <span class='ex-time'>(0)</span>
 </td>
 </tr>
-<tr class='ex-fail'>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1375189428'>
+<span>should find a route for a simple graph [2]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 7, C: 2],
+        B: [A: 3, C: 5],
+        C: [A: 1, B: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)
+def time = graph.getDistance(path)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastestPath
+time == fastestTime</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>fastestPath</th>
+<th class='ex-header'>fastestTime</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
 <td class='ex-value'>A</td>
 <td class='ex-value'>B</td>
-<td class='ex-value'>[A, B]</td>
+<td class='ex-value'>[A, C, B]</td>
 <td class='ex-value'>5</td>
 <td class='ex-result'>
-<span>FAIL</span>
-<span class='ex-time'>(0.011 seconds)</span>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
 </td>
-<td>
-<div class='spec-status'>2/3 passed</div>
-</td>
 </tr>
 <tr>
 <td colspan='10'>
-<div class='problem-description'>
-<div class='problem-header'>The following problems occurred:</div>
-<div class='problem-list'>
-<ul>
-<li>
-<div>[A, B, [A, B], 5]</div>
-<ul>
-<li>
-<pre>Condition not satisfied:<br/><br/>path == fastestPath<br/>|    |  |<br/>|    |  [A, B]<br/>|    false<br/>[A, C, B]<br/></pre>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</td>
-</tr>
-<tr>
-<td colspan='10'>
-<div class='feature-description ignored' id='1877950697'>
-<span>should find a route for a medium graph</span>
+<div class='feature-description' id='1932692497'>
+<span>should find a route for a medium graph [0]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
 </span>
 </div>
 </td>
@@ -484,11 +641,443 @@ def time = graph.getDistance(path)</pre>
 </td>
 </tr>
 <tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>A</td>
+<td class='ex-value'>A</td>
+<td class='ex-value'>0</td>
+<td class='ex-value'>[A]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
 <td colspan='10'>
-<div class='feature-description ignored' id='-1278284136'>
-<span>should find a route for a complex graph</span>
+<div class='feature-description' id='1932692528'>
+<span>should find a route for a medium graph [1]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5],
+        B: [A: 5, C: 10],
+        C: [B: 20, D: 5],
+        D: [E: 5],
+        E: [B: 5]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>B</td>
+<td class='ex-value'>B</td>
+<td class='ex-value'>0</td>
+<td class='ex-value'>[B]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1932692559'>
+<span>should find a route for a medium graph [2]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5],
+        B: [A: 5, C: 10],
+        C: [B: 20, D: 5],
+        D: [E: 5],
+        E: [B: 5]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>A</td>
+<td class='ex-value'>B</td>
+<td class='ex-value'>5</td>
+<td class='ex-value'>[A, B]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1932692590'>
+<span>should find a route for a medium graph [3]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5],
+        B: [A: 5, C: 10],
+        C: [B: 20, D: 5],
+        D: [E: 5],
+        E: [B: 5]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>B</td>
+<td class='ex-value'>A</td>
+<td class='ex-value'>5</td>
+<td class='ex-value'>[B, A]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1932692621'>
+<span>should find a route for a medium graph [4]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5],
+        B: [A: 5, C: 10],
+        C: [B: 20, D: 5],
+        D: [E: 5],
+        E: [B: 5]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>A</td>
+<td class='ex-value'>C</td>
+<td class='ex-value'>15</td>
+<td class='ex-value'>[A, B, C]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1932692652'>
+<span>should find a route for a medium graph [5]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5],
+        B: [A: 5, C: 10],
+        C: [B: 20, D: 5],
+        D: [E: 5],
+        E: [B: 5]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>C</td>
+<td class='ex-value'>A</td>
+<td class='ex-value'>20</td>
+<td class='ex-value'>[C, D, E, B, A]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1058392640'>
+<span>should find a route for a complex graph [0]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
 </span>
 </div>
 </td>
@@ -535,11 +1124,956 @@ def time = graph.getDistance(path)</pre>
 </td>
 </tr>
 <tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>A</td>
+<td class='ex-value'>A</td>
+<td class='ex-value'>0</td>
+<td class='ex-value'>[A]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
 <td colspan='10'>
-<div class='feature-description ignored' id='-1670873817'>
+<div class='feature-description' id='1058392671'>
+<span>should find a route for a complex graph [1]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>B</td>
+<td class='ex-value'>B</td>
+<td class='ex-value'>0</td>
+<td class='ex-value'>[B]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1058392702'>
+<span>should find a route for a complex graph [2]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>A</td>
+<td class='ex-value'>B</td>
+<td class='ex-value'>5</td>
+<td class='ex-value'>[A, B]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1058392733'>
+<span>should find a route for a complex graph [3]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>B</td>
+<td class='ex-value'>A</td>
+<td class='ex-value'>5</td>
+<td class='ex-value'>[B, A]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1058392764'>
+<span>should find a route for a complex graph [4]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>A</td>
+<td class='ex-value'>C</td>
+<td class='ex-value'>9</td>
+<td class='ex-value'>[A, H, G, C]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1058392795'>
+<span>should find a route for a complex graph [5]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>C</td>
+<td class='ex-value'>A</td>
+<td class='ex-value'>12</td>
+<td class='ex-value'>[C, B, A]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1058392826'>
+<span>should find a route for a complex graph [6]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>A</td>
+<td class='ex-value'>G</td>
+<td class='ex-value'>5</td>
+<td class='ex-value'>[A, H, G]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1058392857'>
+<span>should find a route for a complex graph [7]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>C</td>
+<td class='ex-value'>D</td>
+<td class='ex-value'>3</td>
+<td class='ex-value'>[C, D]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1058392888'>
+<span>should find a route for a complex graph [8]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>D</td>
+<td class='ex-value'>C</td>
+<td class='ex-value'>19</td>
+<td class='ex-value'>[D, E, F, G, C]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1058392919'>
+<span>should find a route for a complex graph [9]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>B</td>
+<td class='ex-value'>D</td>
+<td class='ex-value'>10</td>
+<td class='ex-value'>[B, C, D]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1549566869'>
+<span>should find a route for a complex graph [10]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>D</td>
+<td class='ex-value'>B</td>
+<td class='ex-value'>26</td>
+<td class='ex-value'>[D, E, F, G, C, B]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1549566838'>
+<span>should find a route for a complex graph [11]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def graph = Graph.of([
+        A: [B: 5, H: 2],
+        B: [A: 5, C: 7],
+        C: [B: 7, D: 3, G: 4],
+        D: [C: 20, E: 4],
+        E: [F: 5],
+        F: [G: 6],
+        G: [C: 4],
+        H: [G: 3]
+])</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def path = algorithm.findPath(graph, source, target)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>path == fastest</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>graph.getDistance(path) == time as double</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>source</th>
+<th class='ex-header'>target</th>
+<th class='ex-header'>time</th>
+<th class='ex-header'>fastest</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>D</td>
+<td class='ex-value'>H</td>
+<td class='ex-value'>33</td>
+<td class='ex-value'>[D, E, F, G, C, B, A, H]</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1670873817'>
 <span>should thrown NPE for an empty graph</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
 </span>
 </div>
 </td>
@@ -570,10 +2104,11 @@ def time = graph.getDistance(path)</pre>
 </tr>
 <tr>
 <td colspan='10'>
-<div class='feature-description ignored' id='-498380623'>
+<div class='feature-description' id='-498380623'>
 <span>should return an empty path if can't find a route</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
 </span>
 </div>
 </td>

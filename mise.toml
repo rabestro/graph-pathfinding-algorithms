@@ -1,0 +1,28 @@
+[tools]
+java = "temurin-17"
+gradle = "7.5.1"
+
+[tasks.build]
+description = "Build the entire project and run tests"
+run = "gradle build"
+
+[tasks.test]
+description = "Run tests"
+run = "gradle test"
+
+[tasks.assemble]
+description = "Assemble all packages (creates jars)"
+run = "gradle assemble"
+
+[tasks.demo-java]
+description = "Run the Java demo application"
+run = "gradle :sample-java:run"
+
+[tasks.demo-groovy]
+description = "Run the Groovy demo application"
+run = "gradle :sample-groovy:run"
+
+[tasks.demo-shell]
+description = "Run the interactive Graph Shell application"
+depends = ["assemble"]
+run = "java -jar graph-shell/build/libs/graph-shell-1.0-SNAPSHOT.jar"
