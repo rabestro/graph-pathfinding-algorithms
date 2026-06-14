@@ -14,19 +14,19 @@ You can build and run this program easily using **mise**:
 $ mise run demo-shell
 ```
 
-Alternatively, you can compile and run using Gradle manually (using the tool chain managed by `mise` or system tools):
+Alternatively, you can compile and run using Gradle manually (using the toolchain managed by `mise` or system tools):
 
 To compile:
 ```shell
 $ gradle assemble
 ```
 
-This command will create an executable jar. On Linux or macOS you can run it via:
+This command will create an executable JAR. On Linux or macOS you can run it via:
 ```shell
 $ ./build/libs/graph-shell-1.0-SNAPSHOT.jar 
 ```
 
-On a Windows machine you should run the application using java:
+On a Windows machine you should run the application using Java:
 ```shell
 $ java -jar ./build/libs/graph-shell-1.0-SNAPSHOT.jar 
 ```

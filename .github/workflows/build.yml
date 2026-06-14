@@ -34,4 +34,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew build sonarqube --info
+        run: |
+          if [ -n "$SONAR_TOKEN" ]; then
+            ./gradlew build sonarqube --info
+          else
+            ./gradlew build --info
+          fi
